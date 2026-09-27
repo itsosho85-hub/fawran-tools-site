@@ -10,8 +10,8 @@
 
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ليه JSON غير المنسّق صعب القراءة، وإزاي تنظّميه في ثانية | فورا.tools</title>
-<meta content="دليل عملي لفهم بنية JSON، ليه التنسيق مهم لقراءة استجابات API، وإزاي تكتشفي أخطاء الصياغة بسرعة." name="description"/>
+<title>لماذا يصعب قراءة JSON غير المنسق وكيف تنظمه في ثانية | فورا.tools</title>
+<meta content="دليل عملي لفهم بنية JSON، ليه التنسيق مهم لقراءة استجابات API، وكيف تكتشفي أخطاء الصياغة بسرعة." name="description"/>
 <link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="../favicon.svg" rel="apple-touch-icon"/>
 <meta content="#4F3FF0" name="theme-color"/>
@@ -20,7 +20,7 @@
 
 <meta content="article" property="og:type"/>
 <meta content="https://fawran.tools/blog/json-formatter-guide.html" property="og:url"/>
-<meta content="ليه JSON غير المنسّق صعب القراءة، وإزاي تنظّميه في ثانية | فورا.tools" property="og:title"/>
+<meta content="لماذا يصعب قراءة JSON غير المنسق وكيف تنظمه في ثانية | فورا.tools" property="og:title"/>
 <meta content="دليل عملي لفهم بنية JSON وليه التنسيق مهم لقراءة استجابات API." property="og:description"/>
 <meta content="فورا.tools" property="og:site_name"/>
 <meta content="ar_AR" property="og:locale"/>
@@ -28,7 +28,7 @@
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="ليه JSON غير المنسّق صعب القراءة، وإزاي تنظّميه في ثانية | فورا.tools" name="twitter:title"/>
+<meta content="لماذا يصعب قراءة JSON غير المنسق وكيف تنظمه في ثانية | فورا.tools" name="twitter:title"/>
 <meta content="دليل عملي لفهم بنية JSON." name="twitter:description"/>
 <meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -48,10 +48,10 @@
   .toc a{color:var(--indigo-deep);font-weight:700;}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","headline":"ليه JSON غير المنسّق صعب القراءة، وإزاي تنظّميه في ثانية","description":"دليل عملي لفهم بنية JSON، وليه التنسيق مهم لقراءة استجابات API، وإزاي تكتشفي أخطاء الصياغة بسرعة.","url":"https://fawran.tools/blog/json-formatter-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/json-formatter-guide.html"}}
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"لماذا يصعب قراءة JSON غير المنسق وكيف تنظمه في ثانية","description":"دليل عملي لفهم بنية JSON، وليه التنسيق مهم لقراءة استجابات API، وكيف تكتشفي أخطاء الصياغة بسرعة.","url":"https://fawran.tools/blog/json-formatter-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/json-formatter-guide.html"}}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"المدونة","item":"https://fawran.tools/blog/index.html"},{"@type":"ListItem","position":2,"name":"ليه JSON غير المنسّق صعب القراءة، وإزاي تنظّميه في ثانية","item":"https://fawran.tools/blog/json-formatter-guide.html"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"المدونة","item":"https://fawran.tools/blog/index.html"},{"@type":"ListItem","position":2,"name":"لماذا يصعب قراءة JSON غير المنسق وكيف تنظمه في ثانية","item":"https://fawran.tools/blog/json-formatter-guide.html"}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل تنسيق JSON بيغيّر البيانات نفسها؟","acceptedAnswer":{"@type":"Answer","text":"لا، التنسيق بيضيف بس مسافات وأسطر جديدة لتحسين القراءة البصرية — البيانات والقيم نفسها بتفضل زي ما هي بالظبط بدون أي تغيير."}},{"@type":"Question","name":"إيه أشهر أخطاء الصياغة في JSON؟","acceptedAnswer":{"@type":"Answer","text":"أشهرها: فاصلة زيادة في آخر عنصر بقائمة، نسيان علامات اقتباس حوالين اسم مفتاح، أو قوس مفتوح من غير إغلاق مطابق."}},{"@type":"Question","name":"هل JSON نفس الشيء زي JavaScript Object؟","acceptedAnswer":{"@type":"Answer","text":"قريبين في الشكل لكن مش نفس الشيء تمامًا — JSON معيار بيانات مستقل عن أي لغة برمجة، وله قواعد أكثر صرامة (زي إلزامية علامات الاقتباس حوالين المفاتيح) مقارنة بكائنات JavaScript."}},{"@type":"Question","name":"ليه أغلب واجهات برمجة التطبيقات (API) بتستخدم JSON؟","acceptedAnswer":{"@type":"Answer","text":"لأنه خفيف، سهل القراءة نسبيًا، ومدعوم في كل لغات البرمجة تقريبًا، فبقى المعيار الفعلي لتبادل البيانات بين الأنظمة المختلفة على الإنترنت."}}]}
@@ -84,7 +84,7 @@
 <div class="wrap">
 <div class="page-head">
 <div class="article-meta"><span class="tag">أدوات المطورين</span><span>6 دقائق قراءة</span></div>
-<h1>ليه JSON غير المنسّق صعب القراءة، وإزاي تنظّميه في ثانية</h1>
+<h1>لماذا يصعب قراءة JSON غير المنسق وكيف تنظمه في ثانية</h1>
 </div>
 
 <div class="content-card">
@@ -159,7 +159,7 @@
 
 <div class="tool-cta">
 <div>
-<div class="txt">جرّبي منسّق JSON الآن</div>
+<div class="txt">جرّب منسّق JSON الآن</div>
 <div class="sub">تنسيق فوري مع كشف أخطاء الصياغة، محليًا داخل متصفحك</div>
 </div>
 <a class="btn btn-primary" href="../tools/json-formatter.html">
@@ -188,7 +188,7 @@
 
 <h2>خلاصة</h2>
 <p>
-  التنسيق مش بيغيّر بيانات JSON، بس بيخليها قابلة للقراءة والفهم بسرعة — خطوة بسيطة بتوفر عليكِ
+  التنسيق مش بيغيّر بيانات JSON، بس بيخليها قابلة للقراءة والفهم بسرعة — خطوة بسيطة بتوفر عليك
   وقت كبير في مراجعة أو تصحيح أي بيانات معقدة.
 </p>
 

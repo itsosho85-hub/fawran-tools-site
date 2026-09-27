@@ -10,7 +10,7 @@
 
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Base64: إيه هي ومتى فعليًا محتاجة تستخدميها | فورا.tools</title>
+<title>Base64: ما هي ومتى تحتاج إلى استخدامها | فورا.tools</title>
 <meta content="دليل عملي لفهم ترميز Base64، الفرق بينه وبين التشفير، وأشهر استخداماته الحقيقية في تضمين الصور والتعامل مع بيانات API." name="description"/>
 <link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="../favicon.svg" rel="apple-touch-icon"/>
@@ -20,7 +20,7 @@
 
 <meta content="article" property="og:type"/>
 <meta content="https://fawran.tools/blog/base64-guide.html" property="og:url"/>
-<meta content="Base64: إيه هي ومتى فعليًا محتاجة تستخدميها | فورا.tools" property="og:title"/>
+<meta content="Base64: ما هي ومتى تحتاج إلى استخدامها | فورا.tools" property="og:title"/>
 <meta content="دليل عملي لفهم ترميز Base64 والفرق بينه وبين التشفير." property="og:description"/>
 <meta content="فورا.tools" property="og:site_name"/>
 <meta content="ar_AR" property="og:locale"/>
@@ -28,7 +28,7 @@
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Base64: إيه هي ومتى فعليًا محتاجة تستخدميها | فورا.tools" name="twitter:title"/>
+<meta content="Base64: ما هي ومتى تحتاج إلى استخدامها | فورا.tools" name="twitter:title"/>
 <meta content="دليل عملي لفهم ترميز Base64." name="twitter:description"/>
 <meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -48,13 +48,13 @@
   .toc a{color:var(--indigo-deep);font-weight:700;}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","headline":"Base64: إيه هي ومتى فعليًا محتاجة تستخدميها","description":"دليل عملي لفهم ترميز Base64، والفرق بينه وبين التشفير، وأشهر استخداماته الحقيقية.","url":"https://fawran.tools/blog/base64-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/base64-guide.html"}}
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"Base64: ما هي ومتى تحتاج إلى استخدامها","description":"دليل عملي لفهم ترميز Base64، والفرق بينه وبين التشفير، وأشهر استخداماته الحقيقية.","url":"https://fawran.tools/blog/base64-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/base64-guide.html"}}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"المدونة","item":"https://fawran.tools/blog/index.html"},{"@type":"ListItem","position":2,"name":"Base64: إيه هي ومتى فعليًا محتاجة تستخدميها","item":"https://fawran.tools/blog/base64-guide.html"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"المدونة","item":"https://fawran.tools/blog/index.html"},{"@type":"ListItem","position":2,"name":"Base64: ما هي ومتى تحتاج إلى استخدامها","item":"https://fawran.tools/blog/base64-guide.html"}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل Base64 نوع من التشفير الآمن؟","acceptedAnswer":{"@type":"Answer","text":"لا، Base64 ليست تشفيرًا خالص، هي مجرد إعادة تمثيل للبيانات بصيغة نصية. أي حد يقدر يفك ترميزها فورًا من غير أي مفتاح سري، فمينفعش تستخدميها لحماية بيانات حساسة."}},{"@type":"Question","name":"ليه حجم النص بعد الترميز بيكبر؟","acceptedAnswer":{"@type":"Answer","text":"ترميز Base64 بيحوّل كل 3 بايت من البيانات الأصلية إلى 4 حروف نصية، فالحجم النهائي بيزيد بحوالي 33% تقريبًا عن الحجم الأصلي."}},{"@type":"Question","name":"هل ممكن أستخدم Base64 لتضمين صورة مباشرة في HTML؟","acceptedAnswer":{"@type":"Answer","text":"نعم، دي من أشهر الاستخدامات — بتحوّل بيانات الصورة لنص Base64 وتحطها مباشرة جوه وسم img بدون الحاجة لملف صورة منفصل، مفيد للصور الصغيرة والأيقونات."}},{"@type":"Question","name":"هل كل النصوص قابلة للترميز بـBase64؟","acceptedAnswer":{"@type":"Answer","text":"نعم، أي نص أو بيانات ثنائية (صور، ملفات) قابلة للترميز، لأن Base64 بيتعامل مع البيانات كسلسلة بايتات بغض النظر عن نوعها الأصلي."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل Base64 نوع من التشفير الآمن؟","acceptedAnswer":{"@type":"Answer","text":"لا، Base64 ليست تشفيرًا خالص، هي مجرد إعادة تمثيل للبيانات بصيغة نصية. أي حد يقدر يفك ترميزها فورًا من غير أي مفتاح سري، فمينفعش تستخدمها لحماية بيانات حساسة."}},{"@type":"Question","name":"ليه حجم النص بعد الترميز بيكبر؟","acceptedAnswer":{"@type":"Answer","text":"ترميز Base64 بيحوّل كل 3 بايت من البيانات الأصلية إلى 4 حروف نصية، فالحجم النهائي بيزيد بحوالي 33% تقريبًا عن الحجم الأصلي."}},{"@type":"Question","name":"هل ممكن أستخدم Base64 لتضمين صورة مباشرة في HTML؟","acceptedAnswer":{"@type":"Answer","text":"نعم، دي من أشهر الاستخدامات — بتحوّل بيانات الصورة لنص Base64 وتحطها مباشرة جوه وسم img بدون الحاجة لملف صورة منفصل، مفيد للصور الصغيرة والأيقونات."}},{"@type":"Question","name":"هل كل النصوص قابلة للترميز بـBase64؟","acceptedAnswer":{"@type":"Answer","text":"نعم، أي نص أو بيانات ثنائية (صور، ملفات) قابلة للترميز، لأن Base64 بيتعامل مع البيانات كسلسلة بايتات بغض النظر عن نوعها الأصلي."}}]}
 </script>
 <link href="../manifest.webmanifest" rel="manifest"/>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
@@ -84,7 +84,7 @@
 <div class="wrap">
 <div class="page-head">
 <div class="article-meta"><span class="tag">أدوات المطورين</span><span>6 دقائق قراءة</span></div>
-<h1>Base64: إيه هي ومتى فعليًا محتاجة تستخدميها</h1>
+<h1>Base64: ما هي ومتى تحتاج إلى استخدامها</h1>
 </div>
 
 <div class="content-card">
@@ -126,7 +126,7 @@
 <p>
   ده أشهر سوء فهم حوالين الموضوع ده. Base64 <strong>مش</strong> وسيلة حماية أو تشفير — أي حد يقدر
   يفك ترميز نص Base64 فورًا من غير أي مفتاح سري أو كلمة مرور، لأنها أصلًا معيار عام مفتوح ومعروف.
-  لو محتاجة تحمي بيانات حساسة فعليًا، لازم تستخدمي تشفير حقيقي، مش Base64.
+  لو محتاج تحمي بيانات حساسة فعليًا، لازم تستخدم تشفير حقيقي، مش Base64.
 </p>
 
 <h2 id="why-size">ليه الحجم بيكبر بعد الترميز؟</h2>
@@ -151,12 +151,12 @@
 <ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
   <li>الصق النص أو البيانات اللي عايزة تشفّريها أو تفكّي ترميزها.</li>
   <li>اختر "تشفير" أو "فك ترميز" حسب اتجاه العملية.</li>
-  <li>احصلي على النتيجة فورًا، جاهزة للنسخ.</li>
+  <li>احصل على النتيجة فورًا، جاهزة للنسخ.</li>
 </ol>
 
 <div class="tool-cta">
 <div>
-<div class="txt">جرّبي أداة Base64 الآن</div>
+<div class="txt">جرّب أداة Base64 الآن</div>
 <div class="sub">تشفير وفك ترميز فوري، بالكامل داخل متصفحك</div>
 </div>
 <a class="btn btn-primary" href="../tools/base64-encoder-decoder.html">
@@ -186,7 +186,7 @@
 <h2>خلاصة</h2>
 <p>
   Base64 أداة تمثيل بيانات مفيدة جدًا في سياقات محددة (تضمين صور، نقل بيانات عبر API)، لكنها مش
-  وسيلة حماية — فهم الفرق ده بيوفر عليكِ استخدامها في المكان الغلط أو الاعتماد عليها لأمان غير موجود.
+  وسيلة حماية — فهم الفرق ده بيوفر عليك استخدامها في المكان الغلط أو الاعتماد عليها لأمان غير موجود.
 </p>
 
 </div>

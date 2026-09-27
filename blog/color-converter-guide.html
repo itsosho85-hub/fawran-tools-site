@@ -10,7 +10,7 @@
 
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>HEX أم RGB أم HSL: إيه الفرق ومتى تستخدمي كل صيغة | فورا.tools</title>
+<title>HEX أم RGB أم HSL: الفرق بينها ومتى تستخدم كل صيغة | فورا.tools</title>
 <meta content="دليل عملي لفهم صيغ الألوان الثلاث الأساسية في تطوير الويب، الفرق بينهم، ومتى تختاري كل صيغة حسب احتياجك في CSS." name="description"/>
 <link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="../favicon.svg" rel="apple-touch-icon"/>
@@ -20,7 +20,7 @@
 
 <meta content="article" property="og:type"/>
 <meta content="https://fawran.tools/blog/color-converter-guide.html" property="og:url"/>
-<meta content="HEX أم RGB أم HSL: إيه الفرق ومتى تستخدمي كل صيغة | فورا.tools" property="og:title"/>
+<meta content="HEX أم RGB أم HSL: الفرق بينها ومتى تستخدم كل صيغة | فورا.tools" property="og:title"/>
 <meta content="دليل عملي لفهم صيغ الألوان الثلاث الأساسية في تطوير الويب." property="og:description"/>
 <meta content="فورا.tools" property="og:site_name"/>
 <meta content="ar_AR" property="og:locale"/>
@@ -28,7 +28,7 @@
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="HEX أم RGB أم HSL: إيه الفرق ومتى تستخدمي كل صيغة | فورا.tools" name="twitter:title"/>
+<meta content="HEX أم RGB أم HSL: الفرق بينها ومتى تستخدم كل صيغة | فورا.tools" name="twitter:title"/>
 <meta content="دليل عملي لفهم صيغ الألوان الثلاث الأساسية." name="twitter:description"/>
 <meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -51,10 +51,10 @@
   .size-table th{background:var(--surface-sunk);font-weight:800;}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","headline":"HEX أم RGB أم HSL: إيه الفرق ومتى تستخدمي كل صيغة","description":"دليل عملي لفهم صيغ الألوان الثلاث الأساسية في تطوير الويب، ومتى تختاري كل صيغة.","url":"https://fawran.tools/blog/color-converter-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/color-converter-guide.html"}}
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"HEX أم RGB أم HSL: الفرق بينها ومتى تستخدم كل صيغة","description":"دليل عملي لفهم صيغ الألوان الثلاث الأساسية في تطوير الويب، ومتى تختاري كل صيغة.","url":"https://fawran.tools/blog/color-converter-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/color-converter-guide.html"}}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"المدونة","item":"https://fawran.tools/blog/index.html"},{"@type":"ListItem","position":2,"name":"HEX أم RGB أم HSL: إيه الفرق ومتى تستخدمي كل صيغة","item":"https://fawran.tools/blog/color-converter-guide.html"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"المدونة","item":"https://fawran.tools/blog/index.html"},{"@type":"ListItem","position":2,"name":"HEX أم RGB أم HSL: الفرق بينها ومتى تستخدم كل صيغة","item":"https://fawran.tools/blog/color-converter-guide.html"}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"إيه أكتر صيغة شائعة الاستخدام في CSS؟","acceptedAnswer":{"@type":"Answer","text":"HEX هي الأكتر شيوعًا تاريخيًا وبتشاهدها في أغلب الأكواد الجاهزة وأدوات التصميم، لكن RGB وHSL بقوا مستخدمين أكتر مع الحاجة لتحكم في الشفافية أو تعديل السطوع بسهولة."}},{"@type":"Question","name":"هل ممكن أضيف شفافية للون بصيغة HEX؟","acceptedAnswer":{"@type":"Answer","text":"نعم، فيه صيغة HEX ممتدة بـ8 خانات (بدل 6) بتضيف قناة شفافية في الآخر، لكنها أقل شيوعًا ودعمها في المتصفحات القديمة محدود مقارنة بـRGBA."}},{"@type":"Question","name":"ليه HSL أسهل لتعديل درجة اللون يدويًا؟","acceptedAnswer":{"@type":"Answer","text":"لأن HSL بتفصل الخصائص لمكونات مفهومة بديهيًا: الصبغة (Hue) للون نفسه، التشبع (Saturation) لقوة اللون، والإضاءة (Lightness) للفتحة أو الغمقان — تعديل رقم واحد بيديكِ نتيجة متوقعة بسهولة."}},{"@type":"Question","name":"هل تحويل لون من صيغة لأخرى بيغيّر اللون الفعلي؟","acceptedAnswer":{"@type":"Answer","text":"لا، التحويل بين HEX وRGB وHSL هو نفس اللون بالضبط، بس ممثّل بطريقة رياضية مختلفة — مفيش أي فقدان أو تغيير في اللون النهائي المعروض."}}]}
@@ -87,7 +87,7 @@
 <div class="wrap">
 <div class="page-head">
 <div class="article-meta"><span class="tag">أدوات المطورين</span><span>6 دقائق قراءة</span></div>
-<h1>HEX أم RGB أم HSL: إيه الفرق ومتى تستخدمي كل صيغة</h1>
+<h1>HEX أم RGB أم HSL: الفرق بينها ومتى تستخدم كل صيغة</h1>
 </div>
 
 <div class="content-card">
@@ -104,7 +104,7 @@
 
 <p>
   نفس اللون بالظبط، ثلاث طرق مختلفة لكتابته. لو بتشتغلي بـCSS، هتقابلي الصيغ التلاتة دي باستمرار،
-  وفهم الفرق بينهم هيسهّل عليكِ تعديل الألوان وفهم كود مكتوب من مطور تاني.
+  وفهم الفرق بينهم هيسهّل عليك تعديل الألوان وفهم كود مكتوب من مطور تاني.
 </p>
 
 <div class="toc">
@@ -160,7 +160,7 @@
 
 <div class="tool-cta">
 <div>
-<div class="txt">جرّبي محول الألوان الآن</div>
+<div class="txt">جرّب محول الألوان الآن</div>
 <div class="sub">تحويل فوري بين HEX وRGB وHSL مع معاينة مباشرة</div>
 </div>
 <a class="btn btn-primary" href="../tools/color-converter.html">

@@ -11,7 +11,7 @@
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>UUID: ليه احتمال التصادم شبه معدوم رغم غياب رقم مركزي | فورا.tools</title>
-<meta content="دليل عملي لفهم UUID، إزاي معرّفات عشوائية تمامًا بتفضل فريدة من غير أي تنسيق مركزي، ومتى تستخدميها بدل الأرقام التسلسلية العادية." name="description"/>
+<meta content="دليل عملي لفهم UUID، كيف معرّفات عشوائية تمامًا بتفضل فريدة من غير أي تنسيق مركزي، ومتى تستخدمها بدل الأرقام التسلسلية العادية." name="description"/>
 <link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="../favicon.svg" rel="apple-touch-icon"/>
 <meta content="#4F3FF0" name="theme-color"/>
@@ -21,7 +21,7 @@
 <meta content="article" property="og:type"/>
 <meta content="https://fawran.tools/blog/uuid-generator-guide.html" property="og:url"/>
 <meta content="UUID: ليه احتمال التصادم شبه معدوم رغم غياب رقم مركزي | فورا.tools" property="og:title"/>
-<meta content="دليل عملي لفهم UUID وإزاي معرّفات عشوائية بتفضل فريدة." property="og:description"/>
+<meta content="دليل عملي لفهم UUID وكيف معرّفات عشوائية بتفضل فريدة." property="og:description"/>
 <meta content="فورا.tools" property="og:site_name"/>
 <meta content="ar_AR" property="og:locale"/>
 <meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
@@ -48,7 +48,7 @@
   .toc a{color:var(--indigo-deep);font-weight:700;}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","headline":"UUID: ليه احتمال التصادم شبه معدوم رغم غياب رقم مركزي","description":"دليل عملي لفهم UUID، وإزاي معرّفات عشوائية تمامًا بتفضل فريدة من غير أي تنسيق مركزي.","url":"https://fawran.tools/blog/uuid-generator-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/uuid-generator-guide.html"}}
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"UUID: ليه احتمال التصادم شبه معدوم رغم غياب رقم مركزي","description":"دليل عملي لفهم UUID، وكيف معرّفات عشوائية تمامًا بتفضل فريدة من غير أي تنسيق مركزي.","url":"https://fawran.tools/blog/uuid-generator-guide.html","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Organization","name":"فورا.tools"},"publisher":{"@type":"Organization","name":"فورا.tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/blog/uuid-generator-guide.html"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"المدونة","item":"https://fawran.tools/blog/index.html"},{"@type":"ListItem","position":2,"name":"UUID: ليه احتمال التصادم شبه معدوم رغم غياب رقم مركزي","item":"https://fawran.tools/blog/uuid-generator-guide.html"}]}
@@ -96,7 +96,7 @@
 </svg>
 
 <p>
-  محتاجة معرّف فريد لكل سجل في نظامك، بدون رقم تسلسلي بسيط سهل التخمين ولا اعتماد على قاعدة
+  محتاج معرّف فريد لكل سجل في نظامك، بدون رقم تسلسلي بسيط سهل التخمين ولا اعتماد على قاعدة
   بيانات مركزية تحسب آخر رقم؟ UUID الحل — معرّف عشوائي طويل، لكن احتمال تكراره شبه صفري.
 </p>
 
@@ -104,7 +104,7 @@
   <h2>محتوى المقال</h2>
   <ul>
     <li><a href="#what">إيه هو UUID؟</a></li>
-    <li><a href="#why-unique">إزاي بيفضل فريد من غير تنسيق مركزي؟</a></li>
+    <li><a href="#why-unique">كيف بيفضل فريد من غير تنسيق مركزي؟</a></li>
     <li><a href="#versions">إصدارات UUID المختلفة باختصار</a></li>
     <li><a href="#usecases">استخدامات شائعة</a></li>
     <li><a href="#howto">كيف تولّد UUID بسهولة؟</a></li>
@@ -119,7 +119,7 @@
   إعطاء معرّف فريد لأي كيان (سجل، ملف، جلسة) من غير الحاجة لتنسيق مركزي.
 </p>
 
-<h2 id="why-unique">إزاي بيفضل فريد من غير تنسيق مركزي؟</h2>
+<h2 id="why-unique">كيف بيفضل فريد من غير تنسيق مركزي؟</h2>
 <p>
   مساحة الاحتمالات الممكنة لـUUID ضخمة جدًا (2 أُس 128 احتمال تقريبًا) — رقم أكبر بكثير من عدد
   الذرات في الكون المرئي. حتى لو ملايين الأنظمة بتولّد UUID في نفس اللحظة بشكل مستقل تمامًا عن
@@ -147,13 +147,13 @@
 </p>
 <ol style="font-size:14.5px;color:var(--ink-soft);line-height:2;">
   <li>اضغط زر التوليد — تحصلي على UUID v4 عشوائي فورًا.</li>
-  <li>ولّد عدد كام تحتاجيه دفعة واحدة لو محتاجة أكتر من واحد.</li>
+  <li>ولّد عدد كام تحتاجيه دفعة واحدة لو محتاج أكتر من واحد.</li>
   <li>اانسخ النتيجة جاهزة للاستخدام في كودك أو قاعدة بياناتك.</li>
 </ol>
 
 <div class="tool-cta">
 <div>
-<div class="txt">جرّبي مولّد UUID الآن</div>
+<div class="txt">جرّب مولّد UUID الآن</div>
 <div class="sub">توليد فوري لمعرّفات UUID v4، محليًا داخل متصفحك</div>
 </div>
 <a class="btn btn-primary" href="../tools/uuid-generator.html">

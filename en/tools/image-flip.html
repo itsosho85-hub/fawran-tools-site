@@ -1,11 +1,57 @@
 <!doctype html><html lang="en" dir="ltr"><head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5511030780981611" crossorigin="anonymous"></script>
 <meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/><meta name="viewport" content="width=device-width,initial-scale=1"><title>Flip Images Online | Fawran Tools</title><meta name="description" content="Flip images horizontally or vertically for free while preserving image quality."><meta name="keywords" content="flip image, mirror image, image flipper"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://fawran.tools/en/tools/image-flip.html"><link rel="alternate" hreflang="ar" href="https://fawran.tools/tools/image-flip.html"><link rel="alternate" hreflang="en" href="https://fawran.tools/en/tools/image-flip.html"><link rel="alternate" hreflang="x-default" href="https://fawran.tools/en/tools/image-flip.html"><link rel="stylesheet" href="../../assets/style.css"><link rel="icon" href="../../favicon.svg"><link rel="manifest" href="../../manifest.webmanifest"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Flip Images Online", "url": "https://fawran.tools/en/tools/image-flip.html", "description": "Flip images horizontally or vertically for free while preserving image quality.", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script></head><body><header class="topbar"><div class="topbar-inner"><a class="brand" href="../../en/index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a><div class="nav-wrap"><nav class="nav"><a class="active" href="../../en/index.html">Tools</a><a href="../../en/blog/index.html">Blog</a><a href="../../en/about.html">About</a><a href="../../en/contact.html">Contact</a></nav><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">◐</button><a class="lang-switch" href="https://fawran.tools/tools/image-flip.html">AR</a></div></div></header><main class="wrap tool-page"><div class="crumb"><a href="../../en/index.html">Tools</a> / Image Tools / Flip Images Online</div><h1>Flip Images Online</h1><p class="tool-lede">Flip images horizontally or vertically for free while preserving image quality.</p><section class="tool-card-shell"><div class="dropzone" id="dropzone"><input id="fileInput" type="file" accept="image/*"><div class="dz-title">Choose an image or drag it here</div><div class="dz-sub">JPG, PNG, WebP and common image formats</div></div><label>Direction <select id="direction"><option value="h">Horizontal</option><option value="v">Vertical</option></select></label><div class="actions"><button id="processBtn" class="btn primary">Process image</button><button id="downloadBtn" class="btn" disabled>Download result</button><button id="clearBtn" class="btn" disabled>Clear</button></div><div id="status" class="result-box" aria-live="polite"></div><canvas id="canvas" style="display:none"></canvas></section><section class="tool-info"><h2>How to use</h2><ol><li>Choose an image from your device.</li><li>Adjust the options and process the image.</li><li>Download the result. Processing happens locally in your browser.</li></ol><h2>Privacy</h2><p>Your image is processed locally in your browser and is not uploaded to a server by this tool.</p></section></main><script>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap"/></noscript><meta name="viewport" content="width=device-width,initial-scale=1"><title>Flip Images Online | Fawran Tools</title><meta name="description" content="Flip images horizontally or vertically for free while preserving image quality."><meta name="keywords" content="flip image, mirror image, image flipper"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://fawran.tools/en/tools/image-flip.html"><link rel="alternate" hreflang="ar" href="https://fawran.tools/tools/image-flip.html"><link rel="alternate" hreflang="en" href="https://fawran.tools/en/tools/image-flip.html"><link rel="alternate" hreflang="x-default" href="https://fawran.tools/en/tools/image-flip.html"><link rel="stylesheet" href="../../assets/style.css"><link rel="icon" href="../../favicon.svg"><link rel="manifest" href="../../manifest.webmanifest"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Flip Images Online", "url": "https://fawran.tools/en/tools/image-flip.html", "description": "Flip images horizontally or vertically for free while preserving image quality.", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script><script>
+// Defer non-critical third-party scripts until after LCP / idle
+(function(){
+  function loadScript(src, attrs){
+    var s=document.createElement('script');
+    s.src=src;
+    if(attrs) for(var k in attrs) s.setAttribute(k, attrs[k]);
+    s.async=true;
+    document.head.appendChild(s);
+    return s;
+  }
+  function loadGtag(){
+    loadScript('https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S');
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag=gtag;
+    gtag('js', new Date());
+    gtag('config','G-JSG9KGPK0S');
+  }
+  function loadAds(){
+    loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5511030780981611', {crossorigin:'anonymous'});
+  }
+  function idle(fn){
+    if('requestIdleCallback' in window) requestIdleCallback(fn,{timeout:3000});
+    else setTimeout(fn, 2000);
+  }
+  window.addEventListener('load', function(){
+    idle(loadGtag);
+    idle(loadAds);
+  });
+  var triggered=false;
+  function early(){
+    if(triggered) return;
+    triggered=true;
+    loadGtag(); loadAds();
+    remove();
+  }
+  function remove(){
+    window.removeEventListener('scroll', early);
+    window.removeEventListener('touchstart', early);
+    window.removeEventListener('click', early);
+  }
+  window.addEventListener('scroll', early, {passive:true, once:true});
+  window.addEventListener('touchstart', early, {passive:true, once:true});
+  window.addEventListener('click', early, {once:true});
+})();
+</script>
+</head><body>
+<a href="#main-content" class="skip-link">تخطي إلى المحتوى الرئيسي</a><header class="topbar" role="banner"><div class="topbar-inner"><a class="brand" href="../../en/index.html"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a><div class="nav-wrap"><nav class="nav" aria-label="التنقل الرئيسي"><a class="active" href="../../en/index.html">Tools</a><a href="../../en/blog/index.html">Blog</a><a href="../../en/about.html">About</a><a href="../../en/contact.html">Contact</a></nav><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">◐</button><a class="lang-switch" href="https://fawran.tools/tools/image-flip.html">AR</a></div></div></header><main class="wrap tool-page"><div class="crumb"><a href="../../en/index.html">Tools</a> / Image Tools / Flip Images Online</div><h1>Flip Images Online</h1><p class="tool-lede">Flip images horizontally or vertically for free while preserving image quality.</p><section class="tool-card-shell"><div class="dropzone" id="dropzone"><input id="fileInput" type="file" accept="image/*"><div class="dz-title">Choose an image or drag it here</div><div class="dz-sub">JPG, PNG, WebP and common image formats</div></div><label>Direction <select id="direction"><option value="h">Horizontal</option><option value="v">Vertical</option></select></label><div class="actions"><button id="processBtn" class="btn primary">Process image</button><button id="downloadBtn" class="btn" disabled>Download result</button><button id="clearBtn" class="btn" disabled>Clear</button></div><div id="status" class="result-box" aria-live="polite"></div><canvas id="canvas" style="display:none"></canvas></section><section class="tool-info"><h2>How to use</h2><ol><li>Choose an image from your device.</li><li>Adjust the options and process the image.</li><li>Download the result. Processing happens locally in your browser.</li></ol><h2>Privacy</h2><p>Your image is processed locally in your browser and is not uploaded to a server by this tool.</p></section></main><script>
 const slug="image-flip";let file=null,resultBlob=null;const input=document.getElementById('fileInput'),drop=document.getElementById('dropzone'),canvas=document.getElementById('canvas'),ctx=canvas.getContext('2d'),status=document.getElementById('status'),processBtn=document.getElementById('processBtn'),downloadBtn=document.getElementById('downloadBtn'),clearBtn=document.getElementById('clearBtn');
 function msg(t){status.textContent=t} function loadImg(f){return new Promise((res,rej)=>{const im=new Image();im.onload=()=>res(im);im.onerror=()=>rej(new Error('Invalid image'));im.src=URL.createObjectURL(f)})}
 drop.addEventListener('click',()=>input.click());

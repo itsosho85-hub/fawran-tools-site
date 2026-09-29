@@ -3,15 +3,10 @@
 <html dir="rtl" lang="ar">
 <head>
 <meta charset="utf-8"/>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JSG9KGPK0S');</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5511030780981611" crossorigin="anonymous"></script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta name="google-adsense-account" content="ca-pub-5511030780981611">
 <meta name="yandex-verification" content="b0379f5fbc7f93e5"/>
-
-<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="3M6qJcWGxO2lLQzRwxL0OejUVUyNgA4UehDw1V9nL-w" name="google-site-verification"/>  
+<meta content="3M6qJcWGxO2lLQzRwxL0OejUVUyNgA4UehDw1V9nL-w" name="google-site-verification"/>
 <title>فورا.tools — أدوات أونلاين مجانية للصور وPDF وSEO والنصوص ويوتيوب</title>
 <meta content="أدوات أونلاين مجانية لضغط الصور وتغيير حجمها وتحويل WebP ودمج وضغط PDF وأدوات SEO والنصوص والمواقع ويوتيوب. سريعة وسهلة الاستخدام." name="description"/>
 <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
@@ -32,11 +27,13 @@
 <meta content="مجموعة أدوات أونلاين مجانية تعمل مباشرة داخل متصفحك بدون رفع ملفاتك لأي خادم: تحويل وضغط الصور، أدوات PDF، أدوات نصوص، وأدوات SEO." name="twitter:description"/>
 <meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
 <link href="https://pagead2.googlesyndication.com" rel="preconnect"/>
-<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
-<link rel="preload" href="assets/style.css" as="style"/>
-<link href="assets/style.css" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap"/></noscript>
+<link rel="preload" href="assets/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="assets/style.css"/></noscript>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 
 <script type="application/ld+json">
 {
@@ -73,16 +70,67 @@
   ]
 }
 </script>
+
+<script>
+// Defer non-critical third-party scripts until after LCP / idle
+(function(){
+  function loadScript(src, attrs){
+    var s=document.createElement('script');
+    s.src=src;
+    if(attrs) for(var k in attrs) s.setAttribute(k, attrs[k]);
+    s.async=true;
+    document.head.appendChild(s);
+    return s;
+  }
+  function loadGtag(){
+    loadScript('https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S');
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag=gtag;
+    gtag('js', new Date());
+    gtag('config','G-JSG9KGPK0S');
+  }
+  function loadAds(){
+    loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5511030780981611', {crossorigin:'anonymous'});
+  }
+  function idle(fn){
+    if('requestIdleCallback' in window) requestIdleCallback(fn,{timeout:3000});
+    else setTimeout(fn, 2000);
+  }
+  // Load after window load + idle to avoid blocking LCP
+  window.addEventListener('load', function(){
+    idle(loadGtag);
+    idle(loadAds);
+  });
+  // Fallback: if user interacts early, load sooner
+  var triggered=false;
+  function early(){
+    if(triggered) return;
+    triggered=true;
+    loadGtag(); loadAds();
+    remove();
+  }
+  function remove(){
+    window.removeEventListener('scroll', early);
+    window.removeEventListener('touchstart', early);
+    window.removeEventListener('click', early);
+  }
+  window.addEventListener('scroll', early, {passive:true, once:true});
+  window.addEventListener('touchstart', early, {passive:true, once:true});
+  window.addEventListener('click', early, {once:true});
+})();
+</script>
 </head>
 <body>
-<header class="topbar">
+<a href="#main-content" class="skip-link">تخطي إلى المحتوى الرئيسي</a>
+<header class="topbar" role="banner">
 <div class="topbar-inner">
 <a class="brand" href="index.html">
 <span class="mark">FW</span>
       فورا<span class="dot">.</span>tools
     </a>
 <div class="nav-wrap">
-<nav class="nav">
+<nav class="nav" aria-label="التنقل الرئيسي">
 <a class="active" href="index.html">الأدوات</a>
 <a href="blog/index.html">المدونة</a>
 <a href="about.html">من نحن</a>
@@ -95,10 +143,11 @@
 <svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
 <svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </button>
-<a class="lang-switch" href="en/index.html" title="View in English">EN</a>
+<a class="lang-switch" href="en/index.html" aria-label="Switch to English" title="View in English">EN</a>
 </div>
 </div>
 </header>
+<main id="main-content">
 <section class="hero">
 <div class="wrap hero-grid">
 <div class="hero-main">
@@ -109,7 +158,7 @@
       اختر أداتك وابدأ مباشرة.
     </p>
 <div class="tool-search">
-<input id="toolSearch" placeholder="ابحث عن أداة... مثلاً: ضغط صور، دمج PDF، عدّاد كلمات" type="text"/>
+<input id="toolSearch" aria-label="ابحث عن أداة" placeholder="ابحث عن أداة... مثلاً: ضغط صور، دمج PDF، عدّاد كلمات" type="text"/>
 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
 </div>
 <div class="quick-chips">
@@ -139,7 +188,7 @@
 <div class="wrap">
 <div class="ad-slot ad-slot-leaderboard">
 <span class="ad-label">إعلان · Advertisement</span>
-<div class="ad-slot-inner">
+<div class="ad-slot-inner" style="min-height:90px;">
 <!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك -->
 <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5511030780981611" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
 <!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
@@ -164,7 +213,7 @@
 <div class="wrap">
 <div class="ad-slot ad-slot-leaderboard">
 <span class="ad-label">إعلان · Advertisement</span>
-<div class="ad-slot-inner">
+<div class="ad-slot-inner" style="min-height:90px;">
 <!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك -->
 <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5511030780981611" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
 <!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
@@ -420,7 +469,8 @@
 </div>
 </div>
 </div>
-<section class="tools-hub" id="seo-tool-topics"><div class="wrap"><h2>أشهر الأدوات المجانية</h2><p class="hero-lede">استخدم أدوات عملية لضغط الصور وملفات PDF وتحسين SEO والنصوص والمواقع ويوتيوب من مكان واحد.</p><div class="hub-grid"><a class="hub-card" href="tools/image-compressor.html"><h2>ضاغط الصور</h2><p>قلل حجم صور JPG وPNG أونلاين.</p></a><a class="hub-card" href="tools/pdf-merge.html"><h2>دمج PDF</h2><p>ادمج ملفات PDF بسهولة داخل المتصفح.</p></a><a class="hub-card" href="tools/webp-converter.html"><h2>محوّل WebP</h2><p>حوّل الصور إلى WebP لتقليل الحجم.</p></a><a class="hub-card" href="tools/meta-tags-generator.html"><h2>مولد Meta Tags</h2><p>أنشئ عناوين وأوصاف SEO لصفحاتك.</p></a></div></div></section><footer>
+<section class="tools-hub" id="seo-tool-topics"><div class="wrap"><h2>أشهر الأدوات المجانية</h2><p class="hero-lede">استخدم أدوات عملية لضغط الصور وملفات PDF وتحسين SEO والنصوص والمواقع ويوتيوب من مكان واحد.</p><div class="hub-grid"><a class="hub-card" href="tools/image-compressor.html"><h3>ضاغط الصور</h3><p>قلل حجم صور JPG وPNG أونلاين.</p></a><a class="hub-card" href="tools/pdf-merge.html"><h3>دمج PDF</h3><p>ادمج ملفات PDF بسهولة داخل المتصفح.</p></a><a class="hub-card" href="tools/webp-converter.html"><h3>محوّل WebP</h3><p>حوّل الصور إلى WebP لتقليل الحجم.</p></a><a class="hub-card" href="tools/meta-tags-generator.html"><h3>مولد Meta Tags</h3><p>أنشئ عناوين وأوصاف SEO لصفحاتك.</p></a></div></div></section></main>
+<footer role="contentinfo">
 <div class="footer-grid">
 <div>
 <div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> فورا.tools</div>
@@ -444,7 +494,7 @@
 <span>صُنع بعناية لخدمة مستخدمي الإنترنت العرب</span>
 </div>
 </footer>
-<script src="assets/tools-index.js"></script>
-<script src="assets/main.js"></script>
+<script defer src="assets/tools-index.js" fetchpriority="low"></script>
+<script defer src="assets/main.js"></script>
 </body>
 </html>

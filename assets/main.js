@@ -124,8 +124,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Favorites + recent tools. Works without login and stays local.
   const store=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
   const load=(k,d=[])=>{try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(d))}catch(e){return d}};
+  // صفحات الأقسام تحت /tools/ ليست أدوات فعلية — لا زر مفضلة ولا تتبع فيها
+  const CATEGORY_PAGES=['ai','developer','email','images','index','pdf','seo','text','video','website','youtube'];
   const toolKey = path.match(/\/tools\/([^/]+)\.html$/)?.[1];
-  if(toolKey){
+  if(toolKey && !CATEGORY_PAGES.includes(toolKey)){
     let recent=load('fawran-recent'); recent=[toolKey,...recent.filter(x=>x!==toolKey)].slice(0,12); store('fawran-recent',recent);
     const head=$('h1'); if(head){
       const b=document.createElement('button'); b.type='button'; b.className='favorite-tool-btn';

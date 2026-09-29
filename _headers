@@ -1,36 +1,42 @@
+# ============================================================
+# فورا.tools — رؤوس Netlify
+# مهم: أي سطر داخل الملف يجب أن يكون إما مسارًا أو رأسًا أو تعليقًا يبدأ بـ #
+# (في النسخة السابقة كانت هناك أسطر نصية بدون # تحت أول بلوك /* مما كسر
+#  تحليل الملف ودمج كل القواعد معًا — فصار HTML نفسه يُخزَّن بـ immutable)
+# ============================================================
+
+# HTML — دائمًا إعادة التحقق حتى تظهر النشرات الجديدة فورًا للزوار
+# الميكروفون والكاميرا مسموحان لنفس الأصل لأن أداة الإملاء الصوتي تحتاجهما
 /*
-  Cache static assets aggressively; Netlify serves compressed Brotli/Gzip automatically.
-  HTML is always revalidated so GitHub → Netlify deploys appear immediately.
-*/
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(), microphone=(self), camera=(self)
+
+# الأصول الثابتة — أسبوع واحد (توازن بين سرعة الزيارات المتكررة
+# وظهور التحديثات؛ الـ Service Worker يتكفل بالسرعة للزوار المتكررين)
 /assets/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=604800
 
 /favicon.svg
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=86400
 
 /manifest.webmanifest
   Cache-Control: public, max-age=86400
 
-sw.js
+/apple-touch-icon.png
+  Cache-Control: public, max-age=604800
+
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+
+# ملف الـ Service Worker يجب أن يبقى طازجًا دائمًا
+/sw.js
   Cache-Control: no-cache, no-store, must-revalidate
 
-/*.html
-  Cache-Control: public, max-age=0, must-revalidate
-
-/
-  Cache-Control: public, max-age=0, must-revalidate
-
-/*
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: geolocation=(), microphone=(), camera=()
-  X-Frame-Options: SAMEORIGIN
-
-# Google Fonts — cache long but revalidate
-https://fonts.googleapis.com/*
-  Cache-Control: public, max-age=86400
-  Access-Control-Allow-Origin: *
-
-https://fonts.gstatic.com/*
-  Cache-Control: public, max-age=31536000, immutable
-  Access-Control-Allow-Origin: *
+# ملاحظة: خطوط Google Fonts لا تمر عبر Netlify أصلًا (طلبات خارجية)،
+# لذا لا يمكن ضبط رؤوسها من هنا — وجوجل يرسل لها رؤوس تخزين طويلة الأجل بنفسه.

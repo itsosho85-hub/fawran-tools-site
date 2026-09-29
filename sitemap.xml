@@ -525,7 +525,7 @@
     <lastmod>2026-09-28</lastmod>
   </url>
   <url>
-    <loc>https://fawran.tools/en/index.html</loc>
+    <loc>https://fawran.tools/en/</loc>
     <lastmod>2026-09-28</lastmod>
   </url>
   <url>
@@ -1069,7 +1069,7 @@
     <lastmod>2026-09-28</lastmod>
   </url>
   <url>
-    <loc>https://fawran.tools/index.html</loc>
+    <loc>https://fawran.tools/</loc>
     <lastmod>2026-09-28</lastmod>
   </url>
   <url>
@@ -1611,5 +1611,17 @@
   <url>
     <loc>https://fawran.tools/tools/youtube.html</loc>
     <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://fawran.tools/favorites.html</loc>
+    <lastmod>2026-09-29</lastmod>
+  </url>
+  <url>
+    <loc>https://fawran.tools/en/blog/json-compare-diff-checker-guide.html</loc>
+    <lastmod>2026-08-31</lastmod>
+  </url>
+  <url>
+    <loc>https://fawran.tools/en/blog/pdf-rotate-guide.html</loc>
+    <lastmod>2026-08-29</lastmod>
   </url>
 </urlset>

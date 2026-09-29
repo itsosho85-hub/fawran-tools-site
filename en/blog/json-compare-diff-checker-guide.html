@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en"><head>
+<meta charset="utf-8"/>
+<script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Complete Guide to Comparing and Formatting JSON: JSON Compare &amp; Diff Checker | Fawran Tools</title>
+<meta content="Everything you need to know about JSON Compare, Formatter and Diff Checker tools: the difference between formatting, validation and semantic comparison, practical use cases, and fixes for the most common problems — with tools that run locally in your browser." name="description"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="#4F3FF0" name="theme-color"/>
+<link href="https://fawran.tools/en/blog/json-compare-diff-checker-guide.html" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="https://fawran.tools/en/blog/json-compare-diff-checker-guide.html" property="og:url"/>
+<meta content="The Complete Guide to Comparing and Formatting JSON | Fawran Tools" property="og:title"/>
+<meta content="JSON Compare, Formatter and Diff Checker explained: semantic comparison, validation, use cases and common fixes." property="og:description"/>
+<meta content="Fawran Tools" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="The Complete Guide to Comparing and Formatting JSON | Fawran Tools" name="twitter:title"/>
+<meta content="JSON Compare, Formatter and Diff Checker explained." name="twitter:description"/>
+<meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
+<link href="https://pagead2.googlesyndication.com" rel="preconnect"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap"/></noscript>
+<link rel="preload" href="../../assets/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="../../assets/style.css"/></noscript>
+<style>
+  .article-svg{width:100%;max-width:100%;height:auto;border-radius:14px;margin:24px 0;display:block;}
+  .faq-item{margin-bottom:18px;}
+  .faq-item h3{font-size:15px;font-weight:800;margin-bottom:6px;}
+  .toc{background:var(--indigo-soft);border-radius:12px;padding:18px 22px;margin:0 0 26px;}
+  .toc h2{margin:0 0 10px !important;font-size:14px !important;}
+  .toc ul{margin:0;padding-inline-start:20px;font-size:13.5px;}
+  .toc li{margin-bottom:6px;}
+  .toc a{color:var(--indigo-deep);font-weight:700;}
+  .code-demo{background:var(--surface-sunk);border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.9;direction:ltr;text-align:left;overflow-x:auto;}
+  .code-demo .minus{color:var(--danger);}
+  .code-demo .plus{color:var(--good);}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"The Complete Guide to Comparing and Formatting JSON: JSON Compare & Diff Checker","description":"Everything you need to know about JSON Compare, Formatter and Diff Checker tools: semantic comparison, validation, use cases and common fixes.","url":"https://fawran.tools/en/blog/json-compare-diff-checker-guide.html","datePublished":"2026-08-31","dateModified":"2026-09-29","inLanguage":"en","author":{"@type":"Organization","name":"Fawran Tools"},"publisher":{"@type":"Organization","name":"Fawran Tools","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://fawran.tools/en/blog/json-compare-diff-checker-guide.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blog","item":"https://fawran.tools/en/blog/index.html"},{"@type":"ListItem","position":2,"name":"The Complete Guide to Comparing and Formatting JSON: JSON Compare & Diff Checker","item":"https://fawran.tools/en/blog/json-compare-diff-checker-guide.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best way to compare two JSON files?","acceptedAnswer":{"@type":"Answer","text":"Use a semantic JSON comparison tool that parses both documents, ignores key order, and highlights added, removed and changed values — instead of a plain text diff that drowns in formatting noise."}},{"@type":"Question","name":"Can I compare JSON files with different key orders?","acceptedAnswer":{"@type":"Answer","text":"Yes. Per the JSON specification, key order inside objects does not matter. A proper JSON compare tool sorts or maps keys structurally, so re-ordered keys are not reported as changes."}},{"@type":"Question","name":"What is the difference between comparing JSON and validating it?","acceptedAnswer":{"@type":"Answer","text":"Comparison shows the differences between two documents, while validation checks a single document against a set of structural rules (such as JSON Schema) to confirm it is well-formed and complete."}},{"@type":"Question","name":"Is it safe to use online JSON comparison tools on sensitive data?","acceptedAnswer":{"@type":"Answer","text":"Only if the tool processes everything client-side, inside your browser. Browser-based tools like the Fawran Tools JSON tools never upload your data to a server."}},{"@type":"Question","name":"How do I handle very large JSON files?","acceptedAnswer":{"@type":"Answer","text":"Minify before comparing to reduce noise, use a browser-based tool to avoid upload limits, and compare in a structured (semantic) mode so formatting differences do not flood the results."}}]}
+</script>
+<link href="../../manifest.webmanifest" rel="manifest"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+<link href="https://fawran.tools/blog/json-compare-diff-checker-guide.html" hreflang="ar" rel="alternate"/><link href="https://fawran.tools/en/blog/json-compare-diff-checker-guide.html" hreflang="en" rel="alternate"/><link href="https://fawran.tools/en/blog/json-compare-diff-checker-guide.html" hreflang="x-default" rel="alternate"/>
+<script>
+// Defer non-critical third-party scripts until after LCP / idle
+(function(){
+  function loadScript(src, attrs){
+    var s=document.createElement('script');
+    s.src=src;
+    if(attrs) for(var k in attrs) s.setAttribute(k, attrs[k]);
+    s.async=true;
+    document.head.appendChild(s);
+    return s;
+  }
+  function loadGtag(){
+    loadScript('https://www.googletagmanager.com/gtag/js?id=G-JSG9KGPK0S');
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag=gtag;
+    gtag('js', new Date());
+    gtag('config','G-JSG9KGPK0S');
+  }
+  function loadAds(){
+    loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5511030780981611', {crossorigin:'anonymous'});
+  }
+  function idle(fn){
+    if('requestIdleCallback' in window) requestIdleCallback(fn,{timeout:3000});
+    else setTimeout(fn, 2000);
+  }
+  window.addEventListener('load', function(){
+    idle(loadGtag);
+    idle(loadAds);
+  });
+  var triggered=false;
+  function early(){
+    if(triggered) return;
+    triggered=true;
+    loadGtag(); loadAds();
+    remove();
+  }
+  function remove(){
+    window.removeEventListener('scroll', early);
+    window.removeEventListener('touchstart', early);
+    window.removeEventListener('click', early);
+  }
+  window.addEventListener('scroll', early, {passive:true, once:true});
+  window.addEventListener('touchstart', early, {passive:true, once:true});
+  window.addEventListener('click', early, {once:true});
+})();
+</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="topbar" role="banner">
+<div class="topbar-inner">
+<a class="brand" href="/en/"><span class="mark">FW</span> Fawran<span class="dot">.</span>tools</a>
+<div class="nav-wrap">
+<nav class="nav" aria-label="Main navigation">
+<a href="/en/">Tools</a>
+<a class="active" href="index.html">Blog</a>
+<a href="../about.html">About</a>
+<a href="../contact.html">Contact</a>
+</nav>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+</button>
+<button aria-label="Toggle dark mode" class="theme-toggle" id="themeToggle">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<a class="lang-switch" href="../../blog/json-compare-diff-checker-guide.html" aria-label="التبديل إلى العربية" title="View in Arabic">AR</a>
+</div>
+</div>
+</header>
+<main id="main-content">
+<div class="wrap">
+<div class="page-head">
+<div class="article-meta"><span class="tag">Developer Tools</span><span>11 min read</span></div>
+<h1>The Complete Guide to Comparing and Formatting JSON: JSON Compare &amp; Diff Checker</h1>
+</div>
+
+<div class="content-card">
+
+<div class="code-demo">
+  {"user": "Ali", "role": "admin", "active": true}<br>
+  <span class="minus">- "role": "admin"</span><br>
+  <span class="plus">+ "role": "editor"</span><br>
+  {"user": "Ali", <span class="minus">"role": "admin"</span> <span class="plus">"role": "editor"</span>, "active": true}
+  <br><br>VS — a semantic diff shows <em>one</em> changed value, not a wall of text differences.
+</div>
+
+<p>
+  JSON has become the de facto common language for data exchange in modern software development — from API
+  responses to configuration files to complex datasets. But the more we rely on it, the more we need precise
+  tools that help you understand the difference between two versions, verify structural validity, and format
+  a file into something readable — without depending on a plain text comparison that drowns in key-order and
+  whitespace noise.
+</p>
+<p>
+  Whether you are debugging an API that returns unexpected data, tracking changes in a sensitive config file,
+  or verifying the integrity of a data migration — the ability to compare, format and validate JSON quickly
+  and accurately is essential. This guide explains the core concepts, practical use cases, and the most common
+  problems along with their solutions.
+</p>
+
+<div class="toc">
+  <h2>In this article</h2>
+  <ul>
+    <li><a href="#basics">The basics of comparing and formatting JSON</a></li>
+    <li><a href="#why">Why do you need to compare JSON files?</a></li>
+    <li><a href="#types">Types of JSON comparison tools</a></li>
+    <li><a href="#features">Essential features of a great JSON tool</a></li>
+    <li><a href="#validation">Validation as a core part of data integrity</a></li>
+    <li><a href="#advanced">Advanced comparison and merge techniques</a></li>
+    <li><a href="#problems">Solving the most common problems</a></li>
+    <li><a href="#faq">Frequently asked questions</a></li>
+  </ul>
+</div>
+
+<h2 id="basics">The basics of comparing and formatting JSON</h2>
+<p>
+  Before diving into the tools themselves, it is important to understand the core concepts that govern how
+  they work. The strength of JSON lies in the simplicity of its structure, but that same simplicity creates
+  challenges that are completely different from comparing plain text.
+</p>
+<p>
+  JSON is built on key-value pairs: an <strong>object</strong> is an unordered set of those pairs
+  (like <code>{"name": "Ali", "age": 30}</code>), while an <strong>array</strong> is an ordered list of values
+  (like <code>["apple", "banana", "cherry"]</code>). That distinction is fundamental: the order of keys inside
+  an object does not matter at all, but the order of elements inside an array does — and that is the main
+  reason ordinary text-diff tools fail, treating an innocent key reordering as a substantial change.
+</p>
+<p>
+  <strong>Formatting</strong> comes in two basic flavors: <em>pretty-printing</em> turns compact JSON into a
+  readable form by adding indentation and line breaks — essential for debugging and manual review — while
+  <em>minification</em> removes every unnecessary space to shrink the file, which is ideal for transferring
+  data efficiently over the network.
+</p>
+<p>
+  <strong>Diffing</strong> is the process of identifying the differences between two JSON documents. Unlike a
+  simple text comparison, a semantic JSON Compare tool understands the structure itself: it clarifies value
+  changes, identifies added or removed keys, and follows edits inside nested objects and arrays — with the
+  ability to ignore key order entirely so you only see the real changes.
+</p>
+
+<h2 id="why">Why do you need to compare JSON files?</h2>
+<p>
+  The need to compare JSON documents is not a theoretical problem — it appears daily in real development,
+  testing and operations scenarios. Having a reliable comparison tool within reach dramatically shortens
+  debugging time and prevents configuration errors.
+</p>
+<ul>
+  <li><strong>Debugging APIs and web services:</strong> the most common use — comparing an actual API response against the expected or documented one. A JSON compare tool instantly shows which data type changed (a number returned as text, for example), which field was added, or which key went missing — pinpointing the cause of the problem in seconds.</li>
+  <li><strong>Managing configuration files:</strong> modern applications rely heavily on JSON for configuration (like <code>package.json</code> in Node.js). Tracking changes in these files is critical, especially when managing multiple environments (development, staging, production) — comparing JSON ensures a forgotten setting never causes a production outage.</li>
+  <li><strong>Data migration and synchronization:</strong> when moving data between databases or syncing datasets across systems, verifying integrity is essential. Export records as JSON from the source and destination, then compare to confirm nothing was lost or corrupted in transit.</li>
+  <li><strong>Version control and collaboration:</strong> Git shows that a JSON file changed, but its default text diff view is often full of noise from reordered keys or formatting tweaks. A structure-aware comparison tool shows the actual changes far more clearly during code review.</li>
+  <li><strong>Testing and quality assurance:</strong> in automated testing, QA engineers compare a test run's output against an expected "golden" JSON file. A semantic comparison tool is ideal here because it can ignore unimportant differences (like timestamps or auto-generated IDs) and focus only on the data actually being tested.</li>
+</ul>
+
+<h2 id="types">Types of JSON comparison tools</h2>
+<p>
+  JSON comparison tools come in different shapes, each suited to different workflows and security needs.
+  Choosing the right type depends on the sensitivity of your data, the size of your files, and whether the
+  process needs to run automatically.
+</p>
+<ul>
+  <li><strong>Browser-based tools:</strong> the easiest and most common option for quick comparisons — paste JSON into two boxes and see the differences instantly. The main advantage: no installation and available from any device. The critical caveat is security — make sure the tool processes everything locally rather than on a remote server.</li>
+  <li><strong>Desktop applications:</strong> for users who prioritize security and advanced features. They install directly on your machine and process files 100% locally, with better support for very large files and advanced features like three-way merge.</li>
+  <li><strong>Command-line tools (CLI):</strong> the backbone of automation, designed for CI/CD pipeline integration. Extremely useful for automated testing and batch processing, but with a steeper learning curve and no instant visual feedback.</li>
+  <li><strong>IDE plugins:</strong> editors like VS Code and IntelliJ offer extensions that bring JSON comparison and formatting directly into your workflow, often integrated with version control — but tied to a specific development environment.</li>
+</ul>
+
+<h2 id="features">Essential features of a great JSON tool</h2>
+<p>
+  Not all JSON formatter and diff checker tools are equal. An excellent one goes beyond simple text comparison
+  to provide a rich, intuitive experience that speeds up debugging and analysis.
+</p>
+<ul>
+  <li><strong>An intuitive interface:</strong> a clean, simple design is essential — the tool should make pasting or uploading JSON easy and display inputs and outputs clearly.</li>
+  <li><strong>Side-by-side diff view:</strong> the core function — a clear display showing additions, deletions and modifications, with effective color coding so you can identify the nature of each change at a glance.</li>
+  <li><strong>Formatting options:</strong> a complete tool should also work as a JSON formatter — able to display JSON readably with customizable indentation and to minify it for production use.</li>
+  <li><strong>Structural and semantic comparison:</strong> what separates a true JSON tool from a plain text diff — an "ignore key order" option, since ordering is meaningless in the JSON standard anyway.</li>
+  <li><strong>Syntax highlighting and error detection:</strong> instant visual feedback about JSON validity, catching errors like missing commas or unbalanced brackets before you even run the comparison.</li>
+  <li><strong>Privacy and data security:</strong> non-negotiable, especially for online tools. The best tools process everything client-side inside your browser, guaranteeing your sensitive data is never uploaded to any server. Always look for a clear privacy policy confirming local processing before pasting anything confidential.</li>
+</ul>
+
+<div class="tool-cta">
+<div>
+<div class="txt">Try the Fawran Tools JSON Formatter</div>
+<div class="sub">Pretty-print or minify JSON locally inside your browser — no data ever uploaded</div>
+</div>
+<a class="btn btn-primary" href="../../tools/json-formatter.html">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M23 4v6h-6"></path><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+    Open the tool
+  </a>
+</div>
+
+<h2 id="validation">Validation as a core part of data integrity</h2>
+<p>
+  Comparing two JSON documents shows the differences between them, but <strong>validation</strong> ensures a
+  single document complies with a specific set of rules. A JSON validator + compare workflow combines both
+  concepts: first verify your data is structurally sound, then compare it against an expected structure or
+  another dataset.
+</p>
+<p>
+  The cornerstone of robust validation is <strong>JSON Schema</strong> — a powerful vocabulary that lets you
+  define your data's structure: required fields, data types, string patterns, numeric ranges and more. It
+  works as an enforceable contract for your data.
+</p>
+<p>
+  Combining validation with comparison delivers major benefits: it guarantees data consistency, prevents
+  malformed data from entering your applications or databases, and enforces strict adherence to API contracts
+  — both client and server exchange data in exactly the agreed-upon shape.
+</p>
+
+<div class="tool-cta">
+<div>
+<div class="txt">Try the Fawran Tools JSON Validator</div>
+<div class="sub">Instant structural validation with precise error types and locations</div>
+</div>
+<a class="btn btn-primary" href="../../tools/json-validator.html">
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M23 4v6h-6"></path><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+    Open the tool
+  </a>
+</div>
+
+<h2 id="advanced">Advanced comparison and merge techniques</h2>
+<p>
+  Once you master the basics, an advanced JSON formatter and diff tool opens possibilities beyond simple
+  visual comparison.
+</p>
+<ul>
+  <li><strong>Semantic comparison:</strong> the heart of smart JSON comparison — it understands the meaning of the structure, not just its textual representation, automatically ignoring key order because <code>{"a":1,"b":2}</code> is functionally identical to <code>{"b":2,"a":1}</code>. The most advanced tools can also handle arrays semantically, matching elements by a unique identifier instead of by position.</li>
+  <li><strong>Custom ignore rules:</strong> in many scenarios, certain parts of a JSON document are expected to differ — fields like timestamps or database-generated identifiers will always change and add noise to the comparison. Advanced tools let you define custom rules to ignore those keys.</li>
+  <li><strong>Three-way merge:</strong> inspired by version control systems like Git, used to merge changes from two different versions of a JSON file into a common ancestor — very powerful when two people edit the same config file.</li>
+  <li><strong>Generating and applying patches:</strong> some tools can generate a "patch" file describing the differences in a standardized format like JSON Patch (RFC 6902) — extremely useful for automation, since you can apply the patch programmatically to update settings or migrate data without transferring the entire file again.</li>
+</ul>
+
+<h2 id="problems">Solving the most common problems</h2>
+<p>
+  Despite the power of modern JSON comparison tools, you can run into common problems that lead to confusing
+  or inaccurate results. Understanding these issues is the key to a smooth, effective workflow.
+</p>
+<ul>
+  <li><strong>Problem: whitespace and formatting differences.</strong> When one file is minified and the other pretty-printed, the tool reports massive false differences.<br><strong>Solution:</strong> run both files through a formatter first to normalize their shape, or use a semantic comparison tool with an "ignore whitespace" option.</li>
+  <li><strong>Problem: inconsistent key order.</strong> Per the JSON standard, key order inside objects does not matter, but basic text-comparison tools do not know that.<br><strong>Solution:</strong> use a real JSON comparison tool with an "ignore key order" or "semantic comparison" mode, which normalizes keys before comparing.</li>
+  <li><strong>Problem: array element order.</strong> Unlike object keys, array order matters — but sometimes you only need to know whether the same elements exist regardless of position.<br><strong>Solution:</strong> you need an advanced tool with a "semantic array comparison" feature that matches elements using a unique identifier inside each element.</li>
+  <li><strong>Problem: encoding issues.</strong> Mismatched character encoding (UTF-8 vs others) can make identical text appear different.<br><strong>Solution:</strong> always save and compare files as UTF-8, and check the tool's encoding handling if results look garbled.</li>
+</ul>
+
+<h2 id="faq">Frequently asked questions</h2>
+<div class="faq-item">
+  <h3>What is the best way to compare two JSON files?</h3>
+  <p style="font-size:13.5px;">Use a semantic comparison tool that parses both documents, ignores key order and highlights added, removed and changed values — not a plain text diff.</p>
+</div>
+<div class="faq-item">
+  <h3>Can I compare JSON files with different key orders?</h3>
+  <p style="font-size:13.5px;">Yes. Key order does not matter in JSON, and a proper compare tool maps keys structurally so reordering is not reported as a change.</p>
+</div>
+<div class="faq-item">
+  <h3>What is the difference between comparing JSON and validating it?</h3>
+  <p style="font-size:13.5px;">Comparison shows differences between two documents; validation checks one document against structural rules to confirm it is well-formed.</p>
+</div>
+<div class="faq-item">
+  <h3>Is it safe to use online JSON tools on sensitive data?</h3>
+  <p style="font-size:13.5px;">Only if the tool processes everything client-side. The Fawran Tools JSON tools run entirely in your browser and never upload your data.</p>
+</div>
+<div class="faq-item">
+  <h3>How do I handle very large JSON files?</h3>
+  <p style="font-size:13.5px;">Minify first to reduce noise, use a browser-based tool to avoid upload limits, and compare semantically so formatting differences do not flood the results.</p>
+</div>
+
+<h2>Summary</h2>
+<p>
+  Comparing, formatting and validating JSON are three complementary skills in any modern workflow. Understanding
+  the difference between text diffing and semantic comparison — and choosing tools that process your data
+  locally — turns a frustrating debugging session into a few precise clicks.
+</p>
+
+</div>
+</div>
+
+<div class="wrap">
+<div class="ad-slot ad-slot-leaderboard">
+<span class="ad-label">Ad · Advertisement</span>
+<div class="ad-slot-inner" style="min-height:90px;">
+<!-- Paste your responsive AdSense unit code here, e.g.: -->
+<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5511030780981611" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+</div>
+</div>
+</div>
+<div class="wrap"><div class="share-widget"></div></div>
+</main>
+<footer role="contentinfo">
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="mark" style="width:28px;height:28px;font-size:12px;border-radius:8px;">FW</span> Fawran Tools</div>
+<p class="footer-desc">A collection of free online tools for images, PDF files, text and SEO that run entirely inside your browser without uploading your files to any server.</p>
+</div>
+<div class="footer-col">
+<h4>Website</h4>
+<a href="/en/">Tools</a><a href="../favorites.html">☆ Favorites</a>
+<a href="index.html">Blog</a>
+<a href="../about.html">About</a>
+<a href="../contact.html">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Legal</h4>
+<a href="../privacy.html">Privacy Policy</a>
+<a href="../terms.html">Terms of Use</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> Fawran Tools</span>
+<span>Practical browser-based tools.</span>
+</div>
+</footer>
+<script src="../../assets/main.js"></script><script src="../../assets/share-widget.js"></script>
+</body>
+</html>

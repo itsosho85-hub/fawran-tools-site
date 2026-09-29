@@ -6,6 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const isEn = document.documentElement.lang === 'en';
   const labels = isEn ? {fav:'Add to favorites', favOn:'Remove from favorites', recent:'Recently used', favorites:'Favorites', copy:'Copy', copied:'Copied'} : {fav:'إضافة للمفضلة',favOn:'إزالة من المفضلة',recent:'استخدمتها مؤخرًا',favorites:'المفضلة',copy:'نسخ',copied:'تم النسخ'};
 
+  // Hide empty ad placeholders: slots without real (uncommented) AdSense code
+  // keep the layout looking clean and professional instead of showing empty dashed boxes.
+  // As soon as real <ins class="adsbygoogle"> code is pasted in, the slot shows again.
+  $$('.ad-slot').forEach(slot => {
+    if (!slot.querySelector('ins.adsbygoogle')) {
+      slot.hidden = true;
+      const hero = slot.closest('.hero-grid');
+      if (hero) hero.classList.add('no-side-ad');
+    }
+  });
+
   // Mobile navigation
   const toggle = $('.nav-toggle'), nav = $('.nav');
   if (toggle && nav) {

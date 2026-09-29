@@ -1,2 +1,8 @@
+# توحيد الصفحة الرئيسية على الرابط الجذري (كانت / و /index.html
+# كلاهما يعيد 200 بدون توجيه — إشارات SEO كانت مشتتة بينهما)
+/index.html    /     301!
+/en/index.html    /en/    301!
+
+# تغييرات قديمة
 /tools/image-to-pdf.html   /tools/images-to-pdf.html   301
 /en/tools/image-to-pdf.html   /en/tools/images-to-pdf.html   301

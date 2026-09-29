@@ -91,6 +91,11 @@
   background:var(--surface-sunk);text-align:center;
   min-height:122px;contain:layout;
 }
+/* Empty ad placeholders are hidden via JS (main.js) until real ad code is added */
+.ad-slot[hidden]{display:none !important;margin:0 !important;min-height:0 !important;}
+@media(min-width:960px){
+  .hero-grid.no-side-ad{grid-template-columns:1fr;}
+}
 .ad-slot .ad-label{
   font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;
   color:var(--muted);text-transform:uppercase;margin-bottom:8px;display:block;
@@ -320,6 +325,7 @@ h1.hero-title .hl{color:var(--indigo);}
 }
 .content-card h2{font-size:19px;font-weight:800;margin:28px 0 10px;}
 .content-card h2:first-child{margin-top:0;}
+.content-card h2.lead-title{font-size:24px;margin:0 0 10px;}
 .content-card p, .content-card li{font-size:14.5px;color:var(--ink-soft);line-height:1.9;}
 .content-card ul{padding-inline-start:20px;}
 

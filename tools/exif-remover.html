@@ -3,7 +3,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap"/></noscript><meta name="viewport" content="width=device-width,initial-scale=1"><title>إزالة بيانات الصور | فورا.tools</title><meta name="description" content="أنشئ نسخة جديدة من الصورة بدون بيانات EXIF والبيانات الوصفية الشائعة."><meta name="keywords" content="إزالة EXIF, إزالة بيانات الصور, metadata remover"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://fawran.tools/tools/exif-remover.html"><link rel="alternate" hreflang="ar" href="https://fawran.tools/tools/exif-remover.html"><link rel="alternate" hreflang="en" href="https://fawran.tools/en/tools/exif-remover.html"><link rel="alternate" hreflang="x-default" href="https://fawran.tools/en/tools/exif-remover.html"><link rel="stylesheet" href="../assets/style.css"><link rel="icon" href="../favicon.svg"><link rel="manifest" href="../manifest.webmanifest"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "إزالة بيانات الصور", "url": "https://fawran.tools/tools/exif-remover.html", "description": "أنشئ نسخة جديدة من الصورة بدون بيانات EXIF والبيانات الوصفية الشائعة.", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script><script>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap"/></noscript><meta name="viewport" content="width=device-width,initial-scale=1"><title>إزالة بيانات الصور | فورا.tools</title><meta name="description" content="أنشئ نسخة جديدة من الصورة بدون بيانات EXIF والبيانات الوصفية الشائعة."><meta name="keywords" content="إزالة EXIF, إزالة بيانات الصور, metadata remover"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://fawran.tools/tools/exif-remover.html"><link rel="alternate" hreflang="ar" href="https://fawran.tools/tools/exif-remover.html"><link rel="alternate" hreflang="en" href="https://fawran.tools/en/tools/exif-remover.html"><link rel="alternate" hreflang="x-default" href="https://fawran.tools/en/tools/exif-remover.html"><link rel="stylesheet" href="../assets/style.css?v=20260929"><link rel="icon" href="../favicon.svg"><link rel="manifest" href="../manifest.webmanifest"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "إزالة بيانات الصور", "url": "https://fawran.tools/tools/exif-remover.html", "description": "أنشئ نسخة جديدة من الصورة بدون بيانات EXIF والبيانات الوصفية الشائعة.", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script><script>
 // Defer non-critical third-party scripts until after LCP / idle
 (function(){
   function loadScript(src, attrs){
@@ -52,65 +52,38 @@
 </script>
 </head><body>
 <a href="#main-content" class="skip-link">تخطي إلى المحتوى الرئيسي</a><header class="topbar" role="banner"><div class="topbar-inner"><a class="brand" href="/"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a><div class="nav-wrap"><nav class="nav" aria-label="التنقل الرئيسي"><a class="active" href="/">الأدوات</a><a href="../blog/index.html">المدونة</a><a href="../about.html">من نحن</a><a href="../contact.html">تواصل معنا</a></nav><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">◐</button><a class="lang-switch" href="https://fawran.tools/en/tools/exif-remover.html">EN</a></div></div></header><main class="wrap tool-page"><div class="crumb"><a href="/">الأدوات</a> / Image Tools / إزالة بيانات الصور</div><h1>إزالة بيانات الصور</h1><p class="tool-lede">أنشئ نسخة جديدة من الصورة بدون بيانات EXIF والبيانات الوصفية الشائعة.</p><section class="tool-card-shell"><div class="dropzone" id="dropzone"><input id="fileInput" type="file" accept="image/*"><div class="dz-title">اختر صورة أو اسحبها هنا</div><div class="dz-sub">JPG, PNG, WebP and common image formats</div></div><div class="actions"><button id="processBtn" class="btn primary">تنفيذ العملية</button><button id="downloadBtn" class="btn" disabled>تنزيل النتيجة</button><button id="clearBtn" class="btn" disabled>مسح</button></div><div id="status" class="result-box" aria-live="polite"></div><canvas id="canvas" style="display:none"></canvas></section><section class="tool-info"><h2>كيفية الاستخدام</h2><ol><li>اختر صورة من جهازك.</li><li>اضبط الخيارات ثم نفّذ العملية.</li><li>نزّل النتيجة مباشرة. المعالجة تتم محليًا داخل المتصفح.</li></ol><h2>الخصوصية</h2><p>لا يتم رفع الصور إلى خادم لهذه الأداة؛ تتم المعالجة محليًا داخل متصفحك.</p></section>
-<section class="enrich" style="margin:28px 0;padding:22px;background:var(--surface-sunk, #f8f7ff);border-radius:12px;border:1px solid var(--line, #e8e6ff);">
-  <h2>عن هذه الأداة</h2>
-  <p>أداة إزالة بيانات الصور المجانية من فورا.tools — سريعة، آمنة، وتعمل بالكامل داخل المتصفح بدون إرسال بياناتك لأي خادم.</p>
-  <h3>حالات الاستخدام</h3>
-  <ul><li>إنجاز مهام exif remover بسرعة</li><li>توفير الوقت بدون تثبيت برامج</li><li>العمل بدون إنترنت بعد التحميل</li></ul>
-  <h3>كيف تستخدم الأداة</h3>
-  <ol><li>افتح الأداة وأدخل البيانات</li><li>اضبط الخيارات حسب حاجتك</li><li>انسخ أو حمّل النتيجة</li></ol>
-  <h3>أسئلة شائعة</h3>
-  <details><summary>هل أداة إزالة بيانات الصور مجانية؟</summary><p>نعم، مجانية تماماً وبدون تسجيل أو علامة مائية.</p></details>
-<details><summary>هل بياناتي آمنة؟</summary><p>نعم، كل المعالجة تتم محلياً في متصفحك ولا تُرسل لأي خادم.</p></details>
-<details><summary>هل تعمل على الجوال؟</summary><p>نعم، جميع الأدوات متجاوبة وتعمل على الهاتف والكمبيوتر.</p></details>
-
-  <p style="font-size:13px;color:var(--muted);margin-top:14px;">الكلمات المفتاحية: إزالة بيانات الصور</p>
+<section class="tool-guide" aria-labelledby="guide-exif-remover" data-content-version="2026-09">
+  <p class="guide-kicker">دليل عملي ومحتوى مراجع</p>
+  <h2 id="guide-exif-remover">عن أداة إزالة بيانات الصور</h2>
+  <nav class="guide-nav" aria-label="أقسام الدليل"><a href="#overview">نظرة سريعة</a><a href="#steps">خطوات الاستخدام</a><a href="#cases">متى تفيدك الأداة؟</a><a href="#tips">نصائح للحصول على نتيجة دقيقة</a><a href="#faq">أسئلة شائعة</a><a href="#related">أدوات مرتبطة</a></nav>
+  <div class="guide-section" id="overview"><h3>نظرة سريعة</h3><p>قبل أن ترفع صورة إلى الإنترنت، اسأل نفسك: ماذا تعرف عني؟ الإجابة موجودة داخل الملف: طراز هاتفك، وإعدادات كاميرتك، وتاريخ ووقت التصوير بدقة، وربما إحداثيات منزلك. أداة إزالة البيانات الوصفية تنشئ نسخة مطابقة للصورة بصريًا لكنها خالية تمامًا من كل هذه المعلومات.</p><p>الفارق بين الصورتين لا يُرى بالعين: نفس البكسلات، نفس الجودة، لكن النسخة الجديدة لا تحمل أي أثر يشير إليك أو إلى مكانك. وتشمل الإزالة بيانات EXIF وGPS وبيانات التعريف القابلة للتتبع، بينما تبقى المعالجة كلها داخل متصفحك.</p><p class="tool-keywords"><strong>مصطلحات بحث ذات صلة:</strong> إزالة بيانات الصور، معالجة الصور، أداة صور أونلاين، تعديل الصور محليًا</p></div>
+  <div class="guide-section" id="steps"><h3>خطوات الاستخدام</h3><p>اتبع هذه الخطوات لاستخدام إزالة بيانات الصور بدقة:</p><ol class="guide-steps"><li><strong>ارفع الصورة</strong><span>اسحب الصورة التي ستشاركها إلى منطقة الرفع.</span></li><li><strong>اضغط «تنفيذ العملية»</strong><span>تُنشئ الأداة نسخة نظيفة من الصورة بلا أي بيانات وصفية.</span></li><li><strong>تأكد من النتيجة</strong><span>يمكنك فتح الناتج في أداة عرض EXIF لدينا للتأكد من خلوها التام من البيانات.</span></li><li><strong>نزّل النسخة النظيفة</strong><span>«تنزيل النتيجة» يحفظ الصورة الآمنة؛ استخدمها هي في النشر لا الأصل.</span></li><li><strong>كرر لبقية الصور</strong><span>«مسح» والصورة التالية؛ خصوصًا قبل إرسال دفعات صور للجهات العامة.</span></li></ol></div>
+  <div class="guide-section" id="cases"><h3>متى تفيدك الأداة؟</h3><p>هذه أمثلة عملية تُظهر متى يكون إزالة بيانات الصور الاختيار المناسب:</p><ul><li>تعقيم صور المنزل والعائلة قبل نشرها في وسائل التواصل.</li><li>إرسال صور المنتجات للعملاء دون بيانات تصوير داخلية.</li><li>رفع صور المسابقات والتحديات دون كشف وقت ومكان التصوير.</li><li>مشاركة لقطات التصميم دون بيانات البرنامج والتاريخ.</li><li>أرشفة صور نهائية نظيفة خالية من أي معلومات تعريفية.</li></ul></div>
+  <div class="guide-section" id="tips"><h3>نصائح للحصول على نتيجة دقيقة</h3><p>هذه ملاحظات تخص إزالة بيانات الصور قبل اعتماد النتيجة النهائية:</p><ul><li>اعتمد قاعدة ذهبية: انسخ، عالّم، ثم شارك النسخة المعالمة فقط؛ الخطأ الشائع رفع الأصل سهوًا.</li><li>صور واتساب تفقد EXIF أثناء الإرسال غالبًا، لكن لا تعتمد على ذلك مع كل التطبيقات؛ الفحص أهم من الافتراض.</li><li>إزالة البيانات تصغر حجم الملف قليلًا أيضًا؛ مكسب صغير إضافي.</li><li>إن كانت الخصوصية حرجة (صحفي، باحث) فاعتمد الإزالة حتى على الصور التي تبدو آمنة؛ العادة تصنع الأمان.</li></ul></div>
+  <div class="guide-section guide-faq" id="faq"><h3>أسئلة شائعة</h3><details><summary>ما البيانات التي تُحذف بالضبط؟</summary><p>كل البيانات الوصفية المضمنة: EXIF للكاميرا والإعدادات، وإحداثيات GPS، وبيانات التاريخ والوقت، ومعلومات البرامج، ومعرفات التحرير.</p></details><details><summary>هل تتأثر جودة الصورة بالإزالة؟</summary><p>لا؛ البكسلات نفسها تُنسخ كما هي، والفرق الوحيد هو غياب السجل المعلوماتي الملتصق بالملف.</p></details><details><summary>هل تحذف الأداة البيانات من الأصل نفسه؟</summary><p>لا؛ تُنشأ نسخة نظيفة جديدة ويبقى ملفك الأصلي كما هو في جهازك بكل بياناته.</p></details><details><summary>لماذا يهم حذف GPS تحديدًا؟</summary><p>لأن إحداثيات الموقع تحدد مكان التصوير بدقة الأمتار؛ في صور المنزل والمدرسة والعمل تكشف أنماط حياتك اليومية.</p></details><details><summary>هل كل المواقع تحذف البيانات تلقائيًا عند الرفع؟</summary><p>بعض المنصات الكبيرة تفعل، لكن كثيرًا من المواقع والمنتديات تحفظ الملف كما هو؛ الإزالة الذاتية هي الضمانة الوحيدة.</p></details></div>
+  <div class="guide-section" id="related"><h3>أدوات مرتبطة</h3><p>هذه الأدوات قد تكمل الخطوة التالية بعد إزالة بيانات الصور:</p><div class="guide-related"><a class="guide-related-link" href="image-color-picker.html">منتقي ألوان من الصورة</a><a class="guide-related-link" href="image-compressor.html">ضغط الصور أونلاين مجانًا</a><a class="guide-related-link" href="image-cropper.html">قص الصور أونلاين مجانًا</a></div></div>
 </section>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "هل أداة إزالة بيانات الصور مجانية؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، مجانية تماماً وبدون تسجيل أو علامة مائية."}}, {"@type": "Question", "name": "هل بياناتي آمنة؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، كل المعالجة تتم محلياً في متصفحك ولا تُرسل لأي خادم."}}, {"@type": "Question", "name": "هل تعمل على الجوال؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، جميع الأدوات متجاوبة وتعمل على الهاتف والكمبيوتر."}}]}</script>
 
-<section class="enrich-extra" style="margin:24px 0;padding:22px;background:#fff;border:1px solid var(--line,#e8e6ff);border-radius:12px;">
-  <h2>دليل الاستخدام المتقدم</h2>
-  <p>هذه الأداة مصممة لتكون سريعة وآمنة. كل المعالجة تتم داخل متصفحك باستخدام JavaScript حديث، بدون إرسال أي ملف أو نص إلى خادم خارجي. هذا يضمن خصوصية كاملة وسرعة فائقة حتى مع الملفات الكبيرة. يمكنك استخدامها على الكمبيوتر أو الهاتف بدون تثبيت أي برنامج.</p>
-  <h3>لماذا تختار فورا.tools؟</h3>
-  <ul>
-    <li><strong>خصوصية تامة:</strong> ملفاتك لا تغادر جهازك أبداً. مثالي للمستندات الحساسة والصور الشخصية.</li>
-    <li><strong>سرعة فائقة:</strong> معالجة فورية بدون انتظار رفع أو تحميل من خادم.</li>
-    <li><strong>مجاني بدون حدود:</strong> بدون تسجيل، بدون علامة مائية، وبدون قيود يومية.</li>
-    <li><strong>يعمل بدون إنترنت:</strong> بعد تحميل الصفحة مرة واحدة، يمكنك فصل الإنترنت والمتابعة.</li>
-    <li><strong>متوافق مع كل الأجهزة:</strong> تصميم متجاوب يعمل على الهاتف والكمبيوتر والتابلت.</li>
-  </ul>
-  <h3>نصائح للحصول على أفضل نتيجة</h3>
-  <ul>
-    <li>تأكد من تحديث المتصفح لآخر إصدار لدعم الميزات الحديثة.</li>
-    <li>للملفات الكبيرة، أغلق التبويبات الأخرى لتوفير الذاكرة.</li>
-    <li>احفظ النتيجة فوراً — بعض المتصفحات تمسح البيانات المؤقتة عند الإغلاق.</li>
-    <li>استخدم اختصارات لوحة المفاتيح (Ctrl+V للصق، Ctrl+C للنسخ) لتسريع العمل.</li>
-  </ul>
-  <h3>الأسئلة المتكررة الإضافية</h3>
-  <details><summary>هل هناك حد لحجم الملف؟</summary><p>يعتمد على ذاكرة جهازك. عادة حتى 50-100 ميجابايت تعمل بسلاسة. للملفات الأكبر، جرّب تقسيمها أولاً.</p></details>
-  <details><summary>هل أحتاج لإنشاء حساب؟</summary><p>لا، كل الأدوات تعمل بدون تسجيل أو تسجيل دخول.</p></details>
-  <details><summary>هل النتائج دقيقة؟</summary><p>نعم، نستخدم مكتبات موثوقة ومعايير معتمدة. لكن راجع النتيجة دائماً قبل الاستخدام النهائي.</p></details>
-  <p style="font-size:13px;color:var(--muted);margin-top:14px;">جزء من منظومة فورا.tools — أكثر من 130 أداة مجانية للصور و PDF و SEO والنصوص والفيديو.</p>
-</section>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "كيف تستخدم هذه الأداة", "step": [{"@type": "HowToStep", "name": "أدخل البيانات", "text": "افتح الأداة والصق النص أو ارفع الملف المطلوب."}, {"@type": "HowToStep", "name": "اضبط الإعدادات", "text": "اختر الخيارات المناسبة مثل الجودة أو الصيغة أو الخوارزمية."}, {"@type": "HowToStep", "name": "احصل على النتيجة", "text": "اضغط تنفيذ وانسخ النتيجة أو حمّل الملف الناتج."}]}</script>
 
-<section class="enrich-v3" style="margin:24px 0;padding:22px;background:var(--surface,#fff);border:1px solid var(--line,#e8e6ff);border-radius:12px;">
-  <h2>حالات استخدام عملية</h2>
-  <p>سواء كنت مصمماً، مطوراً، مسوقاً، أو طالباً، هذه الأداة توفر عليك ساعات من العمل اليدوي. بدلاً من تثبيت برامج ثقيلة أو البحث عن مواقع تطلب تسجيلاً، يمكنك إنجاز مهمتك في ثوانٍ من أي جهاز.</p>
-  <ul>
-    <li><strong>للمصممين:</strong> تجهيز الصور والأصول بسرعة قبل الرفع على الموقع أو المتجر.</li>
-    <li><strong>للمطورين:</strong> اختبار الأكواد والبيانات والتحقق من الصحة قبل النشر.</li>
-    <li><strong>للمسوقين:</strong> إنشاء روابط تتبع، تحليل النصوص، وتحسين محركات البحث.</li>
-    <li><strong>للطلاب:</strong> تنسيق المستندات، تحويل الصيغ، وإعداد العروض.</li>
-  </ul>
-  <h3>الفرق بين فورا.tools والمواقع الأخرى</h3>
-  <p>كثير من المواقع ترفع ملفاتك لخوادمها، مما يعرض خصوصيتك للخطر ويبطئ العملية. في فورا.tools، كل شيء يحدث في متصفحك. لا نرى ملفاتك، لا نحفظها، ولا نستخدمها لأي غرض. هذا يجعل الأداة مناسبة حتى للملفات السرية والعقود والصور الشخصية.</p>
-  <h3>كيف نضمن الجودة؟</h3>
-  <p>نختبر كل أداة على متصفحات Chrome و Firefox و Safari و Edge، على الهاتف والكمبيوتر. كما نعتمد على مكتبات مفتوحة المصدر موثوقة ومعايير ويب حديثة لضمان دقة النتائج وسرعتها.</p>
-</section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ما البيانات التي تُحذف بالضبط؟","acceptedAnswer":{"@type":"Answer","text":"كل البيانات الوصفية المضمنة: EXIF للكاميرا والإعدادات، وإحداثيات GPS، وبيانات التاريخ والوقت، ومعلومات البرامج، ومعرفات التحرير."}},{"@type":"Question","name":"هل تتأثر جودة الصورة بالإزالة؟","acceptedAnswer":{"@type":"Answer","text":"لا؛ البكسلات نفسها تُنسخ كما هي، والفرق الوحيد هو غياب السجل المعلوماتي الملتصق بالملف."}},{"@type":"Question","name":"هل تحذف الأداة البيانات من الأصل نفسه؟","acceptedAnswer":{"@type":"Answer","text":"لا؛ تُنشأ نسخة نظيفة جديدة ويبقى ملفك الأصلي كما هو في جهازك بكل بياناته."}},{"@type":"Question","name":"لماذا يهم حذف GPS تحديدًا؟","acceptedAnswer":{"@type":"Answer","text":"لأن إحداثيات الموقع تحدد مكان التصوير بدقة الأمتار؛ في صور المنزل والمدرسة والعمل تكشف أنماط حياتك اليومية."}},{"@type":"Question","name":"هل كل المواقع تحذف البيانات تلقائيًا عند الرفع؟","acceptedAnswer":{"@type":"Answer","text":"بعض المنصات الكبيرة تفعل، لكن كثيرًا من المواقع والمنتديات تحفظ الملف كما هو؛ الإزالة الذاتية هي الضمانة الوحيدة."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"طريقة استخدام إزالة بيانات الصور","description":"قبل أن ترفع صورة إلى الإنترنت، اسأل نفسك: ماذا تعرف عني؟ الإجابة موجودة داخل الملف: طراز هاتفك، وإعدادات كاميرتك، وتاريخ ووقت التصوير بدقة، وربما إحداثيات منزلك. أداة إزالة البيانات الوصفية تنشئ نسخة مطابقة للصورة بصريًا لكنها خالية تمامًا من كل هذه المعلومات.","url":"https://fawran.tools/tools/exif-remover.html","step":[{"@type":"HowToStep","position":1,"name":"ارفع الصورة","text":"اسحب الصورة التي ستشاركها إلى منطقة الرفع."},{"@type":"HowToStep","position":2,"name":"اضغط «تنفيذ العملية»","text":"تُنشئ الأداة نسخة نظيفة من الصورة بلا أي بيانات وصفية."},{"@type":"HowToStep","position":3,"name":"تأكد من النتيجة","text":"يمكنك فتح الناتج في أداة عرض EXIF لدينا للتأكد من خلوها التام من البيانات."},{"@type":"HowToStep","position":4,"name":"نزّل النسخة النظيفة","text":"«تنزيل النتيجة» يحفظ الصورة الآمنة؛ استخدمها هي في النشر لا الأصل."},{"@type":"HowToStep","position":5,"name":"كرر لبقية الصور","text":"«مسح» والصورة التالية؛ خصوصًا قبل إرسال دفعات صور للجهات العامة."}]}</script>
 </main><script>
 const slug="exif-remover";let file=null,resultBlob=null;const input=document.getElementById('fileInput'),drop=document.getElementById('dropzone'),canvas=document.getElementById('canvas'),ctx=canvas.getContext('2d'),status=document.getElementById('status'),processBtn=document.getElementById('processBtn'),downloadBtn=document.getElementById('downloadBtn'),clearBtn=document.getElementById('clearBtn');
 function msg(t){status.textContent=t} function loadImg(f){return new Promise((res,rej)=>{const im=new Image();im.onload=()=>res(im);im.onerror=()=>rej(new Error('Invalid image'));im.src=URL.createObjectURL(f)})}
@@ -124,5 +97,5 @@ downloadBtn.onclick=()=>{if(!resultBlob)return;const a=document.createElement('a
   <div class="rating-stars"></div>
   <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
 </div></div>
-<script src="../assets/main.js"></script><script src="../assets/rating-widget.js"></script><div class="wrap"><div class="share-widget"></div></div>
+<script src="../assets/main.js?v=20260929"></script><script src="../assets/rating-widget.js"></script><div class="wrap"><div class="share-widget"></div></div>
 <script src="../assets/share-widget.js"></script></body></html>

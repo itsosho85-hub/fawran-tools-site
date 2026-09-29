@@ -3,7 +3,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap"/></noscript><meta name="viewport" content="width=device-width,initial-scale=1"><title>تدوير الصور أونلاين | فورا.tools</title><meta name="description" content="دوّر صور JPG وPNG وWebP بزاوية 90 أو 180 أو 270 درجة مجانًا."><meta name="keywords" content="تدوير الصور, rotate image, image rotator, تدوير JPG PNG"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://fawran.tools/tools/image-rotate.html"><link rel="alternate" hreflang="ar" href="https://fawran.tools/tools/image-rotate.html"><link rel="alternate" hreflang="en" href="https://fawran.tools/en/tools/image-rotate.html"><link rel="alternate" hreflang="x-default" href="https://fawran.tools/en/tools/image-rotate.html"><link rel="stylesheet" href="../assets/style.css"><link rel="icon" href="../favicon.svg"><link rel="manifest" href="../manifest.webmanifest"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "تدوير الصور أونلاين", "url": "https://fawran.tools/tools/image-rotate.html", "description": "دوّر صور JPG وPNG وWebP بزاوية 90 أو 180 أو 270 درجة مجانًا.", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script><script>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap"/></noscript><meta name="viewport" content="width=device-width,initial-scale=1"><title>تدوير الصور أونلاين | فورا.tools</title><meta name="description" content="دوّر صور JPG وPNG وWebP بزاوية 90 أو 180 أو 270 درجة مجانًا."><meta name="keywords" content="تدوير الصور, rotate image, image rotator, تدوير JPG PNG"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://fawran.tools/tools/image-rotate.html"><link rel="alternate" hreflang="ar" href="https://fawran.tools/tools/image-rotate.html"><link rel="alternate" hreflang="en" href="https://fawran.tools/en/tools/image-rotate.html"><link rel="alternate" hreflang="x-default" href="https://fawran.tools/en/tools/image-rotate.html"><link rel="stylesheet" href="../assets/style.css?v=20260929"><link rel="icon" href="../favicon.svg"><link rel="manifest" href="../manifest.webmanifest"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "تدوير الصور أونلاين", "url": "https://fawran.tools/tools/image-rotate.html", "description": "دوّر صور JPG وPNG وWebP بزاوية 90 أو 180 أو 270 درجة مجانًا.", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script><script>
 // Defer non-critical third-party scripts until after LCP / idle
 (function(){
   function loadScript(src, attrs){
@@ -52,65 +52,38 @@
 </script>
 </head><body>
 <a href="#main-content" class="skip-link">تخطي إلى المحتوى الرئيسي</a><header class="topbar" role="banner"><div class="topbar-inner"><a class="brand" href="/"><span class="mark">FW</span> فورا<span class="dot">.</span>tools</a><div class="nav-wrap"><nav class="nav" aria-label="التنقل الرئيسي"><a class="active" href="/">الأدوات</a><a href="../blog/index.html">المدونة</a><a href="../about.html">من نحن</a><a href="../contact.html">تواصل معنا</a></nav><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">◐</button><a class="lang-switch" href="https://fawran.tools/en/tools/image-rotate.html">EN</a></div></div></header><main class="wrap tool-page"><div class="crumb"><a href="/">الأدوات</a> / Image Tools / تدوير الصور أونلاين</div><h1>تدوير الصور أونلاين</h1><p class="tool-lede">دوّر صور JPG وPNG وWebP بزاوية 90 أو 180 أو 270 درجة مجانًا.</p><section class="tool-card-shell"><div class="dropzone" id="dropzone"><input id="fileInput" type="file" accept="image/*"><div class="dz-title">اختر صورة أو اسحبها هنا</div><div class="dz-sub">JPG, PNG, WebP and common image formats</div></div><label>Angle <select id="angle"><option value="90">90°</option><option value="180">180°</option><option value="270">270°</option></select></label><div class="actions"><button id="processBtn" class="btn primary">تنفيذ العملية</button><button id="downloadBtn" class="btn" disabled>تنزيل النتيجة</button><button id="clearBtn" class="btn" disabled>مسح</button></div><div id="status" class="result-box" aria-live="polite"></div><canvas id="canvas" style="display:none"></canvas></section><section class="tool-info"><h2>كيفية الاستخدام</h2><ol><li>اختر صورة من جهازك.</li><li>اضبط الخيارات ثم نفّذ العملية.</li><li>نزّل النتيجة مباشرة. المعالجة تتم محليًا داخل المتصفح.</li></ol><h2>الخصوصية</h2><p>لا يتم رفع الصور إلى خادم لهذه الأداة؛ تتم المعالجة محليًا داخل متصفحك.</p></section>
-<section class="enrich" style="margin:28px 0;padding:22px;background:var(--surface-sunk, #f8f7ff);border-radius:12px;border:1px solid var(--line, #e8e6ff);">
-  <h2>عن هذه الأداة</h2>
-  <p>أداة تدوير الصور أونلاين المجانية من فورا.tools — سريعة، آمنة، وتعمل بالكامل داخل المتصفح بدون إرسال بياناتك لأي خادم.</p>
-  <h3>حالات الاستخدام</h3>
-  <ul><li>إنجاز مهام image rotate بسرعة</li><li>توفير الوقت بدون تثبيت برامج</li><li>العمل بدون إنترنت بعد التحميل</li></ul>
-  <h3>كيف تستخدم الأداة</h3>
-  <ol><li>افتح الأداة وأدخل البيانات</li><li>اضبط الخيارات حسب حاجتك</li><li>انسخ أو حمّل النتيجة</li></ol>
-  <h3>أسئلة شائعة</h3>
-  <details><summary>هل أداة تدوير الصور أونلاين مجانية؟</summary><p>نعم، مجانية تماماً وبدون تسجيل أو علامة مائية.</p></details>
-<details><summary>هل بياناتي آمنة؟</summary><p>نعم، كل المعالجة تتم محلياً في متصفحك ولا تُرسل لأي خادم.</p></details>
-<details><summary>هل تعمل على الجوال؟</summary><p>نعم، جميع الأدوات متجاوبة وتعمل على الهاتف والكمبيوتر.</p></details>
-
-  <p style="font-size:13px;color:var(--muted);margin-top:14px;">الكلمات المفتاحية: تدوير الصور أونلاين</p>
+<section class="tool-guide" aria-labelledby="guide-image-rotate" data-content-version="2026-09">
+  <p class="guide-kicker">دليل عملي ومحتوى مراجع</p>
+  <h2 id="guide-image-rotate">عن أداة تدوير الصور</h2>
+  <nav class="guide-nav" aria-label="أقسام الدليل"><a href="#overview">نظرة سريعة</a><a href="#steps">خطوات الاستخدام</a><a href="#cases">متى تفيدك الأداة؟</a><a href="#tips">نصائح للحصول على نتيجة دقيقة</a><a href="#faq">أسئلة شائعة</a><a href="#related">أدوات مرتبطة</a></nav>
+  <div class="guide-section" id="overview"><h3>نظرة سريعة</h3><p>صورة مائلة أو مقلوبة مشكلة يعرفها الجميع: صورة من الكاميرا جاءت بجانبها الطويل، أو ملف PDF مصور بالموبايل مقلوب 180 درجة، أو لقطة تحتاج ميلًا بسيطًا لاستقامة الأفق. أداة التدوير تعالجها كلها: تدوير سريع بخطوات 90 درجة، أو انعطاف حر بدرجات دقيقة لتصحيح الميلان.</p><p>التدوير هنا بلا فقد: تدوير 90 أو 180 درجة يعيد ترتيب البكسلات كما هي دون أي إعادة حساب للصورة، والنتيجة تحمل جودة الأصل بالكامل. وكمعتاد، كل شيء يعمل داخل متصفحك دون رفع الملف.</p><p class="tool-keywords"><strong>مصطلحات بحث ذات صلة:</strong> تدوير الصور أونلاين، معالجة الصور، أداة صور أونلاين، تعديل الصور محليًا</p></div>
+  <div class="guide-section" id="steps"><h3>خطوات الاستخدام</h3><p>اتبع هذه الخطوات لاستخدام تدوير الصور أونلاين بدقة:</p><ol class="guide-steps"><li><strong>ارفع الصورة</strong><span>اسحبها إلى منطقة الرفع أو اضغط لاختيارها من جهازك.</span></li><li><strong>اختر زاوية التدوير</strong><span>أزرار 90 و180 و270 درجة للقلب الكامل، أو منزلق الدرجات الدقيقة لتصحيح ميلان الأفق.</span></li><li><strong>راقب المعاينة</strong><span>التدوير الحر يظهر أثره مباشرة؛ درجتان إلى اليمين أو اليسار كثيرًا ما تكفي لاستقامة المشهد.</span></li><li><strong>نفّذ العملية</strong><span>اضغط «تنفيذ العملية» لتطبيق التدوير النهائي على الصورة.</span></li><li><strong>نزّل النتيجة</strong><span>«تنزيل النتيجة» لحفظ الصورة معدلة الاستقامة.</span></li></ol></div>
+  <div class="guide-section" id="cases"><h3>متى تفيدك الأداة؟</h3><p>هذه أمثلة عملية تُظهر متى يكون تدوير الصور أونلاين الاختيار المناسب:</p><ul><li>تصحيح صور هاتف وصلت مقلوبة بسبب قراءة بيانات الاتجاه خطأً.</li><li>استقامة أفق البحر أو المباني في الصور الفوتوغرافية بميل دقيق.</li><li>تجهيز صورة ممسوحة ضوئيًا جاءت رأسًا على عقب.</li><li>تدوير صورة رأسية إلى أفقية لاستخدامها كخلفية عريضة.</li><li>ضبط اتجاه شعار أو أيقونة قبل إدراجها في تصميم.</li></ul></div>
+  <div class="guide-section" id="tips"><h3>نصائح للحصول على نتيجة دقيقة</h3><p>هذه ملاحظات تخص تدوير الصور أونلاين قبل اعتماد النتيجة النهائية:</p><ul><li>التدوير بخطوات 90 درجة بلا فقد تمامًا؛ أما التدوير الحر فيعيد حساب البكسلات فاستخدمه بدرجات صغيرة فقط.</li><li>عند تصحيح ميلان الأفق، اجعل خطًا رأسيًا معروفًا (عمود، باب) مرجعك بدل الحدس.</li><li>التدوير الحر يظهر مثلثات فارغة في الزوايا تُملأ بلون الخلفية؛ اختر لونًا مناسبًا أو قصّها بعد التصحيح.</li><li>إن كانت صور الكاميرا تُفتح مقلوبة دائمًا فالمشكلة في بيانات EXIF للاتجاه، وستجد حلًا موثوقًا لها في أداة البيانات الوصفية.</li></ul></div>
+  <div class="guide-section guide-faq" id="faq"><h3>أسئلة شائعة</h3><details><summary>هل يقلل التدوير جودة الصورة؟</summary><p>تدوير 90 و180 و270 درجة بلا فقد تمامًا لأنه إعادة ترتيب للبكسلات. التدوير بزوايا حرة يعيد حساب الصورة فيحدث فقد طفيف محسوس فقط عند تكراره كثيرًا.</p></details><details><summary>لماذا تظهر صوري مقلوبة من الأصل؟</summary><p>غالبًا بسبب حذف بيانات اتجاه EXIF عند رفعها أو معالجتها، فيظهر الاتجاه الفعلي المخزن داخل الملف.</p></details><details><summary>هل يمكنني تدوير عدة صور معًا؟</summary><p>عالج الصور واحدة تلو الأخرى بسرعة؛ كل عملية تستغرق لحظات داخل المتصفح.</p></details><details><summary>ما أقصى زاوية ميلان يمكن تصحيحها؟</summary><p>يمكنك أي زاوية بين 0 و360 درجة، لكن التصحيحات فوق 15 درجة تُشوه المنظور بوضوح.</p></details><details><summary>هل تُرفع صوري إلى خوادمكم؟</summary><p>لا؛ التدوير يحدث بالكامل داخل متصفحك ولا يغادر الملف جهازك.</p></details></div>
+  <div class="guide-section" id="related"><h3>أدوات مرتبطة</h3><p>هذه الأدوات قد تكمل الخطوة التالية بعد تدوير الصور أونلاين:</p><div class="guide-related"><a class="guide-related-link" href="webp-to-jpg.html">تحويل WebP إلى JPG</a><a class="guide-related-link" href="webp-to-png.html">تحويل WebP إلى PNG</a><a class="guide-related-link" href="background-remover.html">إزالة خلفية الصور مجانًا</a></div></div>
 </section>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "هل أداة تدوير الصور أونلاين مجانية؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، مجانية تماماً وبدون تسجيل أو علامة مائية."}}, {"@type": "Question", "name": "هل بياناتي آمنة؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، كل المعالجة تتم محلياً في متصفحك ولا تُرسل لأي خادم."}}, {"@type": "Question", "name": "هل تعمل على الجوال؟", "acceptedAnswer": {"@type": "Answer", "text": "نعم، جميع الأدوات متجاوبة وتعمل على الهاتف والكمبيوتر."}}]}</script>
 
-<section class="enrich-extra" style="margin:24px 0;padding:22px;background:#fff;border:1px solid var(--line,#e8e6ff);border-radius:12px;">
-  <h2>دليل الاستخدام المتقدم</h2>
-  <p>هذه الأداة مصممة لتكون سريعة وآمنة. كل المعالجة تتم داخل متصفحك باستخدام JavaScript حديث، بدون إرسال أي ملف أو نص إلى خادم خارجي. هذا يضمن خصوصية كاملة وسرعة فائقة حتى مع الملفات الكبيرة. يمكنك استخدامها على الكمبيوتر أو الهاتف بدون تثبيت أي برنامج.</p>
-  <h3>لماذا تختار فورا.tools؟</h3>
-  <ul>
-    <li><strong>خصوصية تامة:</strong> ملفاتك لا تغادر جهازك أبداً. مثالي للمستندات الحساسة والصور الشخصية.</li>
-    <li><strong>سرعة فائقة:</strong> معالجة فورية بدون انتظار رفع أو تحميل من خادم.</li>
-    <li><strong>مجاني بدون حدود:</strong> بدون تسجيل، بدون علامة مائية، وبدون قيود يومية.</li>
-    <li><strong>يعمل بدون إنترنت:</strong> بعد تحميل الصفحة مرة واحدة، يمكنك فصل الإنترنت والمتابعة.</li>
-    <li><strong>متوافق مع كل الأجهزة:</strong> تصميم متجاوب يعمل على الهاتف والكمبيوتر والتابلت.</li>
-  </ul>
-  <h3>نصائح للحصول على أفضل نتيجة</h3>
-  <ul>
-    <li>تأكد من تحديث المتصفح لآخر إصدار لدعم الميزات الحديثة.</li>
-    <li>للملفات الكبيرة، أغلق التبويبات الأخرى لتوفير الذاكرة.</li>
-    <li>احفظ النتيجة فوراً — بعض المتصفحات تمسح البيانات المؤقتة عند الإغلاق.</li>
-    <li>استخدم اختصارات لوحة المفاتيح (Ctrl+V للصق، Ctrl+C للنسخ) لتسريع العمل.</li>
-  </ul>
-  <h3>الأسئلة المتكررة الإضافية</h3>
-  <details><summary>هل هناك حد لحجم الملف؟</summary><p>يعتمد على ذاكرة جهازك. عادة حتى 50-100 ميجابايت تعمل بسلاسة. للملفات الأكبر، جرّب تقسيمها أولاً.</p></details>
-  <details><summary>هل أحتاج لإنشاء حساب؟</summary><p>لا، كل الأدوات تعمل بدون تسجيل أو تسجيل دخول.</p></details>
-  <details><summary>هل النتائج دقيقة؟</summary><p>نعم، نستخدم مكتبات موثوقة ومعايير معتمدة. لكن راجع النتيجة دائماً قبل الاستخدام النهائي.</p></details>
-  <p style="font-size:13px;color:var(--muted);margin-top:14px;">جزء من منظومة فورا.tools — أكثر من 130 أداة مجانية للصور و PDF و SEO والنصوص والفيديو.</p>
-</section>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "كيف تستخدم هذه الأداة", "step": [{"@type": "HowToStep", "name": "أدخل البيانات", "text": "افتح الأداة والصق النص أو ارفع الملف المطلوب."}, {"@type": "HowToStep", "name": "اضبط الإعدادات", "text": "اختر الخيارات المناسبة مثل الجودة أو الصيغة أو الخوارزمية."}, {"@type": "HowToStep", "name": "احصل على النتيجة", "text": "اضغط تنفيذ وانسخ النتيجة أو حمّل الملف الناتج."}]}</script>
 
-<section class="enrich-v3" style="margin:24px 0;padding:22px;background:var(--surface,#fff);border:1px solid var(--line,#e8e6ff);border-radius:12px;">
-  <h2>حالات استخدام عملية</h2>
-  <p>سواء كنت مصمماً، مطوراً، مسوقاً، أو طالباً، هذه الأداة توفر عليك ساعات من العمل اليدوي. بدلاً من تثبيت برامج ثقيلة أو البحث عن مواقع تطلب تسجيلاً، يمكنك إنجاز مهمتك في ثوانٍ من أي جهاز.</p>
-  <ul>
-    <li><strong>للمصممين:</strong> تجهيز الصور والأصول بسرعة قبل الرفع على الموقع أو المتجر.</li>
-    <li><strong>للمطورين:</strong> اختبار الأكواد والبيانات والتحقق من الصحة قبل النشر.</li>
-    <li><strong>للمسوقين:</strong> إنشاء روابط تتبع، تحليل النصوص، وتحسين محركات البحث.</li>
-    <li><strong>للطلاب:</strong> تنسيق المستندات، تحويل الصيغ، وإعداد العروض.</li>
-  </ul>
-  <h3>الفرق بين فورا.tools والمواقع الأخرى</h3>
-  <p>كثير من المواقع ترفع ملفاتك لخوادمها، مما يعرض خصوصيتك للخطر ويبطئ العملية. في فورا.tools، كل شيء يحدث في متصفحك. لا نرى ملفاتك، لا نحفظها، ولا نستخدمها لأي غرض. هذا يجعل الأداة مناسبة حتى للملفات السرية والعقود والصور الشخصية.</p>
-  <h3>كيف نضمن الجودة؟</h3>
-  <p>نختبر كل أداة على متصفحات Chrome و Firefox و Safari و Edge، على الهاتف والكمبيوتر. كما نعتمد على مكتبات مفتوحة المصدر موثوقة ومعايير ويب حديثة لضمان دقة النتائج وسرعتها.</p>
-</section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل يقلل التدوير جودة الصورة؟","acceptedAnswer":{"@type":"Answer","text":"تدوير 90 و180 و270 درجة بلا فقد تمامًا لأنه إعادة ترتيب للبكسلات. التدوير بزوايا حرة يعيد حساب الصورة فيحدث فقد طفيف محسوس فقط عند تكراره كثيرًا."}},{"@type":"Question","name":"لماذا تظهر صوري مقلوبة من الأصل؟","acceptedAnswer":{"@type":"Answer","text":"غالبًا بسبب حذف بيانات اتجاه EXIF عند رفعها أو معالجتها، فيظهر الاتجاه الفعلي المخزن داخل الملف."}},{"@type":"Question","name":"هل يمكنني تدوير عدة صور معًا؟","acceptedAnswer":{"@type":"Answer","text":"عالج الصور واحدة تلو الأخرى بسرعة؛ كل عملية تستغرق لحظات داخل المتصفح."}},{"@type":"Question","name":"ما أقصى زاوية ميلان يمكن تصحيحها؟","acceptedAnswer":{"@type":"Answer","text":"يمكنك أي زاوية بين 0 و360 درجة، لكن التصحيحات فوق 15 درجة تُشوه المنظور بوضوح."}},{"@type":"Question","name":"هل تُرفع صوري إلى خوادمكم؟","acceptedAnswer":{"@type":"Answer","text":"لا؛ التدوير يحدث بالكامل داخل متصفحك ولا يغادر الملف جهازك."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"طريقة استخدام تدوير الصور أونلاين","description":"صورة مائلة أو مقلوبة مشكلة يعرفها الجميع: صورة من الكاميرا جاءت بجانبها الطويل، أو ملف PDF مصور بالموبايل مقلوب 180 درجة، أو لقطة تحتاج ميلًا بسيطًا لاستقامة الأفق. أداة التدوير تعالجها كلها: تدوير سريع بخطوات 90 درجة، أو انعطاف حر بدرجات دقيقة لتصحيح الميلان.","url":"https://fawran.tools/tools/image-rotate.html","step":[{"@type":"HowToStep","position":1,"name":"ارفع الصورة","text":"اسحبها إلى منطقة الرفع أو اضغط لاختيارها من جهازك."},{"@type":"HowToStep","position":2,"name":"اختر زاوية التدوير","text":"أزرار 90 و180 و270 درجة للقلب الكامل، أو منزلق الدرجات الدقيقة لتصحيح ميلان الأفق."},{"@type":"HowToStep","position":3,"name":"راقب المعاينة","text":"التدوير الحر يظهر أثره مباشرة؛ درجتان إلى اليمين أو اليسار كثيرًا ما تكفي لاستقامة المشهد."},{"@type":"HowToStep","position":4,"name":"نفّذ العملية","text":"اضغط «تنفيذ العملية» لتطبيق التدوير النهائي على الصورة."},{"@type":"HowToStep","position":5,"name":"نزّل النتيجة","text":"«تنزيل النتيجة» لحفظ الصورة معدلة الاستقامة."}]}</script>
 </main><script>
 const slug="image-rotate";let file=null,resultBlob=null;const input=document.getElementById('fileInput'),drop=document.getElementById('dropzone'),canvas=document.getElementById('canvas'),ctx=canvas.getContext('2d'),status=document.getElementById('status'),processBtn=document.getElementById('processBtn'),downloadBtn=document.getElementById('downloadBtn'),clearBtn=document.getElementById('clearBtn');
 function msg(t){status.textContent=t} function loadImg(f){return new Promise((res,rej)=>{const im=new Image();im.onload=()=>res(im);im.onerror=()=>rej(new Error('Invalid image'));im.src=URL.createObjectURL(f)})}
@@ -124,5 +97,5 @@ downloadBtn.onclick=()=>{if(!resultBlob)return;const a=document.createElement('a
   <div class="rating-stars"></div>
   <div><div class="rating-summary"></div><span class="rating-prompt"></span><span class="rating-thanks"></span></div>
 </div></div>
-<script src="../assets/main.js"></script><script src="../assets/rating-widget.js"></script><div class="wrap"><div class="share-widget"></div></div>
+<script src="../assets/main.js?v=20260929"></script><script src="../assets/rating-widget.js"></script><div class="wrap"><div class="share-widget"></div></div>
 <script src="../assets/share-widget.js"></script></body></html>

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const $$ = (s, r=document) => [...r.querySelectorAll(s)];
   const path = location.pathname;
   const isEn = document.documentElement.lang === 'en';
-  const labels = isEn ? {fav:'Add to favorites', favOn:'Remove from favorites', recent:'Recently used', favorites:'Favorites', copy:'Copy', copied:'Copied'} : {fav:'إضافة للمفضلة',favOn:'إزالة من المفضلة',recent:'استخدمتها مؤخرًا',favorites:'المفضلة',copy:'نسخ',copied:'تم النسخ'};
+  const labels = isEn ? {fav:'Add to favorites', favOn:'Remove from favorites', recent:'Recently used', favorites:'Favorites', copy:'Copy', copied:'Copied', read:'min guide', copyLink:'Copy tool link', linkCopied:'Tool link copied', print:'Print guide', expandFaq:'Open all answers', collapseFaq:'Close all answers'} : {fav:'إضافة للمفضلة',favOn:'إزالة من المفضلة',recent:'استخدمتها مؤخرًا',favorites:'المفضلة',copy:'نسخ',copied:'تم النسخ', read:'دقيقة قراءة', copyLink:'نسخ رابط الأداة', linkCopied:'تم نسخ رابط الأداة', print:'طباعة الدليل', expandFaq:'فتح كل الإجابات', collapseFaq:'إغلاق كل الإجابات'};
 
   // Hide empty ad placeholders: slots without real (uncommented) AdSense code
   // keep the layout looking clean and professional instead of showing empty dashed boxes.
@@ -134,6 +134,34 @@ document.addEventListener('DOMContentLoaded', () => {
       const fav=load('fawran-favorites'); const active=fav.includes(toolKey); b.setAttribute('aria-pressed',String(active)); b.textContent=(active?'★ ':'☆ ')+(active?labels.favOn:labels.fav);
       b.addEventListener('click',()=>{let f=load('fawran-favorites'); const i=f.indexOf(toolKey); if(i>=0)f.splice(i,1);else f.push(toolKey);store('fawran-favorites',f); const on=f.includes(toolKey);b.setAttribute('aria-pressed',String(on));b.textContent=(on?'★ ':'☆ ')+(on?labels.favOn:labels.fav);});
       head.parentNode.insertBefore(b,head.nextSibling);
+    }
+  }
+
+  // Tool-guide utilities: reading time, one-click share link, print-friendly guide,
+  // and an accessible all-FAQ toggle. They are added to every real tool page.
+  if(toolKey && !CATEGORY_PAGES.includes(toolKey)){
+    const guide=$('.tool-guide');
+    if(guide){
+      const words=(guide.textContent.match(/\S+/g)||[]).length;
+      const minutes=Math.max(1,Math.ceil(words/(isEn?200:180)));
+      const bar=document.createElement('div'); bar.className='guide-utility';
+      const time=document.createElement('span'); time.className='guide-reading-time'; time.textContent=`◷ ${minutes} ${labels.read}`;
+      const copyLink=document.createElement('button'); copyLink.type='button'; copyLink.className='guide-utility-btn'; copyLink.textContent=`↗ ${labels.copyLink}`;
+      const print=document.createElement('button'); print.type='button'; print.className='guide-utility-btn'; print.textContent=`⎙ ${labels.print}`;
+      const faqToggle=document.createElement('button'); faqToggle.type='button'; faqToggle.className='guide-utility-btn';
+      const answers=$$('details',guide);
+      const setFaqState=(open)=>{ answers.forEach(item=>item.open=open); faqToggle.textContent=(open?'− ':'+ ')+(open?labels.collapseFaq:labels.expandFaq); faqToggle.setAttribute('aria-expanded',String(open)); };
+      setFaqState(false);
+      copyLink.addEventListener('click',async()=>{
+        const value=location.href;
+        try { await navigator.clipboard.writeText(value); }
+        catch(err){ const area=document.createElement('textarea'); area.value=value; area.setAttribute('readonly',''); area.style.cssText='position:fixed;opacity:0'; document.body.appendChild(area); area.select(); document.execCommand('copy'); area.remove(); }
+        const old=copyLink.textContent; copyLink.textContent=`✓ ${labels.linkCopied}`; setTimeout(()=>copyLink.textContent=old,1600);
+      });
+      print.addEventListener('click',()=>window.print());
+      faqToggle.addEventListener('click',()=>setFaqState(!answers.every(item=>item.open)));
+      bar.append(time,copyLink,print); if(answers.length) bar.append(faqToggle);
+      const nav=$('.guide-nav',guide); if(nav) nav.insertAdjacentElement('afterend',bar); else guide.prepend(bar);
     }
   }
 

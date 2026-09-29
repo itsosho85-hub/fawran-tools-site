@@ -1,0 +1,131 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Refresh About and Contact pages, remove duplicate page bodies, and align trust copy."""
+from pathlib import Path
+import json, re
+
+ROOT = Path(__file__).resolve().parents[1]
+
+TRUST_CSS = r'''
+/* trust-pages-refresh */
+.trust-intro{display:grid;grid-template-columns:auto 1fr;gap:15px;align-items:start;margin:0 0 26px;padding:20px;border:1px solid rgba(79,63,240,.22);border-radius:16px;background:linear-gradient(135deg,rgba(79,63,240,.11),rgba(240,169,59,.09));}.trust-intro .trust-mark{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:var(--indigo-deep,#4F3FF0);color:#fff;font-size:20px;font-weight:900;}.trust-intro h2{margin:0 0 5px!important;font-size:18px!important;}.trust-intro p{margin:0!important;line-height:1.9;}.trust-section{margin-top:30px;scroll-margin-top:88px;}.trust-section>h2{margin:0 0 11px;padding-bottom:9px;border-bottom:1px solid var(--line);}.trust-section p{line-height:1.95;}.trust-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:15px 0;}.trust-card{padding:16px;border:1px solid var(--line);border-radius:13px;background:var(--surface-sunk,#f8f7ff);}.trust-card h3{margin:0 0 6px;font-size:16px;}.trust-card p{margin:0!important;font-size:13.5px;line-height:1.85;}.trust-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:15px 0;counter-reset:trust-step;}.trust-step{position:relative;min-height:130px;padding:17px 15px 14px 54px;border:1px solid var(--line);border-radius:13px;background:var(--surface);counter-increment:trust-step;}.trust-step::before{content:counter(trust-step);position:absolute;inset-inline-start:15px;top:16px;display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:var(--primary,#4F3FF0);color:#fff;font:800 12px var(--mono,monospace);}.trust-step strong{display:block;margin-bottom:5px;color:var(--ink);}.trust-step span{color:var(--ink-soft);font-size:13.5px;line-height:1.75;}.trust-note{margin:16px 0;padding:13px 15px;border-inline-start:3px solid var(--gold,#F0A93B);border-radius:0 9px 9px 0;background:rgba(240,169,59,.10);font-size:14px;line-height:1.9;}.trust-links{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0;}.trust-links a{display:inline-flex;align-items:center;min-height:35px;padding:5px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:13px;font-weight:700;text-decoration:none;}.trust-links a:hover{border-color:var(--primary,#4F3FF0);background:rgba(79,63,240,.08);}.contact-route{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:15px 0;}.contact-route>div{padding:16px;border:1px solid var(--line);border-radius:13px;background:var(--surface-sunk,#f8f7ff);}.contact-route h3{margin:0 0 6px;font-size:16px;}.contact-route p{margin:0!important;font-size:13.5px;line-height:1.8;}.contact-form{display:grid;gap:14px;max-width:760px;margin:16px 0;}.contact-form label{display:grid;gap:6px;color:var(--ink);font-size:14px;font-weight:800;}.contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--ink);font:inherit;font-weight:400;}.contact-form textarea{min-height:140px;resize:vertical;}.contact-submit{justify-self:start;border:0;border-radius:9px;padding:11px 20px;background:var(--indigo-deep,#4F3FF0);color:#fff;font:800 14px inherit;cursor:pointer;}.contact-status{min-height:20px;margin:0;color:var(--muted);font-size:13px;}.contact-checklist{margin:12px 0;padding-inline-start:22px;line-height:1.9;}[data-theme="dark"] .trust-card,[data-theme="dark"] .contact-route>div{background:rgba(255,255,255,.035);}[data-theme="dark"] .trust-intro{background:linear-gradient(135deg,rgba(111,94,255,.16),rgba(240,169,59,.1));}
+@media(max-width:760px){.trust-grid,.trust-steps,.contact-route{grid-template-columns:1fr;}.trust-intro{grid-template-columns:1fr;padding:17px;}.trust-intro .trust-mark{width:38px;height:38px;}.trust-step{min-height:0;}.contact-submit{width:100%;}.trust-card,.contact-route>div{padding:14px;}}
+/* end trust-pages-refresh */
+'''
+
+ABOUT_AR = '''<main id="main-content">
+<div class="wrap">
+  <div class="page-head"><h1>من نحن</h1><p>فورا.tools: أدوات ويب عملية، محتوى واضح، وخصوصية تُشرح بدل أن تُفترض.</p></div>
+  <div class="trust-intro"><div class="trust-mark" aria-hidden="true">FW</div><div><h2>منصة تساعدك على إنجاز المهمة الصغيرة بسرعة</h2><p>بدأت فورا.tools من حاجة متكررة: ضغط صورة، دمج PDF، فحص عنوان صفحة أو ترتيب نص لا ينبغي أن يتطلب برنامجًا ثقيلًا أو إنشاء حساب. نجمع أدوات مركزة، ثم نشرح طريقة استخدامها وما الذي يجب مراجعته قبل اعتماد نتيجتها.</p></div></div>
+  <article class="content-card">
+    <section class="trust-section" id="mission"><h2>ماذا نقدم؟</h2><p>فورا.tools مكتبة تضم أكثر من 122 أداة مجانية بالعربية والإنجليزية. تغطي الأدوات الصور وملفات PDF والنصوص والمطورين وSEO والمواقع والبريد الإلكتروني والذكاء الاصطناعي والفيديو ويوتيوب. لا نحاول أن نجعل كل أداة تفعل كل شيء؛ نركز على أن تنجز مهمة محددة بواجهة بسيطة ونتيجة قابلة للمراجعة.</p><div class="trust-grid"><div class="trust-card"><h3>أدوات الملفات والصور</h3><p>تحويل الصيغ والضغط والقص وإدارة صفحات PDF، مع توضيح ما يحدث للملف قبل التنزيل.</p></div><div class="trust-card"><h3>أدوات المحتوى والعمل</h3><p>تنسيق نصوص وبيانات، أدوات بريد، أفكار محتوى، وعناصر منظمة تساعد على العمل اليومي.</p></div><div class="trust-card"><h3>أدوات النشر والنمو</h3><p>SEO والمواقع ويوتيوب، من صياغة البيانات المنظمة إلى فحص العنوان والوصف وخطط النشر.</p></div></div></section>
+    <section class="trust-section" id="method"><h2>كيف نبني ونراجع الأدوات؟</h2><p>المعيار ليس إضافة عدد كبير من الأزرار، بل أن يعرف الزائر ما الذي يدخل إلى الأداة، وما الذي تخرجه، وأين يحتاج إلى مراجعة بشرية. لذلك تربط كل صفحة أداة بين الوظيفة والدليل العملي والأسئلة والأدوات المكملة.</p><div class="trust-steps"><div class="trust-step"><strong>وظيفة محددة</strong><span>نحدد المشكلة التي تحلها الأداة ومدخلاتها وحدودها بدلاً من تقديم وعود عامة.</span></div><div class="trust-step"><strong>تجربة قابلة للفهم</strong><span>نرتب الواجهة والخطوات والنتيجة حتى يستطيع المستخدم التحقق مما سيستخدمه أو ينشره.</span></div><div class="trust-step"><strong>مراجعة وتحسين</strong><span>نراجع الأدوات والمحتوى عند ظهور ملاحظة أو احتياج واضح، ونستخدم الاقتراحات لتحديد الأولويات.</span></div></div></section>
+    <section class="trust-section" id="privacy"><h2>الخصوصية ليست عبارة تسويقية</h2><p>تعالج كثير من أدواتنا الملفات والنصوص داخل المتصفح. وفي المقابل، توجد ميزات تحتاج موردًا خارجيًا بحكم طبيعتها، مثل أسعار العملات أو فحص أداء موقع. لا نخفي هذا الفرق تحت عبارة واحدة؛ توضح <a href="privacy.html">سياسة الخصوصية</a> التخزين المحلي والطلبات الخارجية والتقييمات والإعلانات بالتفصيل.</p><div class="trust-note"><strong>قرارك أولًا:</strong> لا تدخل في أي أداة رابطًا خاصًا أو ملفًا حساسًا أو مفتاح API إلا بعد فهم ما تطلبه الأداة. احتفظ دائمًا بنسختك الأصلية وراجع الناتج في سياقه الحقيقي.</div></section>
+    <section class="trust-section" id="quality"><h2>ما الذي نعني به الجودة والثقة؟</h2><div class="trust-grid"><div class="trust-card"><h3>لا حساب للبدء</h3><p>الوظائف الأساسية لا تتطلب تسجيلًا. نريد أن تصل إلى الأداة، تنجز مهمتك، ثم تتابع عملك.</p></div><div class="trust-card"><h3>تقييمات ظاهرة المصدر</h3><p>نظام التقييم يعرض متوسطًا مبنيًا على النجوم المرسلة؛ لا نضيف تقييمًا تجميليًا عندما لا توجد تقييمات.</p></div><div class="trust-card"><h3>محتوى يُراجع</h3><p>لكل أداة الآن دليل وخطوات وحالات استخدام وأسئلة مرتبطة بالمهمة، لا فقرة عامة مكررة.</p></div></div><p>فريق فورا.tools هو المسؤول عن تطوير الموقع وتحديثه التحريري. تعرّف على منهجية الفريق من <a href="author.html">صفحة الكاتب</a>، وأرسل لنا أي خلل أو اقتراح يساعد في تحسين أداة قائمة أو بناء أداة جديدة.</p></section>
+    <section class="trust-section" id="next"><h2>إلى أين نتجه؟</h2><p>نوسع المكتبة وفق المهام التي تتكرر فعلاً لدى المستخدمين، ونفضّل تحسين أداة مفيدة على نشر أداة غير ناضجة. نرحب باقتراحات الأدوات وببلاغات المشاكل وبالملاحظات على الشرح نفسه.</p><div class="trust-links"><a href="tools/index.html">استكشف كل الأدوات</a><a href="blog/index.html">اقرأ أدلة الاستخدام</a><a href="contact.html">اقترح أداة أو أبلغ عن مشكلة</a><a href="privacy.html">سياسة الخصوصية</a></div></section>
+  </article>
+</div>
+</main>'''
+
+ABOUT_EN = '''<main id="main-content">
+<div class="wrap">
+  <div class="page-head"><h1>About Fawran Tools</h1><p>Practical web tools, clear guidance, and privacy explained instead of assumed.</p></div>
+  <div class="trust-intro"><div class="trust-mark" aria-hidden="true">FW</div><div><h2>A faster way to finish a small task</h2><p>Fawran Tools began with a repeated need: compress an image, merge a PDF, inspect a page title, or clean a text list without installing a heavy app or creating an account. We bring focused utilities together, then explain how to use them and what to check before relying on the result.</p></div></div>
+  <article class="content-card">
+    <section class="trust-section" id="mission"><h2>What we offer</h2><p>Fawran Tools is a library of more than 122 free tools in Arabic and English. It covers images, PDFs, text, developer work, SEO, websites, email, AI, video and YouTube. We do not try to make every tool do everything; each one is intended to complete a defined task with a simple interface and an output you can review.</p><div class="trust-grid"><div class="trust-card"><h3>Files and images</h3><p>Format conversion, compression, cropping and PDF page tasks, with an explanation of what happens before you download a result.</p></div><div class="trust-card"><h3>Content and work</h3><p>Text and data formatting, email utilities, content prompts and structured helpers for recurring work.</p></div><div class="trust-card"><h3>Publishing and growth</h3><p>SEO, website and YouTube tools, from structured data to title, description and publishing checks.</p></div></div></section>
+    <section class="trust-section" id="method"><h2>How we build and review a tool</h2><p>The aim is not a page full of buttons. A visitor should understand what the tool accepts, what it creates, and where human judgment still matters. Every tool page therefore connects the feature, a practical guide, FAQs and relevant next-step tools.</p><div class="trust-steps"><div class="trust-step"><strong>A defined job</strong><span>We identify the problem, inputs and limits instead of making a vague promise.</span></div><div class="trust-step"><strong>A clear experience</strong><span>We organize the interface, steps and output so a person can check what they will use or publish.</span></div><div class="trust-step"><strong>Review and improvement</strong><span>We revisit tools and their guidance when useful feedback or a clear need appears.</span></div></div></section>
+    <section class="trust-section" id="privacy"><h2>Privacy is not a marketing line</h2><p>Many tools process files and text inside the browser. Other features naturally need an external resource, such as currency data or a website-performance check. We do not hide this difference under one broad claim: the <a href="privacy.html">Privacy Policy</a> describes browser storage, external requests, ratings and advertising in detail.</p><div class="trust-note"><strong>Your decision comes first:</strong> do not enter a private URL, sensitive file or API key until you understand the tool's request. Keep an original copy and check every result in its real context.</div></section>
+    <section class="trust-section" id="quality"><h2>What quality and trust mean here</h2><div class="trust-grid"><div class="trust-card"><h3>No account to begin</h3><p>Core functions do not require sign-up. Open a tool, complete the task and continue with your work.</p></div><div class="trust-card"><h3>Source-visible ratings</h3><p>The rating system shows an average based on submitted stars; it does not add a decorative score when there are no ratings.</p></div><div class="trust-card"><h3>Reviewed guidance</h3><p>Every tool now has a task-specific guide, steps, use cases and questions instead of one repeated paragraph.</p></div></div><p>The Fawran Tools team develops and maintains the site and its editorial updates. See the team's approach on the <a href="author.html">author page</a>, and let us know when a tool or its explanation can be improved.</p></section>
+    <section class="trust-section" id="next"><h2>Where we are heading</h2><p>We grow the library around work that users genuinely repeat, and would rather improve a useful tool than publish an immature one. Suggestions, bug reports and feedback on the guides all help set priorities.</p><div class="trust-links"><a href="tools/index.html">Explore all tools</a><a href="blog/index.html">Read tool guides</a><a href="contact.html">Suggest a tool or report a problem</a><a href="privacy.html">Privacy Policy</a></div></section>
+  </article>
+</div>
+</main>'''
+
+CONTACT_AR = '''<main id="main-content">
+<div class="wrap">
+  <div class="page-head"><h1>تواصل معنا</h1><p>اقتراح أداة، بلاغ تقني، استفسار، أو فرصة شراكة — اختر الطريق المناسب وسنساعدك.</p></div>
+  <div class="trust-intro"><div class="trust-mark" aria-hidden="true">✉</div><div><h2>رسالتك تصل عبر برنامج بريدك</h2><p>نموذج التواصل أدناه لا يرفع رسالتك إلى قاعدة بيانات الموقع؛ يفتح رسالة بريد جاهزة في التطبيق الذي تستخدمه. لا ترسل ملفات أو كلمات مرور أو بيانات حساسة عبر البريد.</p></div></div>
+  <article class="content-card">
+    <section class="trust-section" id="routes"><h2>اختر قناة التواصل المناسبة</h2><div class="contact-route"><div><h3>استفسار عام</h3><p><a class="mail" href="mailto:hello@fawran.tools">hello@fawran.tools</a><br>للملاحظات العامة واقتراحات المحتوى.</p></div><div><h3>دعم فني</h3><p><a class="mail" href="mailto:support@fawran.tools">support@fawran.tools</a><br>لخلل أداة أو مشكلة استخدام.</p></div><div><h3>شراكات وإعلانات</h3><p><a class="mail" href="mailto:partners@fawran.tools">partners@fawran.tools</a><br>للتعاون والاستفسارات التجارية.</p></div></div><p>نهدف إلى الرد على الرسائل الواضحة خلال يومي عمل. قد يستغرق تشخيص مشكلة تقنية وقتًا أطول إذا احتاج إعادة اختبار.</p></section>
+    <section class="trust-section" id="message"><h2>أرسل رسالة منظمة</h2><p>اختر الموضوع واكتب ما تحتاجه. سيحدد النموذج عنوان البريد المناسب تلقائيًا عند فتح تطبيق البريد.</p><form id="contactForm" class="contact-form"><label>الاسم <input type="text" name="name" autocomplete="name" required placeholder="مثال: أحمد محمد"></label><label>بريد الرد <input type="email" name="email" autocomplete="email" required dir="ltr" placeholder="name@example.com"></label><label>الموضوع <select name="topic"><option value="general">استفسار عام</option><option value="tool">اقتراح أداة جديدة</option><option value="technical">بلاغ عن مشكلة تقنية</option><option value="partner">شراكة أو إعلان</option><option value="privacy">استفسار خصوصية أو طلب متعلق ببيانات رسالة</option></select></label><label>الرسالة <textarea name="message" required placeholder="اشرح طلبك أو المشكلة بالتفصيل..."></textarea></label><button class="contact-submit" type="submit">فتح رسالة البريد</button><p class="contact-status" id="formStatus" aria-live="polite"></p></form></section>
+    <section class="trust-section" id="help-us"><h2>ما الذي يساعدنا على الرد بدقة؟</h2><ul class="contact-checklist"><li>في بلاغ أداة: اكتب اسم الأداة والرابط الذي فتحته والمتصفح ونظام التشغيل والخطوات التي أدت للمشكلة.</li><li>في اقتراح أداة: اشرح المهمة التي تريد إنجازها ومدخلاتها والنتيجة التي تتوقعها؛ هذا أهم من اسم الأداة وحده.</li><li>في طلب شراكة: وضح الجهة والغرض وطريقة التواصل المناسبة.</li><li>لا ترسل كلمات مرور أو مفاتيح API أو ملفات تحتوي معلومات شخصية. راجع <a href="privacy.html">سياسة الخصوصية</a> قبل إرسال طلب متعلق بالبيانات.</li></ul></section>
+    <section class="trust-section" id="answers"><h2>قد تجد الإجابة قبل المراسلة</h2><p>تشرح الصفحات التالية طريقة عمل الموقع وحقوقك وخطوات الاستخدام، وقد تختصر وقت الانتظار.</p><div class="trust-links"><a href="about.html">من نحن ومنهجية العمل</a><a href="privacy.html">سياسة الخصوصية</a><a href="terms.html">شروط الاستخدام</a><a href="blog/index.html">أدلة الاستخدام</a></div></section>
+  </article>
+</div>
+<script>
+(function(){
+  const form=document.getElementById('contactForm'); if(!form) return;
+  const emails={general:'hello@fawran.tools',tool:'hello@fawran.tools',technical:'support@fawran.tools',partner:'partners@fawran.tools',privacy:'hello@fawran.tools'};
+  const labels={general:'استفسار عام',tool:'اقتراح أداة جديدة',technical:'بلاغ تقني',partner:'شراكة أو إعلان',privacy:'استفسار خصوصية'};
+  form.addEventListener('submit',function(e){e.preventDefault();const fd=new FormData(form),topic=fd.get('topic'),to=emails[topic]||emails.general;const subject=encodeURIComponent('[فورا.tools] '+(labels[topic]||labels.general)+' — '+fd.get('name'));const body=encodeURIComponent('الاسم: '+fd.get('name')+'\\nبريد الرد: '+fd.get('email')+'\\nالموضوع: '+(labels[topic]||labels.general)+'\\n\\nالرسالة:\\n'+fd.get('message'));window.location.href='mailto:'+to+'?subject='+subject+'&body='+body;document.getElementById('formStatus').textContent='تم تجهيز الرسالة إلى '+to+'. إذا لم يفتح تطبيق البريد، انسخ العنوان وتواصل معنا مباشرة.';});
+})();
+</script>
+</main>'''
+
+CONTACT_EN = '''<main id="main-content">
+<div class="wrap">
+  <div class="page-head"><h1>Contact Fawran Tools</h1><p>A tool idea, technical report, question or partnership opportunity — choose the route that fits your message.</p></div>
+  <div class="trust-intro"><div class="trust-mark" aria-hidden="true">✉</div><div><h2>Your message is prepared in your email app</h2><p>The form below does not upload a message to a site database. It opens a prepared email in the app you use. Do not send files, passwords or sensitive information by email.</p></div></div>
+  <article class="content-card">
+    <section class="trust-section" id="routes"><h2>Choose the right contact route</h2><div class="contact-route"><div><h3>General questions</h3><p><a class="mail" href="mailto:hello@fawran.tools">hello@fawran.tools</a><br>For general feedback and content suggestions.</p></div><div><h3>Technical support</h3><p><a class="mail" href="mailto:support@fawran.tools">support@fawran.tools</a><br>For a tool error or usage problem.</p></div><div><h3>Partnerships and ads</h3><p><a class="mail" href="mailto:partners@fawran.tools">partners@fawran.tools</a><br>For collaboration and commercial questions.</p></div></div><p>We aim to answer clear messages within two business days. A technical investigation can take longer when it needs reproduction and testing.</p></section>
+    <section class="trust-section" id="message"><h2>Send a structured message</h2><p>Choose a topic and explain what you need. The form selects the appropriate address when it opens your email app.</p><form id="contactForm" class="contact-form"><label>Your name <input type="text" name="name" autocomplete="name" required placeholder="Example: Alex Morgan"></label><label>Reply email <input type="email" name="email" autocomplete="email" required placeholder="name@example.com"></label><label>Topic <select name="topic"><option value="general">General question</option><option value="tool">New tool suggestion</option><option value="technical">Technical issue</option><option value="partner">Partnership or advertising</option><option value="privacy">Privacy question or message-data request</option></select></label><label>Your message <textarea name="message" required placeholder="Describe the request or issue in detail..."></textarea></label><button class="contact-submit" type="submit">Open email message</button><p class="contact-status" id="formStatus" aria-live="polite"></p></form></section>
+    <section class="trust-section" id="help-us"><h2>What helps us answer accurately?</h2><ul class="contact-checklist"><li>For a tool issue, include the tool name, the page URL, browser, operating system and the steps that produced the problem.</li><li>For a tool idea, explain the task, inputs and expected outcome; that is more useful than a tool name alone.</li><li>For a partnership, identify the organization, objective and the best reply route.</li><li>Do not send passwords, API keys or files containing personal information. Read the <a href="privacy.html">Privacy Policy</a> before sending a data-related request.</li></ul></section>
+    <section class="trust-section" id="answers"><h2>You may find an answer first</h2><p>These pages explain how the site works, your options and the usage process. They may save you waiting for a reply.</p><div class="trust-links"><a href="about.html">About and working approach</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="blog/index.html">Tool guides</a></div></section>
+  </article>
+</div>
+<script>
+(function(){
+  const form=document.getElementById('contactForm'); if(!form) return;
+  const emails={general:'hello@fawran.tools',tool:'hello@fawran.tools',technical:'support@fawran.tools',partner:'partners@fawran.tools',privacy:'hello@fawran.tools'};
+  const labels={general:'General question',tool:'New tool suggestion',technical:'Technical issue',partner:'Partnership or advertising',privacy:'Privacy question'};
+  form.addEventListener('submit',function(e){e.preventDefault();const fd=new FormData(form),topic=fd.get('topic'),to=emails[topic]||emails.general;const subject=encodeURIComponent('[Fawran Tools] '+(labels[topic]||labels.general)+' — '+fd.get('name'));const body=encodeURIComponent('Name: '+fd.get('name')+'\\nReply email: '+fd.get('email')+'\\nTopic: '+(labels[topic]||labels.general)+'\\n\\nMessage:\\n'+fd.get('message'));window.location.href='mailto:'+to+'?subject='+subject+'&body='+body;document.getElementById('formStatus').textContent='An email to '+to+' has been prepared. If your email app did not open, copy the address and contact us directly.';});
+})();
+</script>
+</main>'''
+
+PAGES = {
+  'about.html': {'body':ABOUT_AR,'kind':'about','title':'من نحن ومنهجية العمل | فورا.tools','description':'تعرّف على فورا.tools: منصة أدوات ويب مجانية، منهجية بناء الأدوات، الخصوصية، وجودة المحتوى.','og':'من نحن | فورا.tools','lang':'ar','url':'https://fawran.tools/about.html'},
+  'en/about.html': {'body':ABOUT_EN,'kind':'about','title':'About Fawran Tools | How We Build Practical Web Tools','description':'Learn about Fawran Tools, its practical tool-building approach, privacy principles and reviewed guidance.','og':'About Fawran Tools','lang':'en','url':'https://fawran.tools/en/about.html'},
+  'contact.html': {'body':CONTACT_AR,'kind':'contact','title':'تواصل مع فورا.tools | دعم واقتراحات وشراكات','description':'تواصل مع فريق فورا.tools للدعم الفني واقتراح الأدوات والشراكات واستفسارات الخصوصية.','og':'تواصل معنا | فورا.tools','lang':'ar','url':'https://fawran.tools/contact.html'},
+  'en/contact.html': {'body':CONTACT_EN,'kind':'contact','title':'Contact Fawran Tools | Support, Ideas & Partnerships','description':'Contact Fawran Tools for technical support, tool ideas, partnerships and privacy questions.','og':'Contact Fawran Tools','lang':'en','url':'https://fawran.tools/en/contact.html'},
+}
+
+def meta(attr, key, value): return f'<meta {attr}="{key}" content="{value}"/>'
+def set_meta(page, attr, key, value):
+  pattern=rf'<meta\b(?=[^>]*\b{attr}="{re.escape(key)}")[^>]*?/?>'
+  return re.sub(pattern,meta(attr,key,value),page,count=1) if re.search(pattern,page) else page.replace('</head>',meta(attr,key,value)+'\n</head>',1)
+
+def page_schema(conf):
+  if conf['kind']=='about':
+    graph=[
+      {'@type':'Organization','@id':'https://fawran.tools/#organization','name':'فورا.tools' if conf['lang']=='ar' else 'Fawran Tools','url':'https://fawran.tools/','logo':{'@type':'ImageObject','url':'https://fawran.tools/favicon.svg'},'description':'منصة أدوات ويب مجانية للمهمات اليومية.' if conf['lang']=='ar' else 'Free web tools for practical everyday tasks.','contactPoint':{'@type':'ContactPoint','email':'support@fawran.tools','contactType':'customer support','availableLanguage':['ar','en']}},
+      {'@type':'AboutPage','@id':conf['url']+'#aboutpage','name':conf['og'],'url':conf['url'],'inLanguage':conf['lang'],'dateModified':'2026-09-29','about':{'@id':'https://fawran.tools/#organization'}}]
+    data={'@context':'https://schema.org','@graph':graph}
+  else:
+    data={'@context':'https://schema.org','@type':'ContactPage','name':conf['og'],'url':conf['url'],'inLanguage':conf['lang'],'dateModified':'2026-09-29','mainEntity':{'@type':'Organization','@id':'https://fawran.tools/#organization','name':'فورا.tools' if conf['lang']=='ar' else 'Fawran Tools','email':'support@fawran.tools'}}
+  return '<script id="trust-page-schema" type="application/ld+json">'+json.dumps(data,ensure_ascii=False,separators=(',',':'))+'</script>'
+
+def update(path,conf):
+  page=(ROOT/path).read_text(encoding='utf8')
+  # Strip the old duplicate body. Header/footer preserve global navigation, analytics and scripts.
+  head_end=page.find('<body')
+  header=re.search(r'(<body\b[^>]*>.*?</header>)',page,re.S)
+  footer=re.search(r'(<footer\b.*)',page,re.S)
+  if head_end < 0 or not header or not footer: raise RuntimeError(f'Could not isolate page shell: {path}')
+  page=page[:head_end]+header.group(1)+'\n'+conf['body']+'\n'+footer.group(1)
+  page=re.sub(r'<title>.*?</title>',f'<title>{conf["title"]}</title>',page,count=1,flags=re.S)
+  page=set_meta(page,'name','description',conf['description'])
+  page=set_meta(page,'property','og:title',conf['og'])
+  page=set_meta(page,'property','og:description',conf['description'])
+  page=set_meta(page,'name','twitter:title',conf['og'])
+  page=set_meta(page,'name','twitter:description',conf['description'])
+  page=re.sub(r'/\* trust-pages-refresh \*/.*?/\* end trust-pages-refresh \*/\n?','',page,flags=re.S)
+  page=page.replace('</style>',TRUST_CSS+'</style>',1)
+  # Existing older ContactPage and AboutPage graph are replaced by a single current record.
+  page=re.sub(r'<script(?: id="(?:trust-page-schema|[^\"]*)")? type="application/ld\+json">.*?</script>','',page,flags=re.S)
+  page=page.replace('</head>',page_schema(conf)+'\n</head>',1)
+  (ROOT/path).write_text(page,encoding='utf8')
+
+if __name__=='__main__':
+  for file,conf in PAGES.items():
+    update(file,conf); print('updated',file)

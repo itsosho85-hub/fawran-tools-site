@@ -5,8 +5,8 @@
 <meta charset="utf-8"/>
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>من نحن - قصتنا وفريقنا وقيمنا | فورا.tools</title>
-<meta content="تعرّف على فورا.tools: قصتنا، قيمنا، وليه بنينا أكتر من 100 أداة مجانية تعمل بالكامل داخل متصفحك بدون رفع ملفاتك لأي خادم." name="description"/>
+<title>من نحن ومنهجية العمل | فورا.tools</title>
+<meta name="description" content="تعرّف على فورا.tools: منصة أدوات ويب مجانية، منهجية بناء الأدوات، الخصوصية، وجودة المحتوى."/>
 <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
 <meta content="#4F3FF0" name="theme-color"/>
@@ -15,16 +15,16 @@
 
 <meta content="website" property="og:type"/>
 <meta content="https://fawran.tools/about.html" property="og:url"/>
-<meta content="من نحن | فورا.tools" property="og:title"/>
-<meta content="تعرّف على فورا.tools، منصة أدوات أونلاين مجانية تعمل داخل متصفحك بدون رفع ملفاتك لأي خادم." property="og:description"/>
+<meta property="og:title" content="من نحن | فورا.tools"/>
+<meta property="og:description" content="تعرّف على فورا.tools: منصة أدوات ويب مجانية، منهجية بناء الأدوات، الخصوصية، وجودة المحتوى."/>
 <meta content="فورا.tools" property="og:site_name"/>
 <meta content="ar_AR" property="og:locale"/>
 <meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="من نحن | فورا.tools" name="twitter:title"/>
-<meta content="تعرّف على فورا.tools، منصة أدوات أونلاين مجانية تعمل داخل متصفحك بدون رفع ملفاتك لأي خادم." name="twitter:description"/>
+<meta name="twitter:title" content="من نحن | فورا.tools"/>
+<meta name="twitter:description" content="تعرّف على فورا.tools: منصة أدوات ويب مجانية، منهجية بناء الأدوات، الخصوصية، وجودة المحتوى."/>
 <meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
@@ -50,8 +50,13 @@
   .stat-box{flex:1 1 130px;background:var(--indigo-soft);border-radius:14px;padding:16px;text-align:center;}
   .stat-box .n{font-family:'IBM Plex Mono',monospace;font-weight:800;font-size:24px;color:var(--indigo-deep);}
   .stat-box .l{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+
+/* trust-pages-refresh */
+.trust-intro{display:grid;grid-template-columns:auto 1fr;gap:15px;align-items:start;margin:0 0 26px;padding:20px;border:1px solid rgba(79,63,240,.22);border-radius:16px;background:linear-gradient(135deg,rgba(79,63,240,.11),rgba(240,169,59,.09));}.trust-intro .trust-mark{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:var(--indigo-deep,#4F3FF0);color:#fff;font-size:20px;font-weight:900;}.trust-intro h2{margin:0 0 5px!important;font-size:18px!important;}.trust-intro p{margin:0!important;line-height:1.9;}.trust-section{margin-top:30px;scroll-margin-top:88px;}.trust-section>h2{margin:0 0 11px;padding-bottom:9px;border-bottom:1px solid var(--line);}.trust-section p{line-height:1.95;}.trust-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:15px 0;}.trust-card{padding:16px;border:1px solid var(--line);border-radius:13px;background:var(--surface-sunk,#f8f7ff);}.trust-card h3{margin:0 0 6px;font-size:16px;}.trust-card p{margin:0!important;font-size:13.5px;line-height:1.85;}.trust-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:15px 0;counter-reset:trust-step;}.trust-step{position:relative;min-height:130px;padding:17px 15px 14px 54px;border:1px solid var(--line);border-radius:13px;background:var(--surface);counter-increment:trust-step;}.trust-step::before{content:counter(trust-step);position:absolute;inset-inline-start:15px;top:16px;display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:var(--primary,#4F3FF0);color:#fff;font:800 12px var(--mono,monospace);}.trust-step strong{display:block;margin-bottom:5px;color:var(--ink);}.trust-step span{color:var(--ink-soft);font-size:13.5px;line-height:1.75;}.trust-note{margin:16px 0;padding:13px 15px;border-inline-start:3px solid var(--gold,#F0A93B);border-radius:0 9px 9px 0;background:rgba(240,169,59,.10);font-size:14px;line-height:1.9;}.trust-links{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0;}.trust-links a{display:inline-flex;align-items:center;min-height:35px;padding:5px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:13px;font-weight:700;text-decoration:none;}.trust-links a:hover{border-color:var(--primary,#4F3FF0);background:rgba(79,63,240,.08);}.contact-route{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:15px 0;}.contact-route>div{padding:16px;border:1px solid var(--line);border-radius:13px;background:var(--surface-sunk,#f8f7ff);}.contact-route h3{margin:0 0 6px;font-size:16px;}.contact-route p{margin:0!important;font-size:13.5px;line-height:1.8;}.contact-form{display:grid;gap:14px;max-width:760px;margin:16px 0;}.contact-form label{display:grid;gap:6px;color:var(--ink);font-size:14px;font-weight:800;}.contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--ink);font:inherit;font-weight:400;}.contact-form textarea{min-height:140px;resize:vertical;}.contact-submit{justify-self:start;border:0;border-radius:9px;padding:11px 20px;background:var(--indigo-deep,#4F3FF0);color:#fff;font:800 14px inherit;cursor:pointer;}.contact-status{min-height:20px;margin:0;color:var(--muted);font-size:13px;}.contact-checklist{margin:12px 0;padding-inline-start:22px;line-height:1.9;}[data-theme="dark"] .trust-card,[data-theme="dark"] .contact-route>div{background:rgba(255,255,255,.035);}[data-theme="dark"] .trust-intro{background:linear-gradient(135deg,rgba(111,94,255,.16),rgba(240,169,59,.1));}
+@media(max-width:760px){.trust-grid,.trust-steps,.contact-route{grid-template-columns:1fr;}.trust-intro{grid-template-columns:1fr;padding:17px;}.trust-intro .trust-mark{width:38px;height:38px;}.trust-step{min-height:0;}.contact-submit{width:100%;}.trust-card,.contact-route>div{padding:14px;}}
+/* end trust-pages-refresh */
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://fawran.tools/#organization", "name": "فورا.tools", "url": "https://fawran.tools/", "logo": {"@type": "ImageObject", "url": "https://fawran.tools/favicon.svg"}, "description": "منصة أدوات أونلاين مجانية للصور و PDF و SEO والنصوص والفيديو ويوتيوب — تعمل بالكامل داخل المتصفح بدون إرسال بياناتك لأي خادم.", "foundingDate": "2024", "contactPoint": {"@type": "ContactPoint", "email": "support@fawran.tools", "contactType": "customer support", "availableLanguage": ["ar", "en"]}}, {"@type": "AboutPage", "@id": "https://fawran.tools/about.html#aboutpage", "url": "https://fawran.tools/about.html", "name": "من نحن - فورا.tools", "isPartOf": {"@id": "https://fawran.tools/#organization"}, "about": {"@id": "https://fawran.tools/#organization"}, "inLanguage": "ar"}, {"@type": "Person", "@id": "https://fawran.tools/#founder", "name": "فريق فورا.tools", "url": "https://fawran.tools/about.html", "jobTitle": "مطورو أدوات الويب", "description": "فريق متخصص في تطوير أدوات الويب المجانية مع التركيز على الخصوصية والسرعة والجودة."}]}</script>
+
 <script>
 // Defer non-critical third-party scripts until after LCP / idle
 (function(){
@@ -99,6 +104,7 @@
   window.addEventListener('click', early, {once:true});
 })();
 </script>
+<script id="trust-page-schema" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://fawran.tools/#organization","name":"فورا.tools","url":"https://fawran.tools/","logo":{"@type":"ImageObject","url":"https://fawran.tools/favicon.svg"},"description":"منصة أدوات ويب مجانية للمهمات اليومية.","contactPoint":{"@type":"ContactPoint","email":"support@fawran.tools","contactType":"customer support","availableLanguage":["ar","en"]}},{"@type":"AboutPage","@id":"https://fawran.tools/about.html#aboutpage","name":"من نحن | فورا.tools","url":"https://fawran.tools/about.html","inLanguage":"ar","dateModified":"2026-09-29","about":{"@id":"https://fawran.tools/#organization"}}]}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">تخطي إلى المحتوى الرئيسي</a>
@@ -125,92 +131,16 @@
 </header>
 <main id="main-content">
 <div class="wrap">
-<div class="page-head">
-<h1>من نحن</h1>
-<p>لماذا بنينا فورا، وما الذي يجعلها مختلفة عن مواقع الأدوات الأخرى.</p>
+  <div class="page-head"><h1>من نحن</h1><p>فورا.tools: أدوات ويب عملية، محتوى واضح، وخصوصية تُشرح بدل أن تُفترض.</p></div>
+  <div class="trust-intro"><div class="trust-mark" aria-hidden="true">FW</div><div><h2>منصة تساعدك على إنجاز المهمة الصغيرة بسرعة</h2><p>بدأت فورا.tools من حاجة متكررة: ضغط صورة، دمج PDF، فحص عنوان صفحة أو ترتيب نص لا ينبغي أن يتطلب برنامجًا ثقيلًا أو إنشاء حساب. نجمع أدوات مركزة، ثم نشرح طريقة استخدامها وما الذي يجب مراجعته قبل اعتماد نتيجتها.</p></div></div>
+  <article class="content-card">
+    <section class="trust-section" id="mission"><h2>ماذا نقدم؟</h2><p>فورا.tools مكتبة تضم أكثر من 122 أداة مجانية بالعربية والإنجليزية. تغطي الأدوات الصور وملفات PDF والنصوص والمطورين وSEO والمواقع والبريد الإلكتروني والذكاء الاصطناعي والفيديو ويوتيوب. لا نحاول أن نجعل كل أداة تفعل كل شيء؛ نركز على أن تنجز مهمة محددة بواجهة بسيطة ونتيجة قابلة للمراجعة.</p><div class="trust-grid"><div class="trust-card"><h3>أدوات الملفات والصور</h3><p>تحويل الصيغ والضغط والقص وإدارة صفحات PDF، مع توضيح ما يحدث للملف قبل التنزيل.</p></div><div class="trust-card"><h3>أدوات المحتوى والعمل</h3><p>تنسيق نصوص وبيانات، أدوات بريد، أفكار محتوى، وعناصر منظمة تساعد على العمل اليومي.</p></div><div class="trust-card"><h3>أدوات النشر والنمو</h3><p>SEO والمواقع ويوتيوب، من صياغة البيانات المنظمة إلى فحص العنوان والوصف وخطط النشر.</p></div></div></section>
+    <section class="trust-section" id="method"><h2>كيف نبني ونراجع الأدوات؟</h2><p>المعيار ليس إضافة عدد كبير من الأزرار، بل أن يعرف الزائر ما الذي يدخل إلى الأداة، وما الذي تخرجه، وأين يحتاج إلى مراجعة بشرية. لذلك تربط كل صفحة أداة بين الوظيفة والدليل العملي والأسئلة والأدوات المكملة.</p><div class="trust-steps"><div class="trust-step"><strong>وظيفة محددة</strong><span>نحدد المشكلة التي تحلها الأداة ومدخلاتها وحدودها بدلاً من تقديم وعود عامة.</span></div><div class="trust-step"><strong>تجربة قابلة للفهم</strong><span>نرتب الواجهة والخطوات والنتيجة حتى يستطيع المستخدم التحقق مما سيستخدمه أو ينشره.</span></div><div class="trust-step"><strong>مراجعة وتحسين</strong><span>نراجع الأدوات والمحتوى عند ظهور ملاحظة أو احتياج واضح، ونستخدم الاقتراحات لتحديد الأولويات.</span></div></div></section>
+    <section class="trust-section" id="privacy"><h2>الخصوصية ليست عبارة تسويقية</h2><p>تعالج كثير من أدواتنا الملفات والنصوص داخل المتصفح. وفي المقابل، توجد ميزات تحتاج موردًا خارجيًا بحكم طبيعتها، مثل أسعار العملات أو فحص أداء موقع. لا نخفي هذا الفرق تحت عبارة واحدة؛ توضح <a href="privacy.html">سياسة الخصوصية</a> التخزين المحلي والطلبات الخارجية والتقييمات والإعلانات بالتفصيل.</p><div class="trust-note"><strong>قرارك أولًا:</strong> لا تدخل في أي أداة رابطًا خاصًا أو ملفًا حساسًا أو مفتاح API إلا بعد فهم ما تطلبه الأداة. احتفظ دائمًا بنسختك الأصلية وراجع الناتج في سياقه الحقيقي.</div></section>
+    <section class="trust-section" id="quality"><h2>ما الذي نعني به الجودة والثقة؟</h2><div class="trust-grid"><div class="trust-card"><h3>لا حساب للبدء</h3><p>الوظائف الأساسية لا تتطلب تسجيلًا. نريد أن تصل إلى الأداة، تنجز مهمتك، ثم تتابع عملك.</p></div><div class="trust-card"><h3>تقييمات ظاهرة المصدر</h3><p>نظام التقييم يعرض متوسطًا مبنيًا على النجوم المرسلة؛ لا نضيف تقييمًا تجميليًا عندما لا توجد تقييمات.</p></div><div class="trust-card"><h3>محتوى يُراجع</h3><p>لكل أداة الآن دليل وخطوات وحالات استخدام وأسئلة مرتبطة بالمهمة، لا فقرة عامة مكررة.</p></div></div><p>فريق فورا.tools هو المسؤول عن تطوير الموقع وتحديثه التحريري. تعرّف على منهجية الفريق من <a href="author.html">صفحة الكاتب</a>، وأرسل لنا أي خلل أو اقتراح يساعد في تحسين أداة قائمة أو بناء أداة جديدة.</p></section>
+    <section class="trust-section" id="next"><h2>إلى أين نتجه؟</h2><p>نوسع المكتبة وفق المهام التي تتكرر فعلاً لدى المستخدمين، ونفضّل تحسين أداة مفيدة على نشر أداة غير ناضجة. نرحب باقتراحات الأدوات وببلاغات المشاكل وبالملاحظات على الشرح نفسه.</p><div class="trust-links"><a href="tools/index.html">استكشف كل الأدوات</a><a href="blog/index.html">اقرأ أدلة الاستخدام</a><a href="contact.html">اقترح أداة أو أبلغ عن مشكلة</a><a href="privacy.html">سياسة الخصوصية</a></div></section>
+  </article>
 </div>
-
-<div class="content-card">
-
-<h2>قصتنا</h2>
-<p>بدأت فورا.tools من ملاحظة بسيطة: كل مرة نحتاج فيها ضغط صورة أو دمج ملف PDF أو تنسيق نص، كنا بنلاقي نفسنا بندوّر في نتائج بحث مليانة إعلانات، مواقع بتطلب تسجيل حساب لمهمة تاخد ثانيتين، أو أدوات بترفع ملفاتنا لخوادم غير معروفة من غير أي وضوح فين بتروح البيانات دي. قررنا نبني بديل مختلف: منصة عربية أولًا، بتجمع الأدوات اليومية اللي أي شخص بيتعامل مع صور وملفات ونصوص محتاجها، من غير تعقيد، ومن غير التنازل عن خصوصيتك.</p>
-
-<h2>إيه اللي بنقدمه</h2>
-<p>فورا.tools دلوقتي بيضم أكتر من 100 أداة مجانية موزّعة على سبع فئات رئيسية:</p>
-<div class="stats-row">
-  <div class="stat-box"><div class="n">صور</div><div class="l">ضغط، تحويل صيغ، تدوير، إزالة خلفية</div></div>
-  <div class="stat-box"><div class="n">PDF</div><div class="l">دمج، تقسيم، ضغط، تعديل صفحات</div></div>
-  <div class="stat-box"><div class="n">مطورين</div><div class="l">JSON، Base64، Regex، UUID</div></div>
-  <div class="stat-box"><div class="n">نصوص</div><div class="l">عدّ كلمات، مقارنة، تنظيف</div></div>
-</div>
-<p>بالإضافة لأدوات تحسين محركات البحث (SEO)، أدوات المواقع والمدونات، وأدوات يوتيوب — كل أداة مصممة لتنجز مهمة واحدة محددة بأسرع وأبسط طريقة ممكنة.</p>
-
-<h2>كيف بتشتغل الأدوات؟</h2>
-<p>معظم أدوات فورا مبنية لتعمل مباشرة داخل متصفحك باستخدام تقنيات الويب الحديثة. معنى كده إن ملفاتك — صورك، مستنداتك، نصوصك — ما بتترفعش لأي خادم خارجي أثناء المعالجة، وتفضل على جهازك طول الوقت. الاستثناء الوحيد هو الأدوات اللي بطبيعتها محتاجة تتواصل مع خدمة خارجية (زي فحص سرعة موقع، أو جلب بيانات فيديو يوتيوب) — وفي الحالة دي، بنوضح ده صراحة داخل الأداة نفسها. التفاصيل الكاملة موجودة في <a href="privacy.html">سياسة الخصوصية</a>.</p>
-
-<h2>مين بيستخدم فورا؟</h2>
-<ul>
-  <li>أصحاب المدونات والمتاجر الإلكترونية اللي محتاجين تجهيز صور سريعة بجودة مناسبة للويب.</li>
-  <li>الطلاب والموظفين اللي بيتعاملوا مع ملفات PDF ونصوص بشكل يومي.</li>
-  <li>المطورين اللي محتاجين أداة سريعة لتنسيق JSON أو تشفير Base64 من غير تثبيت أي برنامج.</li>
-  <li>صنّاع محتوى يوتيوب اللي بيدوّروا على أدوات لتحسين العناوين والأوصاف والصور المصغرة.</li>
-  <li>أي شخص بيدوّر على أداة تنجز مهمة محددة من غير تسجيل دخول أو اشتراك مدفوع.</li>
-</ul>
-
-<h2>قيمنا</h2>
-<div class="value-grid">
-  <div class="value-card">
-    <h3>🔒 الخصوصية أولًا</h3>
-    <p>معظم المعالجة تتم على جهازك مباشرة، مش على خوادمنا.</p>
-  </div>
-  <div class="value-card">
-    <h3>🆓 مجاني بالكامل</h3>
-    <p>كل الأدوات متاحة مجانًا، من غير حدود استخدام مخفية أو نسخة "برو" مدفوعة.</p>
-  </div>
-  <div class="value-card">
-    <h3>🚫 من غير تسجيل</h3>
-    <p>افتح الأداة، نفّذ مهمتك، اقفل التبويب — من غير حساب ولا بريد إلكتروني.</p>
-  </div>
-  <div class="value-card">
-    <h3>🌐 ثنائية اللغة</h3>
-    <p>كل أداة ومحتوى متاح بالعربي والإنجليزي بنفس الجودة والعمق.</p>
-  </div>
-</div>
-
-<h2>تقييمات حقيقية، مش أرقام ملفّقة</h2>
-<p>لاحظت في مواقع تانية نجوم تقييم بأرقام ضخمة (زي "4.8 من ملايين التقييمات") من غير أي وضوح لمصدرها؟ في فورا، نظام التقييمات اللي بتشوفه تحت كل أداة مبني بالكامل على تقييمات زوارنا الفعليين — لو أداة معينة لسه ما اتقيّمتش، مش هتلاقي نجوم مزيفة تحتها. نؤمن إن الشفافية جزء أساسي من الثقة اللي بنبنيها مع مستخدمينا.</p>
-
-<h2>إلى أين نتجه؟</h2>
-<p>بنضيف أدوات جديدة باستمرار في مجالات الصور، ملفات PDF، النصوص، تحسين محركات البحث (SEO)، ويوتيوب — وبنراجع الأدوات الموجودة بانتظام لتحسينها وإصلاح أي مشكلة تقنية بسرعة. إذا احتجت أداة معينة غير موجودة بعد، أو لاحظت أي مشكلة في أداة موجودة، يسعدنا سماع اقتراحك أو ملاحظتك عبر <a href="contact.html">صفحة التواصل</a>.</p>
-
-</div>
-</div>
-
-<div class="wrap">
-<div class="ad-slot ad-slot-leaderboard">
-<span class="ad-label">إعلان · Advertisement</span>
-<div class="ad-slot-inner" style="min-height:90px;">
-<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك -->
-<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5511030780981611" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
-<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-</div>
-</div>
-</div>
-
-
-<section style="margin:28px 0;padding:22px;background:var(--surface-sunk,#f8f7ff);border-radius:12px;border:1px solid var(--line,#e8e6ff);">
-  <h2>خبرتنا ومصداقيتنا</h2>
-  <p>نطور أدوات الويب منذ سنوات، ونعتمد على معايير الويب الحديثة ومكتبات مفتوحة المصدر موثوقة. كل أداة تُختبر على متصفحات متعددة وأجهزة مختلفة قبل النشر. نلتزم بالشفافية: لا نجمع بياناتك، لا نبيعها، ولا نستخدمها لأي غرض.</p>
-  <h3>قيمنا</h3>
-  <ul>
-    <li><strong>الخصوصية أولاً:</strong> ملفاتك لا تغادر جهازك.</li>
-    <li><strong>المجانية الحقيقية:</strong> بدون تسجيل أو علامة مائية أو حدود.</li>
-    <li><strong>الجودة:</strong> أدوات سريعة، دقيقة، وسهلة الاستخدام.</li>
-    <li><strong>الاستماع:</strong> نطور بناءً على اقتراحاتكم وملاحظاتكم.</li>
-  </ul>
-  <p>تواصل معنا عبر <a href="contact.html">اتصل بنا</a> أو راسلنا على <a href="mailto:support@fawran.tools">support@fawran.tools</a></p>
-</section>
-
 </main>
 <footer role="contentinfo">
 <div class="footer-grid">

@@ -5,8 +5,8 @@
 <meta charset="utf-8"/>
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>شروط الاستخدام | فورا.tools</title>
-<meta content="شروط استخدام موقع فورا.tools وأدواته المجانية — الاستخدام المقبول، مسؤولية المحتوى، الخدمات الخارجية، ونظام التقييمات." name="description"/>
+<title>شروط الاستخدام وإخلاء المسؤولية | فورا.tools</title>
+<meta name="description" content="شروط استخدام فورا.tools: نطاق الخدمة، الاستخدام المسموح، مخرجات الأدوات، والخدمات الخارجية."/>
 <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
 <meta content="#4F3FF0" name="theme-color"/>
@@ -15,16 +15,16 @@
 
 <meta content="website" property="og:type"/>
 <meta content="https://fawran.tools/terms.html" property="og:url"/>
-<meta content="شروط الاستخدام | فورا.tools" property="og:title"/>
-<meta content="شروط استخدام موقع فورا.tools وأدواته المجانية." property="og:description"/>
+<meta property="og:title" content="شروط الاستخدام | فورا.tools"/>
+<meta property="og:description" content="شروط استخدام فورا.tools: نطاق الخدمة، الاستخدام المسموح، مخرجات الأدوات، والخدمات الخارجية."/>
 <meta content="فورا.tools" property="og:site_name"/>
 <meta content="ar_AR" property="og:locale"/>
 <meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="شروط الاستخدام | فورا.tools" name="twitter:title"/>
-<meta content="شروط استخدام موقع فورا.tools وأدواته المجانية." name="twitter:description"/>
+<meta name="twitter:title" content="شروط الاستخدام | فورا.tools"/>
+<meta name="twitter:description" content="شروط استخدام فورا.tools: نطاق الخدمة، الاستخدام المسموح، مخرجات الأدوات، والخدمات الخارجية."/>
 <meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
@@ -47,6 +47,19 @@
   .content-card ul{padding-inline-start:22px;line-height:1.9;}
   .content-card li{margin-bottom:6px;}
   @media (max-width:640px){.toc ul{columns:1;}}
+
+
+
+/* legal-page-refresh */
+.legal-summary{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;margin:0 0 24px;padding:18px 20px;border:1px solid rgba(79,63,240,.22);border-radius:14px;background:linear-gradient(135deg,rgba(79,63,240,.10),rgba(240,169,59,.10));}
+.legal-summary .legal-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--indigo-deep,#4F3FF0);color:#fff;font-size:21px;font-weight:900;}
+.legal-summary h2{margin:0 0 4px!important;font-size:17px!important;}.legal-summary p{margin:0!important;color:var(--ink-soft);line-height:1.85;}
+.legal-section{padding-top:4px;}.legal-section h2{padding-bottom:9px;border-bottom:1px solid var(--line);}.legal-section h3{font-size:15px;margin:18px 0 7px;}
+.legal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0;}.legal-grid>div{padding:14px;border:1px solid var(--line);border-radius:11px;background:var(--surface-sunk,#f8f7ff);}.legal-grid strong{display:block;margin-bottom:4px;color:var(--ink);}.legal-grid p{margin:0!important;font-size:13.5px!important;}
+.legal-note{margin:14px 0;padding:13px 15px;border-inline-start:3px solid var(--gold,#F0A93B);border-radius:0 9px 9px 0;background:rgba(240,169,59,.10);font-size:14px;line-height:1.9;}.legal-note strong{color:var(--ink);}.legal-status{display:inline-flex;align-items:center;gap:6px;margin:0 0 13px;padding:4px 9px;border-radius:999px;background:rgba(11,136,81,.10);color:#087044;font-size:12px;font-weight:800;}
+.data-table caption{padding:0 0 8px;text-align:start;font-weight:800;color:var(--ink);}.data-table code{font-family:var(--mono,monospace);font-size:12px;word-break:break-word;}[data-theme="dark"] .legal-grid>div{background:rgba(255,255,255,.035);}[data-theme="dark"] .legal-summary{background:linear-gradient(135deg,rgba(111,94,255,.16),rgba(240,169,59,.10));}
+@media(max-width:640px){.legal-summary{grid-template-columns:1fr;padding:16px;}.legal-grid{grid-template-columns:1fr;}.legal-summary .legal-icon{width:36px;height:36px;}.legal-note{font-size:13px;}}
+/* end legal-page-refresh */
 </style>
 <script>
 // Defer non-critical third-party scripts until after LCP / idle
@@ -95,6 +108,9 @@
   window.addEventListener('click', early, {once:true});
 })();
 </script>
+
+
+<script id="legal-webpage-schema" type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"شروط الاستخدام | فورا.tools","url":"https://fawran.tools/terms.html","inLanguage":"ar","dateModified":"2026-09-29","isPartOf":{"@type":"WebSite","name":"Fawran Tools","url":"https://fawran.tools/"}}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">تخطي إلى المحتوى الرئيسي</a>
@@ -121,124 +137,30 @@
 </header>
 <main id="main-content">
 <div class="wrap">
-<div class="page-head">
-<h1>شروط الاستخدام</h1>
-<p>آخر تحديث: أغسطس 2026</p>
+  <div class="page-head"><h1>شروط الاستخدام</h1><p>آخر تحديث: 29 سبتمبر 2026</p></div>
+  <div class="legal-summary"><div class="legal-icon" aria-hidden="true">§</div><div><h2>فهم سريع للخدمة</h2><p>فورا.tools منصة أدوات مجانية تساعدك على معالجة ملفات ونصوص وإنشاء نتائج عملية داخل المتصفح. هذه الشروط تنظّم طريقة الاستخدام؛ أما تفاصيل البيانات والملفات وملفات الارتباط فتجدها في <a href="privacy.html">سياسة الخصوصية</a> بدل تكرارها هنا.</p></div></div>
+  <div class="toc"><h2>محتوى الصفحة</h2><ul>
+    <li><a href="#acceptance">١. قبول الشروط</a></li><li><a href="#service">٢. نطاق الخدمة</a></li>
+    <li><a href="#use">٣. الاستخدام المسموح</a></li><li><a href="#content">٤. ملفاتك ونتائج الأدوات</a></li>
+    <li><a href="#external-terms">٥. خدمات الأطراف الخارجية</a></li><li><a href="#availability">٦. الإتاحة والتحديثات</a></li>
+    <li><a href="#ip">٧. الملكية الفكرية</a></li><li><a href="#ads-terms">٨. الإعلانات</a></li>
+    <li><a href="#disclaimer">٩. إخلاء المسؤولية</a></li><li><a href="#liability">١٠. حدود المسؤولية</a></li>
+    <li><a href="#general">١١. أحكام عامة وتواصل</a></li>
+  </ul></div>
+  <article class="content-card">
+    <section class="legal-section" id="acceptance"><h2>١. قبول الشروط</h2><p>باستخدامك فورا.tools أو أي أداة فيه، تقر بأنك قرأت هذه الشروط وتوافق على الالتزام بها. إذا لم توافق عليها، توقف عن استخدام الموقع. استمرار الاستخدام بعد نشر نسخة محدثة يعني قبولك للنسخة الجديدة في حدود ما يسمح به القانون.</p></section>
+    <section class="legal-section" id="service"><h2>٢. نطاق الخدمة</h2><p>يوفر الموقع أدوات مساعدة للصور وPDF والنصوص والتطوير وSEO والمواقع ويوتيوب. تقدم الأدوات لأغراض عامة ومعلوماتية وإنتاجية، ولا تمثل مشورة قانونية أو مالية أو طبية أو مهنية متخصصة. لا يتطلب الموقع حسابًا للوصول إلى وظائفه الأساسية، وقد تتغير الأدوات أو خصائصها أو تتوقف دون أن يشكل ذلك التزامًا باستمرار خدمة بعينها.</p><div class="legal-note"><strong>النتائج تحتاج مراجعة:</strong> راجع المخرجات قبل استخدامها في عقد، قرار مالي، ملف رسمي، نشر عام، أو أي موقف تكون فيه الدقة ذات أثر مهم.</div></section>
+    <section class="legal-section" id="use"><h2>٣. الاستخدام المسموح</h2><p>يمكنك استخدام الأدوات بصورة شخصية أو مهنية مشروعة، بشرط ألا:</p><ul><li>تدخل أو تعالج محتوى لا تملك حق استخدامه أو ينتهك خصوصية أو حقوق الآخرين.</li><li>تحاول تعطيل الموقع أو تجاوز الحماية أو إجراء طلبات آلية مفرطة تضر بالخدمة.</li><li>تستخدم الأدوات لإنشاء أو نشر محتوى غير قانوني أو احتيالي أو ضار أو يحض على العنف والكراهية.</li><li>تعيد بيع الموقع أو تمثل الأدوات على أنها خدمتك أو تضمنها في منتج تجاري دون موافقة كتابية.</li><li>تنسب إلى الموقع نتيجة أو موافقة أو شراكة غير موجودة.</li></ul><p>إذا كنت قاصرًا وفق قوانين بلدك، استخدم الموقع بإشراف ولي الأمر عند الحاجة.</p></section>
+    <section class="legal-section" id="content"><h2>٤. ملفاتك ونتائج الأدوات</h2><p>تبقى حقوقك في الملفات والنصوص التي تختار معالجتها لك أو لمالكها. أنت مسؤول عن وجود الحق أو الإذن اللازم لاستخدام ما تدخله. لا ننقل إليك حقوقًا في محتوى طرف ثالث، ولا تمنحنا ملكية ملفاتك لمجرد استخدامك للأداة.</p><p>قد تؤدي التحويلات أو الضغط أو التوليد إلى نتيجة غير مناسبة لحالتك أو إلى فقدان جودة أو بيانات. احفظ النسخة الأصلية واختبر الناتج قبل الاعتماد عليه. لا تعتمد على نتيجة أداة لاتخاذ قرار قانوني أو طبي أو استثماري دون مراجعة مختص مؤهل.</p></section>
+    <section class="legal-section" id="external-terms"><h2>٥. خدمات الأطراف الخارجية</h2><p>تتطلب بعض الأدوات خدمة خارجية، مثل بيانات أسعار العملات أو Google PageSpeed أو خطوط ومكتبات تشغيل. استخدامك لهذه الميزات قد يخضع لشروط وسياسات ذلك الطرف، وقد ترسل الأداة مدخلًا ضروريًا — مثل رابط عام أو مفتاح API تختاره — مباشرة من متصفحك. أنت مسؤول عن حماية مفاتيحك والالتزام بشروط مزود الخدمة.</p><p>لا نضمن استمرار أو دقة بيانات أي طرف ثالث، ولا نتحمل مسؤولية تغيير واجهاته أو سياساته أو توقفه.</p></section>
+    <section class="legal-section" id="availability"><h2>٦. الإتاحة والتحديثات والتقييمات</h2><p>نسعى لتشغيل الموقع بصورة مستقرة، لكن لا نضمن أن تكون الخدمة متاحة دائمًا أو خالية من الأخطاء أو مناسبة لكل جهاز ومتصفح. يجوز لنا إصلاح أداة أو تعديلها أو تقييدها أو إيقافها لأسباب تشغيلية أو أمنية أو قانونية.</p><p>تقييمات الأدوات تعكس متوسط النجوم المرسل من الزوار ولا تمثل توصية مهنية أو وعدًا بجودة ثابتة. يجوز معالجة التقييمات الإجمالية عند وجود نشاط آلي أو تلاعب ظاهر لحماية نزاهة النظام.</p></section>
+    <section class="legal-section" id="ip"><h2>٧. الملكية الفكرية</h2><p>اسم فورا.tools وشعاره وهوية الموقع وتصميمه ومحتوى الأدلة والشفرة الخاصة به محمية بالحقوق المعمول بها، باستثناء الحقوق الخاصة بالمكتبات مفتوحة المصدر وأصحابها. يمكنك استخدام الموقع كما تتيحه واجهته، لكن لا يجوز نسخ أجزاء جوهرية منه أو إعادة نشرها أو إنشاء خدمة منافسة منه دون إذن كتابي.</p></section>
+    <section class="legal-section" id="ads-terms"><h2>٨. الإعلانات</h2><p>قد يعرض الموقع إعلانات لتمويل تشغيل الأدوات. قد تكون هذه الإعلانات مقدمة من شبكات خارجية وتخضع لشروطها وسياساتها. لا تعني الإعلانات تأييدًا منا للمنتج أو الخدمة المعلن عنها. راجع <a href="privacy.html#ads">قسم الإعلانات وملفات الارتباط</a> لمعرفة كيفية التعامل مع التقنيات الإعلانية.</p></section>
+    <section class="legal-section" id="disclaimer"><h2>٩. إخلاء المسؤولية</h2><p>تقدم الأدوات والمحتوى «كما هي» و«بحسب التوافر». لا نضمن صحة أو اكتمال أو ملاءمة كل نتيجة لغرض محدد، ولا نضمن عدم انقطاع الخدمة أو توافقها مع جميع البيئات. تقع عليك مسؤولية فحص المدخلات والمخرجات وتحديد مدى ملاءمتها لاستخدامك.</p></section>
+    <section class="legal-section" id="liability"><h2>١٠. حدود المسؤولية</h2><p>إلى الحد الذي يسمح به القانون، لا يكون فورا.tools أو القائمون عليه مسؤولين عن خسارة بيانات أو أرباح أو أعمال أو أضرار غير مباشرة أو تبعية تنشأ عن استخدام الموقع أو تعذر استخدامه أو الاعتماد على مخرجاته. لا يحد هذا النص من أي حق لا يمكن استبعاده بموجب قانون واجب التطبيق.</p></section>
+    <section class="legal-section" id="general"><h2>١١. أحكام عامة وتواصل</h2><p>قد نحدّث هذه الشروط عند تغير الخدمة أو المتطلبات القانونية، ويظهر تاريخ المراجعة في أعلى الصفحة. تخضع العلاقة بينك وبين الموقع للقانون الواجب التطبيق مع الحفاظ على الحقوق الإلزامية للمستهلك في محل إقامته. للاستفسار عن الشروط، استخدم <a href="contact.html">صفحة التواصل</a> أو راسل <a href="mailto:hello@fawran.tools">hello@fawran.tools</a>.</p></section>
+  </article>
 </div>
-
-<div class="toc">
-  <h2>محتوى الصفحة</h2>
-  <ul>
-    <li><a href="#acceptance">١. قبول الشروط</a></li>
-    <li><a href="#service">٢. طبيعة الخدمة</a></li>
-    <li><a href="#eligibility">٣. الأهلية لاستخدام الموقع</a></li>
-    <li><a href="#acceptable-use">٤. الاستخدام المقبول</a></li>
-    <li><a href="#user-content">٥. مسؤوليتك عن المحتوى</a></li>
-    <li><a href="#third-party">٦. الخدمات والواجهات الخارجية</a></li>
-    <li><a href="#ratings">٧. نظام التقييمات</a></li>
-    <li><a href="#no-warranty">٨. إخلاء المسؤولية عن الضمانات</a></li>
-    <li><a href="#liability">٩. حدود المسؤولية</a></li>
-    <li><a href="#ip">١٠. الملكية الفكرية</a></li>
-    <li><a href="#ads">١١. الإعلانات</a></li>
-    <li><a href="#suspension">١٢. تعليق أو إيقاف الوصول</a></li>
-    <li><a href="#changes">١٣. التعديلات على الشروط</a></li>
-    <li><a href="#law">١٤. القانون المطبّق</a></li>
-    <li><a href="#contact">١٥. التواصل معنا</a></li>
-  </ul>
-</div>
-
-<div class="content-card">
-
-<h2 id="acceptance">١. قبول الشروط</h2>
-<p>باستخدامك لموقع فورا.tools وأي أداة من أدواته، فإنك توافق على الالتزام بهذه الشروط بالكامل. إذا كنت لا توافق على أي جزء منها، نرجو التوقف عن استخدام الموقع فورًا. استمرارك في التصفح واستخدام الأدوات بعد قراءة هذه الصفحة يُعتبر قبولًا صريحًا لها.</p>
-
-<h2 id="service">٢. طبيعة الخدمة</h2>
-<p>فورا.tools منصة تقدّم مجموعة من الأدوات المجانية عبر الإنترنت، موزّعة على عدة فئات: أدوات الصور (ضغط، تحويل صيغ، تدوير، إزالة خلفية، إلخ)، أدوات PDF (دمج، تقسيم، ضغط، تعديل صفحات)، أدوات المطورين (تنسيق JSON، تشفير Base64، إلخ)، أدوات النصوص، أدوات تحسين محركات البحث (SEO)، أدوات المواقع والمدونات، وأدوات يوتيوب. معظم هذه الأدوات تعالج الملفات محليًا داخل متصفحك مباشرة دون رفعها لأي خادم — التفاصيل الكاملة موضّحة في <a href="privacy.html">سياسة الخصوصية</a>. نسعى لتوفير هذه الأدوات بأفضل جودة ممكنة، لكننا لا نضمن خلوها التام من الأخطاء أو توفرها المستمر دون انقطاع.</p>
-
-<h2 id="eligibility">٣. الأهلية لاستخدام الموقع</h2>
-<p>الموقع موجّه للاستخدام العام ولا يتطلب إنشاء حساب أو تسجيل دخول لاستخدام أي أداة مجانية. إذا كنت أقل من السن القانونية للموافقة على هذه الشروط في بلدك، يجب استخدام الموقع بإشراف أحد الوالدين أو ولي الأمر. لا نجمع بيانات شخصية متعلقة بالحساب لأن الموقع لا يتطلب تسجيلًا أصلًا.</p>
-
-<h2 id="acceptable-use">٤. الاستخدام المقبول</h2>
-<p>عند استخدامك للموقع وأدواته، أنت توافق على عدم القيام بأي مما يلي:</p>
-<ul>
-  <li>استخدام الأدوات لأي غرض غير قانوني أو لمعالجة محتوى ينتهك حقوق الآخرين (حقوق النشر، العلامات التجارية، الخصوصية، أو أي حق قانوني آخر).</li>
-  <li>محاولة إلحاق ضرر بالموقع أو تعطيل عمله، بما في ذلك عبر إرسال طلبات آلية مفرطة (Scraping أو Bots) بشكل يؤثر على أداء الخدمة لباقي المستخدمين.</li>
-  <li>محاولة الوصول غير المصرّح به لأي جزء من البنية التقنية للموقع، أو محاولة كسر أو تجاوز أي إجراء حماية.</li>
-  <li>استخدام أي أداة لإنشاء أو نشر محتوى مضلل، مسيء، أو يحض على الكراهية أو العنف.</li>
-  <li>انتحال شخصية أي فرد أو جهة، أو تقديم معلومات كاذبة عبر نموذج التواصل.</li>
-  <li>إعادة بيع الوصول للأدوات أو تضمينها ضمن خدمة تجارية أخرى دون إذن كتابي مسبق منا.</li>
-</ul>
-
-<h2 id="user-content">٥. مسؤوليتك عن المحتوى</h2>
-<p>أنت تتحمّل وحدك مسؤولية أي ملف، صورة، نص، أو رابط تقوم بمعالجته أو إدخاله عبر أدوات الموقع. باستخدامك لأي أداة، فإنك تقرّ بأنك:</p>
-<ul>
-  <li>تملك الحقوق القانونية الكاملة على أي محتوى تقوم بمعالجته، أو لديك إذن صريح من مالكه لاستخدامه بهذه الطريقة.</li>
-  <li>لن تستخدم الأدوات لمعالجة محتوى محمي بحقوق نشر لا تملكها، أو محتوى سري أو حساس دون إذن.</li>
-  <li>مسؤول عن مراجعة أي ملف ناتج قبل استخدامه في أي سياق مهني أو قانوني أو تجاري أو نشره للعامة.</li>
-</ul>
-<p>الموقع غير مسؤول عن أي فقد للبيانات ناتج عن استخدام الأدوات؛ ننصح دائمًا بالاحتفاظ بنسخة أصلية من ملفاتك قبل معالجتها.</p>
-
-<h2 id="third-party">٦. الخدمات والواجهات الخارجية</h2>
-<p>بعض أدوات الموقع تعتمد على واجهات برمجية (APIs) تابعة لجهات خارجية لتقديم وظيفتها، من بينها على سبيل المثال:</p>
-<ul>
-  <li><strong>Google PageSpeed Insights</strong> — تُستخدم في أداة فحص سرعة الموقع لتحليل أداء الروابط التي تدخلها.</li>
-  <li><strong>YouTube oEmbed</strong> — تُستخدم في أدوات يوتيوب (مثل رابط التوقيت المحدد وتحميل الصورة المصغرة) لجلب بيانات الفيديو العامة.</li>
-  <li><strong>Google Fonts</strong> — تُستخدم لعرض خطوط الموقع.</li>
-</ul>
-<p>عند استخدامك لأداة تعتمد على خدمة خارجية، فإن الرابط أو البيانات التي تُدخلها (مثل رابط موقع أو رابط فيديو) تُرسل لتلك الخدمة الخارجية لمعالجتها، وتخضع لسياسات الاستخدام والخصوصية الخاصة بها. لسنا مسؤولين عن مدى دقة أو توفر هذه الخدمات الخارجية أو عن ممارساتها في التعامل مع البيانات.</p>
-
-<h2 id="ratings">٧. نظام التقييمات</h2>
-<p>يتيح الموقع لزواره تقييم الأدوات بمنح عدد نجوم من 1 إلى 5. عند إرسالك لتقييم:</p>
-<ul>
-  <li>يُرسل رقم تقييمك إلى خادمنا ويُضاف لمتوسط التقييمات العام المعروض للأداة — هذا الرقم حقيقي ومبني فعليًا على تقييمات الزوار، ولا نقوم بتلفيق أو تضخيم أي رقم تقييم.</li>
-  <li>يُحفظ في متصفحك مؤشر يمنعك من إعادة تقييم نفس الأداة أكثر من مرة من نفس الجهاز.</li>
-  <li>التقييمات المُرسلة لا يمكن حذفها بشكل فردي بعد إرسالها، لأنها تُجمع كرقم إجمالي (متوسط وعدد) وليست كتقييمات فردية مرتبطة بهوية المستخدم.</li>
-  <li>نحتفظ بالحق في إزالة أو تصفير تقييمات أداة معينة في حال رصد نشاط مشبوه أو محاولات تلاعب واضحة بالنتائج.</li>
-</ul>
-
-<h2 id="no-warranty">٨. إخلاء المسؤولية عن الضمانات</h2>
-<p>يتم تقديم جميع أدوات ومحتوى الموقع "كما هي" (As Is) و"كما هي متاحة" (As Available)، دون أي ضمانات صريحة أو ضمنية من أي نوع. لا نضمن أن:</p>
-<ul>
-  <li>الأدوات ستعمل دون انقطاع أو أخطاء في جميع الأوقات.</li>
-  <li>نتائج أي أداة ستكون دقيقة بنسبة 100% أو مناسبة تمامًا لغرضك المحدد.</li>
-  <li>الموقع سيبقى خاليًا تمامًا من أي ثغرات تقنية.</li>
-</ul>
-
-<h2 id="liability">٩. حدود المسؤولية</h2>
-<p>إلى أقصى حد يسمح به القانون، لا يتحمّل فورا.tools أو القائمون عليه أي مسؤولية عن أي أضرار مباشرة أو غير مباشرة أو عرضية أو تبعية تنتج عن استخدامك (أو عدم قدرتك على استخدام) الموقع أو أي من أدواته، بما في ذلك على سبيل المثال لا الحصر: فقدان البيانات، فقدان الأرباح، أو أي ضرر ناتج عن الاعتماد على نتائج إحدى الأدوات في قرار مهني أو قانوني أو مالي.</p>
-
-<h2 id="ip">١٠. الملكية الفكرية</h2>
-<p>جميع عناصر تصميم الموقع، شعاره، هوية العلامة التجارية، وأكواده البرمجية (باستثناء المكتبات مفتوحة المصدر المستخدمة) مملوكة لفورا.tools، ولا يجوز نسخها أو إعادة نشرها أو استخدامها تجاريًا دون إذن كتابي مسبق. المحتوى الذي تقوم بمعالجته باستخدام أدواتنا (ملفاتك وصورك ونصوصك) يبقى ملكًا خاصًا بك بالكامل — نحن لا نطالب بأي حقوق ملكية عليه.</p>
-
-<h2 id="ads">١١. الإعلانات</h2>
-<p>قد يعرض الموقع إعلانات من شبكات إعلانية تابعة لجهات خارجية (مثل Google AdSense) كمصدر لتمويل تشغيل الخدمة مجانًا. هذه الإعلانات تخضع لسياسات الجهة المعلنة الخاصة بها. لمزيد من التفاصيل حول كيفية استخدام ملفات تعريف الارتباط الخاصة بالإعلانات، راجع <a href="privacy.html">سياسة الخصوصية</a>.</p>
-
-<h2 id="suspension">١٢. تعليق أو إيقاف الوصول</h2>
-<p>نحتفظ بالحق في تقييد أو إيقاف وصول أي مستخدم لأي أداة أو للموقع بالكامل، دون إشعار مسبق، في حال رصدنا استخدامًا يخالف هذه الشروط أو يشكّل ضررًا فعليًا أو محتملًا على الموقع أو مستخدميه الآخرين.</p>
-
-<h2 id="changes">١٣. التعديلات على الشروط</h2>
-<p>قد نحدّث هذه الشروط من وقت لآخر لتعكس تغييرات في الخدمة أو لأسباب قانونية. سيظهر تاريخ آخر تحديث أعلى الصفحة دائمًا. استمرارك في استخدام الموقع بعد أي تحديث يُعد موافقة ضمنية على الشروط الجديدة، لذا ننصح بمراجعة هذه الصفحة بين الحين والآخر.</p>
-
-<h2 id="law">١٤. القانون المطبّق</h2>
-<p>تخضع هذه الشروط وتُفسَّر وفقًا للقوانين المعمول بها، دون الإخلال بأي حقوق قانونية إلزامية قد تتمتع بها بموجب قوانين حماية المستهلك في بلد إقامتك.</p>
-
-<h2 id="contact">١٥. التواصل معنا</h2>
-<p>لأي استفسار أو ملاحظة حول هذه الشروط، يسعدنا تواصلك معنا عبر <a href="contact.html">صفحة اتصل بنا</a>.</p>
-
-</div>
-</div>
-
-<div class="wrap">
-<div class="ad-slot ad-slot-leaderboard">
-<span class="ad-label">إعلان · Advertisement</span>
-<div class="ad-slot-inner" style="min-height:90px;">
-<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك -->
-<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5511030780981611" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
-<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-</div>
-</div>
-</div>
-
 </main>
 <footer role="contentinfo">
 <div class="footer-grid">

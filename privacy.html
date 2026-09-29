@@ -5,8 +5,8 @@
 <meta charset="utf-8"/>
 <script>(function(){try{var t=localStorage.getItem('fawran-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>سياسة الخصوصية | فورا.tools</title>
-<meta content="سياسة خصوصية فورا.tools — كيف نتعامل مع ملفاتك، بيانات التصفح، التخزين المحلي، والخدمات الخارجية المستخدمة." name="description"/>
+<title>سياسة الخصوصية وملفات الارتباط | فورا.tools</title>
+<meta name="description" content="سياسة خصوصية فورا.tools: معالجة الملفات داخل المتصفح، التخزين المحلي، التحليلات، الإعلانات والخدمات الخارجية."/>
 <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
 <meta content="#4F3FF0" name="theme-color"/>
@@ -15,16 +15,16 @@
 
 <meta content="website" property="og:type"/>
 <meta content="https://fawran.tools/privacy.html" property="og:url"/>
-<meta content="سياسة الخصوصية | فورا.tools" property="og:title"/>
-<meta content="سياسة خصوصية فورا.tools وكيفية تعاملنا مع بياناتك." property="og:description"/>
+<meta property="og:title" content="سياسة الخصوصية | فورا.tools"/>
+<meta property="og:description" content="سياسة خصوصية فورا.tools: معالجة الملفات داخل المتصفح، التخزين المحلي، التحليلات، الإعلانات والخدمات الخارجية."/>
 <meta content="فورا.tools" property="og:site_name"/>
 <meta content="ar_AR" property="og:locale"/>
 <meta content="https://fawran.tools/assets/og-image.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="سياسة الخصوصية | فورا.tools" name="twitter:title"/>
-<meta content="سياسة خصوصية فورا.tools وكيفية تعاملنا مع بياناتك." name="twitter:description"/>
+<meta name="twitter:title" content="سياسة الخصوصية | فورا.tools"/>
+<meta name="twitter:description" content="سياسة خصوصية فورا.tools: معالجة الملفات داخل المتصفح، التخزين المحلي، التحليلات، الإعلانات والخدمات الخارجية."/>
 <meta content="https://fawran.tools/assets/og-image.png" name="twitter:image"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/>
@@ -50,6 +50,19 @@
   .data-table th,.data-table td{padding:9px 12px;border:1px solid var(--line);text-align:right;vertical-align:top;}
   .data-table th{background:var(--surface-sunk);font-weight:800;}
   @media (max-width:640px){.toc ul{columns:1;}.data-table{font-size:12px;}}
+
+
+
+/* legal-page-refresh */
+.legal-summary{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;margin:0 0 24px;padding:18px 20px;border:1px solid rgba(79,63,240,.22);border-radius:14px;background:linear-gradient(135deg,rgba(79,63,240,.10),rgba(240,169,59,.10));}
+.legal-summary .legal-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--indigo-deep,#4F3FF0);color:#fff;font-size:21px;font-weight:900;}
+.legal-summary h2{margin:0 0 4px!important;font-size:17px!important;}.legal-summary p{margin:0!important;color:var(--ink-soft);line-height:1.85;}
+.legal-section{padding-top:4px;}.legal-section h2{padding-bottom:9px;border-bottom:1px solid var(--line);}.legal-section h3{font-size:15px;margin:18px 0 7px;}
+.legal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0;}.legal-grid>div{padding:14px;border:1px solid var(--line);border-radius:11px;background:var(--surface-sunk,#f8f7ff);}.legal-grid strong{display:block;margin-bottom:4px;color:var(--ink);}.legal-grid p{margin:0!important;font-size:13.5px!important;}
+.legal-note{margin:14px 0;padding:13px 15px;border-inline-start:3px solid var(--gold,#F0A93B);border-radius:0 9px 9px 0;background:rgba(240,169,59,.10);font-size:14px;line-height:1.9;}.legal-note strong{color:var(--ink);}.legal-status{display:inline-flex;align-items:center;gap:6px;margin:0 0 13px;padding:4px 9px;border-radius:999px;background:rgba(11,136,81,.10);color:#087044;font-size:12px;font-weight:800;}
+.data-table caption{padding:0 0 8px;text-align:start;font-weight:800;color:var(--ink);}.data-table code{font-family:var(--mono,monospace);font-size:12px;word-break:break-word;}[data-theme="dark"] .legal-grid>div{background:rgba(255,255,255,.035);}[data-theme="dark"] .legal-summary{background:linear-gradient(135deg,rgba(111,94,255,.16),rgba(240,169,59,.10));}
+@media(max-width:640px){.legal-summary{grid-template-columns:1fr;padding:16px;}.legal-grid{grid-template-columns:1fr;}.legal-summary .legal-icon{width:36px;height:36px;}.legal-note{font-size:13px;}}
+/* end legal-page-refresh */
 </style>
 <script>
 // Defer non-critical third-party scripts until after LCP / idle
@@ -98,6 +111,9 @@
   window.addEventListener('click', early, {once:true});
 })();
 </script>
+
+
+<script id="legal-webpage-schema" type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"سياسة الخصوصية | فورا.tools","url":"https://fawran.tools/privacy.html","inLanguage":"ar","dateModified":"2026-09-29","isPartOf":{"@type":"WebSite","name":"Fawran Tools","url":"https://fawran.tools/"}}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">تخطي إلى المحتوى الرئيسي</a>
@@ -124,131 +140,41 @@
 </header>
 <main id="main-content">
 <div class="wrap">
-<div class="page-head">
-<h1>سياسة الخصوصية</h1>
-<p>آخر تحديث: أغسطس 2026</p>
+  <div class="page-head"><h1>سياسة الخصوصية</h1><p>آخر تحديث: 29 سبتمبر 2026</p></div>
+  <div class="legal-summary"><div class="legal-icon" aria-hidden="true">⌁</div><div><h2>ملخص واضح قبل البدء</h2><p>تشرح هذه السياسة البيانات التي يتعامل معها موقع فورا.tools، ومتى تبقى في متصفحك ومتى يتصل الموقع بخدمة خارجية. معظم عمليات الملفات والنصوص تتم محليًا، لكن ذلك لا ينطبق تلقائيًا على كل أداة أو كل خدمة خارجية.</p></div></div>
+  <div class="toc"><h2>محتوى الصفحة</h2><ul>
+    <li><a href="#scope">١. نطاق السياسة</a></li><li><a href="#local-processing">٢. الملفات والمحتوى داخل المتصفح</a></li>
+    <li><a href="#browser-storage">٣. التخزين على جهازك</a></li><li><a href="#analytics">٤. التحليلات وسجلات الخدمة</a></li>
+    <li><a href="#ratings">٥. التقييمات</a></li><li><a href="#external">٦. الطلبات والخدمات الخارجية</a></li>
+    <li><a href="#ads">٧. الإعلانات وملفات تعريف الارتباط</a></li><li><a href="#contact-data">٨. التواصل ومشاركة البيانات</a></li>
+    <li><a href="#retention">٩. الاحتفاظ والأمان</a></li><li><a href="#choices">١٠. خياراتك وحقوقك</a></li>
+    <li><a href="#children">١١. الأطفال والتعديلات</a></li><li><a href="#privacy-contact">١٢. التواصل بشأن الخصوصية</a></li>
+  </ul></div>
+  <article class="content-card">
+    <section class="legal-section" id="scope"><h2>١. نطاق هذه السياسة</h2><p>تسري هذه السياسة على موقع <strong>فورا.tools</strong> وصفحاته وأدواته المجانية. لا ينشئ الموقع حساب مستخدم للوصول إلى الأدوات، ولا نطلب منك اسمًا أو رقم هاتف أو كلمة مرور لاستخدام وظائفه الأساسية. قد تختلف معالجة البيانات عندما تختار استخدام خدمة تابعة لطرف ثالث أو تراسلنا بنفسك.</p><div class="legal-note"><strong>القاعدة العملية:</strong> اقرأ وصف الأداة قبل إدخال رابط أو مفتاح API أو ملف حساس. إذا كانت الأداة تحتاج اتصالًا بخدمة خارجية، نوضح ذلك في هذه الصفحة وفي سياق الأداة قدر الإمكان.</div></section>
+    <section class="legal-section" id="local-processing"><h2>٢. الملفات والنصوص داخل المتصفح</h2><p>تصمم غالبية أدوات الصور وPDF والنصوص والمطورين لمعالجة مدخلاتك محليًا داخل متصفحك باستخدام تقنيات المتصفح. في هذه الحالات لا يرسل الموقع ملفك إلى خادم فورا.tools لمجرد اختيارك له أو معالجته داخل الأداة.</p><p>قد يحتفظ المتصفح بالملف أو المعاينة في الذاكرة المؤقتة طوال الجلسة. يزول ذلك عادة عند إغلاق الصفحة أو تحديثها، لكن سلوك الذاكرة والتحميلات يخضع لإعدادات المتصفح وجهازك. احتفظ دائمًا بالنسخة الأصلية، ولا ترفع محتوى لا تملك حق معالجته.</p></section>
+    <section class="legal-section" id="browser-storage"><h2>٣. التخزين على جهازك</h2><p>نستخدم التخزين المحلي أو تخزين الجلسة في متصفحك لتحسين تجربة الزيارة. هذه القيم لا تنتقل إلينا تلقائيًا مع كل زيارة، ويمكنك حذفها من إعدادات المتصفح.</p>
+      <table class="data-table"><caption>أمثلة على القيم المخزنة محليًا</caption><thead><tr><th>القيمة أو الفئة</th><th>الغرض</th><th>المكان</th></tr></thead><tbody>
+      <tr><td><code>fawran-theme</code></td><td>تذكر الوضع الداكن أو الفاتح</td><td>Local Storage</td></tr>
+      <tr><td><code>fawran-favorites</code> و<code>fawran-recent</code></td><td>عرض الأدوات المفضلة والمستخدمة مؤخرًا</td><td>Local Storage</td></tr>
+      <tr><td><code>fawran-rated-*</code></td><td>تذكر أن هذا المتصفح أرسل تقييمًا لأداة</td><td>Local Storage</td></tr>
+      <tr><td>تفضيلات بعض الأدوات</td><td>مثل آخر زوج عملات أو مفتاح PageSpeed الذي تختار حفظه أو سجل أداة مخصص</td><td>Local Storage</td></tr>
+      <tr><td><code>fawran-adblock-dismissed</code></td><td>عدم إظهار تنبيه مانع الإعلانات مرة أخرى في الجلسة نفسها</td><td>Session Storage</td></tr>
+      </tbody></table>
+      <p>حذف بيانات الموقع من إعدادات المتصفح يزيل هذه القيم من جهازك. لا نخزن كلمات مرورك أو ملفاتك الشخصية ضمن هذه المفاتيح العامة.</p></section>
+    <section class="legal-section" id="analytics"><h2>٤. التحليلات وسجلات الخدمة</h2><p>قد نستخدم Google Analytics لفهم استخدام الصفحات بصورة مجمعة، مثل الصفحات المفتوحة، نوع المتصفح، الجهاز، مصدر الزيارة، والتفاعل العام. توفر المتصفحات ومزودو البنية التحتية أيضًا سجلات تقنية معتادة، مثل عنوان IP والتوقيت وبيانات الطلب، لأغراض التشغيل والأمان ومنع الإساءة.</p><p>لا نستخدم هذه البيانات لبناء حساب شخصي لك داخل الموقع. تعامل Google وNetlify أو مزود الاستضافة مع البيانات يخضع كذلك لسياساتهم المستقلة.</p></section>
+    <section class="legal-section" id="ratings"><h2>٥. نظام التقييمات</h2><p>عند تقييم أداة، يرسل الموقع إلى وظيفة التقييم الخاصة به <strong>معرّف الأداة</strong> و<strong>عدد النجوم من 1 إلى 5</strong>. تحفظ الخدمة إجمالي عدد التقييمات ومجموعها لإظهار متوسط عام؛ لا نطلب اسمًا أو تعليقًا أو حسابًا لهذا الغرض. ويحتفظ متصفحك بمؤشر محلي لتقليل التقييم المتكرر من الجهاز نفسه.</p></section>
+    <section class="legal-section" id="external"><h2>٦. الطلبات والخدمات الخارجية</h2><p>بعض الميزات تعتمد على مورد خارجي لأن وظيفتها لا يمكن تنفيذها من الموقع وحده. عند استخدامك لها، يتلقى ذلك الطرف طلبًا تقنيًا من متصفحك وقد يرى عنوان IP وبيانات المتصفح المعتادة، إضافة إلى المدخل المرتبط بالميزة.</p>
+      <div class="legal-grid"><div><strong>الخطوط والمكتبات</strong><p>قد تُحمّل Google Fonts ومكتبات من jsDelivr أو cdnjs لتشغيل واجهة أو معالجة محلية؛ وهي طلبات تحميل عادية من المتصفح.</p></div><div><strong>أسعار العملات</strong><p>تطلب أداة العملات وودجت العملات بيانات أسعار عامة من مزود عملات خارجي لعرض التحويلات.</p></div><div><strong>فحص الموقع</strong><p>عند فحص رابط أو حالة HTTP أو سرعة موقع، قد يُطلب الرابط من متصفحك أو من واجهة Google PageSpeed بحسب الأداة. لا تدخل روابط خاصة أو تحتوي بيانات سرية.</p></div><div><strong>مفتاح PageSpeed</strong><p>إذا أدخلت مفتاح Google PageSpeed API واخترت حفظه، يبقى في Local Storage على جهازك؛ لا نرسله إلى خادم فورا.tools.</p></div></div>
+      <p>روابط المشاركة تفتح المنصة التي تختارها، وعندها تسري سياسة تلك المنصة. لا نتحكم في مدى دقة أو إتاحة أو ممارسات الأطراف الخارجية.</p></section>
+    <section class="legal-section" id="ads"><h2>٧. الإعلانات وملفات تعريف الارتباط</h2><p>قد يعرض الموقع إعلانات من Google AdSense أو شبكات إعلانية أخرى لتمويل تشغيل الخدمة. عند تفعيل الإعلانات، قد تستخدم Google وشركاؤها ملفات تعريف ارتباط أو معرّفات مشابهة وفق سياساتهم والقواعد المطبقة على منطقتك. يمكنك إدارة الإعلانات المخصصة من <a href="https://adssettings.google.com/" rel="noopener noreferrer" target="_blank">إعدادات إعلانات Google</a> وضبط ملفات الارتباط من متصفحك.</p><p>إذا كانت القواعد في بلدك تفرض موافقة مسبقة على تقنيات إعلانية غير ضرورية، فقد تظهر لك واجهة موافقة عند تفعيلها. تعطيل ملفات الارتباط أو مانع الإعلانات قد يغير بعض وظائف العرض أو التمويل، لكنه لا يمنعك من استخدام الأدوات الأساسية.</p></section>
+    <section class="legal-section" id="contact-data"><h2>٨. التواصل ومشاركة البيانات</h2><p>صفحة الاتصال تفتح برنامج البريد على جهازك ولا ترسل النموذج إلى قاعدة بيانات الموقع. إذا أرسلت لنا بريدًا، نستلم الاسم أو عنوان البريد والمحتوى الذي تختار إرساله لنتمكن من الرد أو متابعة الطلب. لا نبيع بياناتك الشخصية، ولا نشاركها لغرض إعلاني مستقل عن تشغيل الموقع، إلا إذا كان ذلك مطلوبًا قانونًا أو ضروريًا لحماية الخدمة وحقوق مستخدميها.</p></section>
+    <section class="legal-section" id="retention"><h2>٩. الاحتفاظ والأمان</h2><p>تبقى تفضيلات المتصفح على جهازك حتى تحذفها. تحفظ بيانات التقييمات بصيغة إجمالية ما دامت لازمة لعرض المتوسطات ومنع العبث، وقد تحتفظ جهات الاستضافة أو الأطراف الخارجية بسجلاتها طبقًا لسياساتها. نستخدم إجراءات تقنية معقولة لحماية الموقع، لكن لا توجد خدمة إنترنت خالية من المخاطر؛ لا ترسل معلومات لا ينبغي كشفها عبر روابط أو رسائل عامة.</p></section>
+    <section class="legal-section" id="choices"><h2>١٠. خياراتك وحقوقك</h2><ul><li>احذف Local Storage وSession Storage وملفات الارتباط من إعدادات المتصفح.</li><li>لا تحفظ مفتاح API في أداة إن كنت تستخدم جهازًا مشتركًا.</li><li>استخدم إعدادات Google لإدارة الإعلانات والقياس وفق الخيارات المتاحة لك.</li><li>راسلنا لطلب توضيح أو طلب متعلق ببيانات رسالة أرسلتها إلينا؛ قد نحتاج معلومات كافية للتحقق من الطلب.</li></ul></section>
+    <section class="legal-section" id="children"><h2>١١. الأطفال والتعديلات</h2><p>الموقع ليس موجّهًا عمدًا إلى جمع بيانات من الأطفال. إذا كنت دون السن الذي يسمح لك بالموافقة الرقمية في بلدك، استخدم الموقع بإشراف ولي الأمر. قد نعدّل هذه السياسة عند تغير وظائف الموقع أو المتطلبات القانونية، وسيظهر تاريخ التحديث أعلى الصفحة.</p></section>
+    <section class="legal-section" id="privacy-contact"><h2>١٢. التواصل بشأن الخصوصية</h2><p>للاستفسار عن هذه السياسة أو عن رسالة أرسلتها إلينا، استخدم <a href="contact.html">صفحة التواصل</a> أو راسلنا على <a href="mailto:hello@fawran.tools">hello@fawran.tools</a>. هذه السياسة عامة وليست استشارة قانونية فردية.</p></section>
+  </article>
 </div>
-
-<div class="toc">
-  <h2>محتوى الصفحة</h2>
-  <ul>
-    <li><a href="#overview">١. نظرة عامة</a></li>
-    <li><a href="#files">٢. معالجة الملفات والصور</a></li>
-    <li><a href="#collected-data">٣. البيانات التي قد نجمعها</a></li>
-    <li><a href="#local-storage">٤. التخزين المحلي في متصفحك</a></li>
-    <li><a href="#ratings-data">٥. بيانات نظام التقييمات</a></li>
-    <li><a href="#third-party-services">٦. الخدمات الخارجية المستخدمة</a></li>
-    <li><a href="#ads-cookies">٧. الإعلانات وملفات تعريف الارتباط</a></li>
-    <li><a href="#contact-form">٨. نموذج التواصل</a></li>
-    <li><a href="#sharing">٩. مشاركة البيانات</a></li>
-    <li><a href="#retention">١٠. مدة الاحتفاظ بالبيانات</a></li>
-    <li><a href="#rights">١١. حقوقك</a></li>
-    <li><a href="#children">١٢. خصوصية الأطفال</a></li>
-    <li><a href="#security">١٣. أمان البيانات</a></li>
-    <li><a href="#external-links">١٤. روابط لمواقع أخرى</a></li>
-    <li><a href="#changes">١٥. تعديلات على هذه السياسة</a></li>
-    <li><a href="#contact">١٦. التواصل معنا</a></li>
-  </ul>
-</div>
-
-<div class="content-card">
-
-<h2 id="overview">١. نظرة عامة</h2>
-<p>خصوصيتك مهمة جدًا بالنسبة لنا، وصممنا فورا.tools من الأساس بحيث تتم معظم عمليات معالجة الملفات محليًا داخل متصفحك، دون الحاجة لرفعها على أي خادم. هذه الصفحة توضّح بالتفصيل ما هي البيانات التي قد نجمعها، ولماذا، وكيف نستخدمها، حتى تكون على دراية كاملة قبل استخدام أي أداة من أدواتنا.</p>
-
-<h2 id="files">٢. معالجة الملفات والصور</h2>
-<p>جميع أدوات فورا.tools التي تتعامل مع صور أو ملفات (مثل محوّل WebP، ضاغط الصور، أدوات دمج وتقسيم PDF) تعالج هذه الملفات محليًا داخل متصفحك عبر تقنيات الويب القياسية (مثل JavaScript وWebAssembly). نحن لا نرفع صورك أو ملفاتك إلى خوادمنا ولا نحتفظ بنسخة منها في أي وقت — تبقى المعالجة بالكامل على جهازك، ويُحذف الملف من ذاكرة المتصفح بمجرد إغلاق الصفحة أو تحديثها.</p>
-<p>الاستثناء الوحيد هو الأدوات التي تعتمد صراحة على خدمة خارجية لأداء وظيفتها (مثل فحص سرعة موقع، أو جلب بيانات فيديو يوتيوب) — في هذه الحالة، الرابط الذي تُدخله (وليس ملفًا يخصك) هو ما يُرسل لتلك الخدمة، كما هو موضّح في القسم السادس أدناه.</p>
-
-<h2 id="collected-data">٣. البيانات التي قد نجمعها</h2>
-<p>قد نجمع بيانات استخدام عامة وغير شخصية باستخدام أدوات تحليل مثل Google Analytics، بهدف فهم كيفية استخدام الموقع وتحسينه. من أمثلة هذه البيانات:</p>
-<table class="data-table">
-  <tr><th>نوع البيانات</th><th>مثال</th></tr>
-  <tr><td>معلومات المتصفح والجهاز</td><td>نوع المتصفح، نظام التشغيل، حجم الشاشة</td></tr>
-  <tr><td>سلوك التصفح</td><td>الصفحات الأكثر زيارة، مدة الزيارة التقريبية، مصدر الزيارة</td></tr>
-  <tr><td>الموقع الجغرافي التقريبي</td><td>الدولة أو المدينة (مشتق من عنوان IP، وليس موقعًا دقيقًا)</td></tr>
-</table>
-<p>هذه البيانات مجمّعة وإحصائية بطبيعتها، ولا نستخدمها للتعرف على هويتك الشخصية.</p>
-
-<h2 id="local-storage">٤. التخزين المحلي في متصفحك</h2>
-<p>يستخدم الموقع خاصية التخزين المحلي (Local Storage) المدمجة في متصفحك لحفظ بعض التفضيلات، من بينها:</p>
-<ul>
-  <li>تفضيل الوضع الليلي أو النهاري للموقع.</li>
-  <li>قائمة الأدوات "المفضلة" أو "المستخدمة مؤخرًا" إن وجدت هذه الميزة.</li>
-  <li>مؤشر يوضح إذا كنت قد قيّمت أداة معينة من قبل (لمنع التصويت المتكرر).</li>
-  <li>مفتاح API اختياري خاص بك تُدخله بنفسك في بعض الأدوات (مثل فاحص سرعة الموقع)، إن اخترت استخدام هذه الميزة.</li>
-  <li>سجل بآخر الروابط التي أنشأتها في بعض الأدوات (مثل أداة بناء روابط UTM)، لتسهيل إعادة استخدامها.</li>
-</ul>
-<p>هذه البيانات تبقى محفوظة على جهازك فقط، ولا تُرسل لخوادمنا، ويمكنك حذفها في أي وقت عبر مسح بيانات التصفح من إعدادات متصفحك.</p>
-
-<h2 id="ratings-data">٥. بيانات نظام التقييمات</h2>
-<p>عند تقييمك لأداة عبر نظام النجوم، يُرسل رقم تقييمك (من 1 إلى 5) إلى خادمنا ليُضاف إلى المتوسط العام المعروض للأداة. لا نربط هذا الرقم باسمك أو بريدك الإلكتروني أو أي معرّف شخصي — يُخزَّن فقط كجزء من إحصائية إجمالية (مجموع التقييمات وعددها) لكل أداة. قد يُسجَّل عنوان IP الخاص بك بشكل تلقائي ومؤقت من قِبل مزوّد الاستضافة كجزء طبيعي من أي طلب شبكي، دون أن نستخدمه نحن لأي غرض آخر غير منع محاولات التلاعب الواضحة بالتقييمات.</p>
-
-<h2 id="third-party-services">٦. الخدمات الخارجية المستخدمة</h2>
-<p>تعتمد بعض أدواتنا على خدمات وواجهات برمجية تابعة لجهات خارجية لتقديم وظيفتها بشكل صحيح:</p>
-<table class="data-table">
-  <tr><th>الخدمة</th><th>تُستخدم في</th><th>ما الذي يُرسل إليها</th></tr>
-  <tr><td>Google PageSpeed Insights</td><td>فاحص سرعة الموقع</td><td>رابط الموقع الذي تدخله للفحص</td></tr>
-  <tr><td>YouTube oEmbed</td><td>أدوات يوتيوب (رابط بتوقيت، تحميل صورة مصغرة)</td><td>رابط الفيديو الذي تدخله</td></tr>
-  <tr><td>Google Fonts</td><td>عرض خطوط الموقع</td><td>لا بيانات شخصية، فقط طلب تحميل ملف خط</td></tr>
-  <tr><td>Netlify (استضافة الموقع)</td><td>تشغيل الموقع وخدمة التقييمات</td><td>بيانات الطلب المعتادة لأي زيارة ويب</td></tr>
-</table>
-<p>كل من هذه الخدمات لديها سياسة خصوصية منفصلة خاصة بها، وننصحك بمراجعتها إذا كانت لديك مخاوف محددة بشأن كيفية تعاملها مع البيانات.</p>
-
-<h2 id="ads-cookies">٧. الإعلانات وملفات تعريف الارتباط</h2>
-<p>قد يعرض الموقع إعلانات عبر شبكة Google AdSense كمصدر لتمويل تشغيل الأدوات مجانًا. تستخدم Google ومعلنون خارجيون ملفات تعريف الارتباط (Cookies) لعرض إعلانات مناسبة بناءً على زياراتك لهذا الموقع ومواقع أخرى. يمكنك تعطيل الإعلانات المخصصة عبر <a href="https://adssettings.google.com/" rel="noopener" target="_blank">إعدادات إعلانات Google</a>، أو عبر إضافات حجب الإعلانات في متصفحك.</p>
-
-<h2 id="contact-form">٨. نموذج التواصل</h2>
-<p>إذا تواصلت معنا عبر <a href="contact.html">صفحة اتصل بنا</a>، فإننا نجمع الاسم والبريد الإلكتروني ومحتوى رسالتك فقط بهدف الرد على استفسارك. لا نستخدم هذه البيانات لأي غرض تسويقي دون موافقتك الصريحة، ولا نشاركها مع أي طرف ثالث.</p>
-
-<h2 id="sharing">٩. مشاركة البيانات</h2>
-<p>لا نبيع بياناتك الشخصية لأي طرف ثالث. قد تتم مشاركة بيانات محدودة فقط في الحالات التالية:</p>
-<ul>
-  <li>مع مزوّدي الخدمات الخارجية المذكورين في القسم السادس، فقط بالقدر اللازم لتشغيل الأداة التي تستخدمها.</li>
-  <li>إذا طُلب منا ذلك بموجب أمر قانوني ملزم من جهة رسمية مختصة.</li>
-  <li>لحماية حقوقنا القانونية أو أمان الموقع في حالات الاشتباه بإساءة استخدام واضحة.</li>
-</ul>
-
-<h2 id="retention">١٠. مدة الاحتفاظ بالبيانات</h2>
-<p>بيانات التخزين المحلي (Local Storage) تبقى على جهازك حتى تقوم بمسحها بنفسك. بيانات التقييمات الإجمالية (المتوسط والعدد لكل أداة) تُحفظ بشكل دائم كجزء من إحصائيات الموقع العامة. رسائل التواصل تُحفظ للمدة اللازمة للرد على استفسارك ومتابعته فقط.</p>
-
-<h2 id="rights">١١. حقوقك</h2>
-<p>يمكنك في أي وقت:</p>
-<ul>
-  <li>مسح كل بيانات التخزين المحلي الخاصة بالموقع عبر إعدادات متصفحك مباشرة.</li>
-  <li>طلب معرفة أو حذف أي بيانات شخصية أرسلتها لنا عبر نموذج التواصل، بمراسلتنا عبر <a href="contact.html">صفحة اتصل بنا</a>.</li>
-  <li>تعطيل ملفات تعريف الارتباط الخاصة بالإعلانات عبر إعدادات متصفحك أو رابط إعدادات إعلانات Google المذكور أعلاه.</li>
-</ul>
-
-<h2 id="children">١٢. خصوصية الأطفال</h2>
-<p>الموقع غير موجّه بشكل خاص للأطفال دون سن 13 عامًا، ولا نجمع عن قصد أي بيانات شخصية من الأطفال في هذه الفئة العمرية. إذا كنت وليّ أمر وتعتقد أن طفلك قد شاركنا بيانات شخصية، تواصل معنا فورًا لحذفها.</p>
-
-<h2 id="security">١٣. أمان البيانات</h2>
-<p>نتخذ إجراءات معقولة لحماية أي بيانات نجمعها من الوصول غير المصرّح به أو الفقد أو سوء الاستخدام، بما في ذلك استخدام اتصال آمن (HTTPS) في جميع صفحات الموقع. مع ذلك، لا يمكن لأي نظام نقل بيانات عبر الإنترنت أن يكون آمنًا بنسبة 100%، ولا نستطيع ضمان الأمان المطلق التام.</p>
-
-<h2 id="external-links">١٤. روابط لمواقع أخرى</h2>
-<p>قد يحتوي الموقع على روابط لمواقع خارجية (مثل مصادر داخل مقالات المدونة، أو خدمات نشير إليها ضمن الأدوات). لسنا مسؤولين عن سياسات الخصوصية أو المحتوى الخاص بتلك المواقع، وننصح بمراجعة سياسة الخصوصية الخاصة بأي موقع خارجي تزوره.</p>
-
-<h2 id="changes">١٥. تعديلات على هذه السياسة</h2>
-<p>قد نحدّث سياسة الخصوصية هذه من وقت لآخر لتعكس تغييرات في ممارساتنا أو لأسباب قانونية. سيظهر تاريخ آخر تحديث دائمًا أعلى الصفحة، وننصح بمراجعتها بشكل دوري.</p>
-
-<h2 id="contact">١٦. التواصل معنا</h2>
-<p>لأي استفسار يخص هذه السياسة أو بياناتك، يمكنك التواصل معنا عبر <a href="contact.html">صفحة اتصل بنا</a>.</p>
-
-</div>
-</div>
-
-<div class="wrap">
-<div class="ad-slot ad-slot-leaderboard">
-<span class="ad-label">إعلان · Advertisement</span>
-<div class="ad-slot-inner" style="min-height:90px;">
-<!-- ضع هنا كود وحدة إعلانات AdSense المتجاوبة الخاصة بك -->
-<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5511030780981611" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
-<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-</div>
-</div>
-</div>
-
 </main>
 <footer role="contentinfo">
 <div class="footer-grid">
